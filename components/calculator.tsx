@@ -40,13 +40,14 @@ function Slider({
         <label htmlFor={id} className="text-[13px] font-medium text-white/70 sm:text-sm">
           {label}
         </label>
-        <output htmlFor={id} className="text-lg font-bold tabular-nums text-accent sm:text-xl">
+        <output htmlFor={id} data-ck={`out-${id}`} className="text-lg font-bold tabular-nums text-accent sm:text-xl">
           {format(value)}
         </output>
       </div>
       <input
         id={id}
         type="range"
+        data-ck={`in-${id}`}
         className="range mt-3.5"
         min={min}
         max={max}
@@ -96,19 +97,19 @@ export function Calculator() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">
               Added revenue per month
             </p>
-            <p className="mt-2 text-[2.5rem] font-extrabold leading-none tracking-tight text-accent tabular-nums sm:text-[3.25rem]">
+            <p data-ck="added" className="mt-2 text-[2.5rem] font-extrabold leading-none tracking-tight text-accent tabular-nums sm:text-[3.25rem]">
               {r.added >= 0 ? "+" : "−"}
               {money(Math.abs(r.added))}
             </p>
-            <p className="mt-2.5 text-[13px] text-white/45">
+            <p data-ck="vs" className="mt-2.5 text-[13px] text-white/45">
               vs. {money(r.currentRev)}/mo at your current close rate
             </p>
 
             <dl className="mt-6 space-y-0 divide-y divide-hairline border-y border-hairline">
-              <Row label="Projected monthly revenue" value={money(r.projectedRev)} />
-              <Row label="Closer commission (10%)" value={`− ${money(r.closerCut)}`} muted />
-              <Row label="ClosingKing (6%)" value={`− ${money(r.ckCut)}`} muted />
-              <Row label="You keep" value={money(r.youKeep)} strong />
+              <Row hook="projected" label="Projected monthly revenue" value={money(r.projectedRev)} />
+              <Row hook="closer" label="Closer commission (10%)" value={`− ${money(r.closerCut)}`} muted />
+              <Row hook="ck" label="ClosingKing (6%)" value={`− ${money(r.ckCut)}`} muted />
+              <Row hook="keep" label="You keep" value={money(r.youKeep)} strong />
             </dl>
 
             <div className="mt-6 flex items-center justify-between gap-4 rounded-xl border border-accent/25 bg-accent/[0.07] px-4 py-3.5">
@@ -178,11 +179,13 @@ function Row({
   value,
   muted,
   strong,
+  hook,
 }: {
   label: string;
   value: string;
   muted?: boolean;
   strong?: boolean;
+  hook?: string;
 }) {
   return (
     <div className="flex items-center justify-between gap-4 py-3">
@@ -190,6 +193,7 @@ function Row({
         {label}
       </dt>
       <dd
+        data-ck={hook}
         className={`tabular-nums ${
           strong
             ? "text-base font-bold text-white sm:text-lg"
