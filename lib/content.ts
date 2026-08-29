@@ -40,7 +40,7 @@ export const hero = {
   headline: { pre: "Have A Proven Closer", accent: "On Your Offer", post: "" },
   headlineLine2: "",
   sub: "Select from 300+ vetted closers. Trained on your offer. Taking calls tomorrow.",
-  cta: "Book A Call — 4 Spots Left",
+  cta: "Book A Call. 4 Spots Left",
   ctaSub: "You pay only when they close.",
   videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
@@ -103,15 +103,7 @@ export const guarantee = {
   ],
 };
 
-/* 4 — What's it worth to me? */
-export const calculator = {
-  eyebrow: "Run the numbers",
-  heading: { pre: "How Much You're", accent: "Losing", post: " Each Month" },
-  sub: "Your assumptions, not ours.",
-  disclaimer: "Illustrative only. Uses the numbers you enter — not a projection or guarantee.",
-};
-
-/* 5 — Am I a fit? */
+/* 4 — Am I a fit? */
 export const audience = {
   eyebrow: "Who this is for",
   heading: { pre: "Who This Is", accent: "For", post: "" },
@@ -133,7 +125,7 @@ export const audience = {
   },
 };
 
-/* 6 — Remaining objections */
+/* 5 — Remaining objections */
 export const faq = {
   eyebrow: "Questions",
   heading: { pre: "Frequently Asked", accent: "Questions", post: "" },
@@ -143,10 +135,10 @@ export const faq = {
     { q: "How fast can a rep start?", a: "Intake today, matched the same day, live on your calls the next morning. Vetting is already done and we write the SOP for you." },
     { q: "What if the rep isn't a fit?", a: "Tell us and we swap them. A replacement from the same bench is live within 24 hours. No fee, no penalty." },
     { q: "Do I need my own leads?", a: "Yes. We supply and manage sales talent, not leads. You need an offer that converts and calls getting booked." },
-    { q: "Are reps exclusive to my offer?", a: "Full-time closers work your offer exclusively. Part-time and setter placements can go either way — we set that during intake." },
+    { q: "Are reps exclusive to my offer?", a: "Full-time closers work your offer exclusively. Part-time and setter placements can go either way, and we set that during intake." },
     { q: "Who manages and trains them?", a: "We do. Call reviews, mock drills and coaching run on our side weekly. You keep full say over your offer and process." },
     { q: "How do you vet closers?", a: "Verified close-rate history on comparable offers, live mocks against real objections, and references with previous offer owners." },
-    { q: "What tools do you work with?", a: "Whatever you already run — HubSpot, GoHighLevel, Close, Salesforce, Zoom, Calendly. No migration." },
+    { q: "What tools do you work with?", a: "Whatever you already run: HubSpot, GoHighLevel, Close, Salesforce, Zoom, Calendly. No migration." },
     { q: "What's the minimum commitment?", a: "None. No contract term, no notice period. You're only ever paying a share of closed revenue." },
   ],
 };

@@ -55,7 +55,7 @@ export function ApplyForm() {
               rel="noopener noreferrer"
               className="btn btn-primary mt-7 w-full sm:w-auto"
             >
-              Skip the wait — book your intake call
+              Skip the wait. Book your intake call
             </a>
           )}
         </div>
@@ -162,7 +162,7 @@ export function ApplyForm() {
 
         <p className="mt-4 text-center text-[12px] leading-relaxed text-ink-tertiary">
           No retainer. No setup fee. You pay only when they close. We reply within one
-          business day — and if your offer isn&apos;t a fit, we&apos;ll tell you straight.
+          business day. If your offer isn&apos;t a fit, we&apos;ll tell you straight.
         </p>
       </form>
     </Section>

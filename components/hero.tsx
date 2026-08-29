@@ -59,7 +59,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1C0E44] to-[#0D0624] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#170B39] to-[#0B0520] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}

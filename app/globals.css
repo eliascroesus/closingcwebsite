@@ -13,9 +13,9 @@
      high-contrast direction none of the reference pages use. Neutrals carry a
      faint green bias so the greys read chosen. */
   --color-canvas: #0C0620;
-  --color-s1: #150932;
-  --color-s2: #1B0D40;
-  --color-s3: #23124F;
+  --color-s1: #110726;
+  --color-s2: #170A33;
+  --color-s3: #1E0F42;
   --color-hairline: #301C5C;
   --color-hairline-strong: #422880;
 
@@ -111,17 +111,17 @@ body {
 .t-hero-accent {
   font-family: var(--font-accent-serif), ui-serif, Georgia, serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--color-accent);
   text-shadow: 0 0 40px rgba(176, 124, 255, 0.45), 0 0 14px rgba(176, 124, 255, 0.25);
   /* Instrument Serif has a tall x-height, so it needs far less upsizing than a
      didone would. Line-height under 1 plus a negative top margin closes the
      gap the larger size opens between the two headline lines. */
-  font-size: 1.52em;
+  font-size: 1.82em;
   letter-spacing: -0.02em;
   display: block;
-  line-height: 0.84;
-  margin-top: -0.02em;
+  line-height: 0.9;
+  margin-top: 0.04em;
   padding-bottom: 0.1em;
 }
 

@@ -245,7 +245,6 @@ export function Footer() {
             {[
               { label: "Pricing", href: "#pricing" },
               { label: "How It Works", href: "#how" },
-              { label: "Calculator", href: "#calculator" },
               { label: "For Closers", href: "#closers" },
               { label: "FAQ", href: "#faq" },
             ].map((l) => (

@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0C0620 canvas → #150932 → #1B0D40 → #23124F) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0C0620 canvas → #110726 → #170A33 → #1E0F42) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
   primary: "#B07CFF"
@@ -13,9 +13,9 @@ colors:
   ink-subtle: "#8175A6"
   ink-tertiary: "#5B4E7D"
   canvas: "#0C0620"
-  surface-1: "#150932"
-  surface-2: "#1B0D40"
-  surface-3: "#23124F"
+  surface-1: "#110726"
+  surface-2: "#170A33"
+  surface-3: "#1E0F42"
   hairline: "#301C5C"
   hairline-strong: "#422880"
   inverse-canvas: "#FFFFFF"
@@ -57,9 +57,9 @@ never by white gaps. Four steps only — do not skip levels.
 | Level | Value | Use |
 |---|---|---|
 | canvas | `#0C0620` | Page ground |
-| surface-1 | `#150932` | Default cards, panels |
-| surface-2 | `#1B0D40` | Hovered / featured cards |
-| surface-3 | `#23124F` | Inputs, chips, nested surfaces |
+| surface-1 | `#110726` | Default cards, panels |
+| surface-2 | `#170A33` | Hovered / featured cards |
+| surface-3 | `#1E0F42` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
 `{colors.primary}` purple appears ONLY on:
@@ -86,7 +86,7 @@ Two families, deliberately different registers:
   `.t-card`, `.t-stat`). Tight, neutral, heavy.
 - **Instrument Sans** — body, UI, form fields, everything else.
 - **Geist Mono** — eyebrows and numeric labels only.
-- **Instrument Serif italic** — the hero's accent line and nothing else.
+- **Newsreader italic 600** - the hero's accent line and nothing else.
 
 - Display runs at **weight 680** in the hero, 600 for section headings. Never 800.
 - Negative tracking scales with size: −2.4px at 60px (≈4%), −1.0px at 32px, 0 at body.
@@ -103,20 +103,21 @@ anything, so it was reverted. A headline that states the whole offer beats a
 bigger one that states a category.
 
 ### The one italic serif
-`.t-hero-accent` — the second line of the H1 — is set in **Instrument Serif**
-italic, matching how the reference page sets its own payoff phrase. Playfair
-Display was tried first and rejected: it is a high-contrast didone with ball
-terminals and reads decorative, where the reference uses a moderate-contrast
-modern serif.
+`.t-hero-accent`, the second line of the H1, is set in **Newsreader italic at
+weight 600**. Two faces were tried before it: Playfair Display, a
+high-contrast didone that read decorative, and Instrument Serif, which is the
+right class of modern serif but ships a single 400 weight and so cannot be
+thickened. Newsreader is the same class and variable.
 
-Its metrics have to be tuned, or the two headline lines drift apart. Current
-values: `font-size: 1.52em`, `line-height: 0.84`, `margin-top: -0.02em`,
-`padding-bottom: 0.1em`. At a 64px sans line that puts the serif at 97px with
-a −2px gap between the two.
+Its metrics have to be tuned, or the two headline lines either drift apart or
+collide. Current values: `font-size: 1.82em`, `line-height: 0.9`,
+`margin-top: 0.04em`, `padding-bottom: 0.1em`. At a 64px sans line that puts
+the serif at 116px with a 5px gap.
 
-**The rule:** whenever the serif's size changes, its line-height must come
-down with it. A larger font-size on its own opens the gap — the two moves are
-a pair, not independent. `.t-display` sits at `line-height: 0.97` to match.
+**The rule:** size and line-height move together, and there are bounds on both
+sides. Enlarging the font alone opens a gap; over-tightening the line-height
+drives the italic ascenders (`Y`, `ff`) into the sans baseline above. At
+1.82em, `0.78` collided and `0.9` clears. `.t-display` sits at `0.97`.
 
 This is a deliberate, single-instance exception requested for the hero. An
 italic serif used *anywhere else* — section headings, card titles, pull quotes
@@ -276,3 +277,9 @@ content, never like the page is dim.
 
 The nav is hidden over the hero and slides in past 560px, so the hero carries
 its own wordmark — on one row with the status chip, to start the fold higher.
+
+## Copy conventions
+
+**No em dashes.** Use a period, a comma, or a colon instead. A dash where a
+full stop belongs is a tell, and the page reads harder for it. En dashes stay
+in numeric ranges (`5-7%`, `$1,000 - $2,999`).

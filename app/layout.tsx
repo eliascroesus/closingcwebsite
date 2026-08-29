@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Instrument_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 
 // Body and UI. Geist carries headlines; this carries everything else, so the
@@ -14,9 +14,9 @@ const instrumentSans = Instrument_Sans({
 
 // The hero's accent line only — a high-contrast italic serif, matching the
 // reference page's treatment of its own payoff phrase.
-const accentSerif = Instrument_Serif({
+const accentSerif = Newsreader({
   subsets: ["latin"],
-  weight: "400",
+  weight: "600",
   style: "italic",
   variable: "--font-accent-serif",
   display: "swap",

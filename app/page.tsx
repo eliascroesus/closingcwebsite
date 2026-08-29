@@ -1,6 +1,5 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
-import { Calculator } from "@/components/calculator";
 import { Faq } from "@/components/faq";
 import { ApplyForm } from "@/components/apply-form";
 import {
@@ -11,7 +10,7 @@ import {
 /**
  * Order follows the buyer's decision sequence:
  * what is it → what does it cost → how does it work →
- * what if it goes wrong → what's it worth → am I a fit → objections → book.
+ * what if it goes wrong → am I a fit → objections → book.
  */
 export default function Page() {
   return (
@@ -23,7 +22,6 @@ export default function Page() {
         <Pricing />
         <How />
         <Guarantee />
-        <Calculator />
         <Audience />
         <Faq />
         <ForClosers />
