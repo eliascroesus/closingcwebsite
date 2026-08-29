@@ -23,7 +23,6 @@ colors:
   bloom: "rgba(176,124,255,0.45)"
 
 typography:
-  hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
   display-xl: { fontFamily: Geist, fontSize: 60px, fontWeight: 600, lineHeight: 1.02, letterSpacing: -2.4px }
   display-lg: { fontFamily: Geist, fontSize: 44px, fontWeight: 600, lineHeight: 1.06, letterSpacing: -1.6px }
   display-md: { fontFamily: Geist, fontSize: 32px, fontWeight: 600, lineHeight: 1.12, letterSpacing: -1.0px }
@@ -88,7 +87,9 @@ Two families, deliberately different registers:
 - **Geist Mono** — eyebrows and numeric labels only.
 - **Newsreader italic 600** - the hero's accent line and nothing else.
 
-- Display runs at **weight 680** in the hero, 600 for section headings. Never 800.
+- The hero's sans line runs at **weight 400**; section headings at 600. The
+  weight contrast against the 600 serif below it is what separates the two
+  lines, so the sans stays light on purpose. Never 800 anywhere.
 - Negative tracking scales with size: −2.4px at 60px (≈4%), −1.0px at 32px, 0 at body.
 - Eyebrows invert this: Geist Mono, uppercase, **+1.2px positive tracking**. The
   contrast against negative-tracked display is what marks them as taxonomy.
@@ -290,3 +291,12 @@ its own wordmark — on one row with the status chip, to start the fold higher.
 **No em dashes.** Use a period, a comma, or a colon instead. A dash where a
 full stop belongs is a tell, and the page reads harder for it. En dashes stay
 in numeric ranges (`5-7%`, `$1,000 - $2,999`).
+
+## The hero video
+
+`max-w-xl` (36rem) up to `lg`, then `lg:max-w-[63rem]` (1008px). The larger
+size is deliberate and costs fold space: at 1440x900 the CTA sits just below
+the fold, while at 1728x1000 and on tablet and phone it stays inside it. If
+the CTA must be visible on a 900px-tall laptop, cap the video near 52rem
+instead; that is the trade, and the hero stack has already been tightened as
+far as it can go without shrinking the headline.

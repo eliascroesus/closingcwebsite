@@ -40,7 +40,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="t-display rise mx-auto mt-8 max-w-3xl text-center text-balance"
+          className="t-display rise mx-auto mt-6 max-w-3xl text-center text-balance"
           style={{ animationDelay: "110ms" }}
         >
           <span className="block">{hero.headline.pre}</span>
@@ -48,7 +48,7 @@ export function Hero() {
         </h1>
 
         <p
-          className="rise mx-auto mt-5 max-w-[58ch] text-center text-[14.5px] leading-relaxed text-ink-muted text-balance sm:mt-6 sm:text-[16px]"
+          className="rise mx-auto mt-4 max-w-[58ch] text-center text-[14.5px] leading-relaxed text-ink-muted text-balance sm:mt-6 sm:text-[16px]"
           style={{ animationDelay: "170ms" }}
         >
           {hero.sub}
@@ -56,7 +56,7 @@ export function Hero() {
 
 
         {/* ── VSL: the protagonist. CTA lives underneath it, not above. ── */}
-        <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
+        <div className="rise relative mx-auto mt-4 max-w-xl lg:max-w-[63rem]" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#170B39] to-[#0B0520] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
@@ -112,7 +112,7 @@ export function Hero() {
         </div>
 
         {/* CTA under the video — watch, then act */}
-        <div className="rise mt-6 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
+        <div className="rise mt-5 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
           <a href={ctaHref} className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
             {hero.cta}
           </a>

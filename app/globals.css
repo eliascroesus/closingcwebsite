@@ -65,7 +65,7 @@ body {
 
 .t-display {
   font-family: var(--font-heading);
-  font-weight: 680;
+  font-weight: 400;
   font-size: clamp(2.375rem, 5.2vw, 4rem);
   line-height: 0.97;
   letter-spacing: -0.038em;
