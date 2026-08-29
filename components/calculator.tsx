@@ -40,7 +40,7 @@ function Slider({
         <label htmlFor={id} className="text-[13px] font-medium text-white/70 sm:text-sm">
           {label}
         </label>
-        <output htmlFor={id} className="text-lg font-bold tabular-nums text-gold sm:text-xl">
+        <output htmlFor={id} className="text-lg font-bold tabular-nums text-accent sm:text-xl">
           {format(value)}
         </output>
       </div>
@@ -92,11 +92,11 @@ export function Calculator() {
         <div className="grid lg:grid-cols-[1.05fr_1fr]">
           {/* RESULT — rendered first on mobile so the number stays visible
               above the thumb while sliders are dragged; moves right on desktop. */}
-          <div className="order-1 border-b border-line bg-[radial-gradient(ellipse_at_50%_0%,rgba(240,178,60,0.18),transparent_65%)] p-5 sm:p-7 lg:order-2 lg:border-b-0 lg:border-l lg:p-8">
+          <div className="order-1 border-b border-hairline bg-[radial-gradient(ellipse_at_50%_0%,rgba(240,178,60,0.18),transparent_65%)] p-5 sm:p-7 lg:order-2 lg:border-b-0 lg:border-l lg:p-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">
               Added revenue per month
             </p>
-            <p className="mt-2 text-[2.5rem] font-extrabold leading-none tracking-tight text-gold tabular-nums sm:text-[3.25rem]">
+            <p className="mt-2 text-[2.5rem] font-extrabold leading-none tracking-tight text-accent tabular-nums sm:text-[3.25rem]">
               {r.added >= 0 ? "+" : "−"}
               {money(Math.abs(r.added))}
             </p>
@@ -104,18 +104,18 @@ export function Calculator() {
               vs. {money(r.currentRev)}/mo at your current close rate
             </p>
 
-            <dl className="mt-6 space-y-0 divide-y divide-line border-y border-line">
+            <dl className="mt-6 space-y-0 divide-y divide-hairline border-y border-hairline">
               <Row label="Projected monthly revenue" value={money(r.projectedRev)} />
               <Row label="Closer commission (10%)" value={`− ${money(r.closerCut)}`} muted />
               <Row label="ClosingKing (6%)" value={`− ${money(r.ckCut)}`} muted />
               <Row label="You keep" value={money(r.youKeep)} strong />
             </dl>
 
-            <div className="mt-6 flex items-center justify-between gap-4 rounded-xl border border-gold/25 bg-gold/[0.07] px-4 py-3.5">
+            <div className="mt-6 flex items-center justify-between gap-4 rounded-xl border border-accent/25 bg-accent/[0.07] px-4 py-3.5">
               <span className="text-[13px] font-medium text-white/75">
                 Upfront cost to start
               </span>
-              <span className="text-xl font-extrabold text-gold sm:text-2xl">$0</span>
+              <span className="text-xl font-extrabold text-accent sm:text-2xl">$0</span>
             </div>
 
             <p className="mt-5 text-[11px] leading-relaxed text-white/30">

@@ -1,170 +1,158 @@
 @import "tailwindcss";
 
 /* ============================================================
-   ClosingKing design system
-   Follows the reference-page formula:
-   - near-black canvas
-   - ONE saturated accent (gold), used only for eyebrows, one
-     highlighted word per heading, buttons, icons, stat numbers, glows
-   - heavy sans in title case + italic serif on the accent word
+   ClosingKing — implements /DESIGN.md
+   Surface ladder + hairlines carry hierarchy. The red accent is
+   scarce by rule: wordmark, primary CTA, focus ring, stat figures,
+   hero bloom, closing band. Nothing else.
    ============================================================ */
 
 @theme {
-  /* Canvas */
-  --color-ink: #06060A;
-  --color-ink-2: #0B0B11;
-  --color-ink-3: #101018;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.14);
+  --color-canvas: #08080B;
+  --color-s1: #101014;
+  --color-s2: #16161B;
+  --color-s3: #1C1C22;
+  --color-hairline: #232329;
+  --color-hairline-strong: #2E2E36;
 
-  /* Single accent: gold */
-  --color-gold: #F0B23C;
-  --color-gold-bright: #FFCE6A;
-  --color-gold-deep: #C98A1E;
+  --color-accent: #E5322F;
+  --color-accent-hover: #FF4A44;
+  --color-accent-press: #C82724;
 
-  /* Type */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, sans-serif;
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --color-ink: #F5F5F7;
+  --color-ink-muted: #A1A1AA;
+  --color-ink-subtle: #71717A;
+  --color-ink-tertiary: #52525B;
 
-  /* Motion */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ---------- Base ---------- */
-
-* {
-  border-color: var(--color-line);
-}
+* { border-color: var(--color-hairline); }
 
 html {
   scroll-behavior: smooth;
-  /* keep anchored sections clear of the fixed nav on every breakpoint */
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--color-ink);
-  color: #fff;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-::selection {
-  background: var(--color-gold);
-  color: #000;
-}
+::selection { background: var(--color-accent); color: #fff; }
 
-/* Visible focus for keyboard users only */
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* ---------- Typography primitives ---------- */
+/* ---------- Type scale: one family, negative tracking with size ---------- */
 
-/* The signature pairing: title-case heavy sans + italic serif accent word */
-.h-display {
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  font-size: clamp(2.05rem, 4.9vw, 3.35rem);
+.t-display {
+  font-weight: 600;                 /* display ceiling — never 700+ */
+  font-size: clamp(2.125rem, 5.4vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
-.h-section {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  font-size: clamp(1.65rem, 3.4vw, 2.5rem);
-}
-
-.h-card {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-/* The italic serif accent — never bold, always optically larger */
-.serif {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  /* serif x-height runs small next to a heavy grotesque; nudge it up */
-  font-size: 1.06em;
-}
-
-.eyebrow {
-  font-size: 0.6875rem;
+.t-section {
   font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold);
+  font-size: clamp(1.625rem, 3.3vw, 2.375rem);
+  line-height: 1.08;
+  letter-spacing: -0.032em;
 }
 
-/* Body copy tuned for dark backgrounds: pure white is too hot at small sizes */
-.body-muted {
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.65;
+.t-headline {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.t-card {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  letter-spacing: -0.019em;
+}
+
+.t-stat {
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.2vw, 2.125rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Eyebrows invert the tracking — mono, uppercase, positive. This contrast is
+   what marks them as taxonomy rather than headline. */
+.t-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--color-ink-subtle);
+}
+
+.t-body {
+  color: var(--color-ink-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 /* ---------- Surfaces ---------- */
 
 .card {
-  background: #101015;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 0.875rem;
-  transition: border-color 0.35s var(--ease-out-soft),
-    background 0.35s var(--ease-out-soft), transform 0.35s var(--ease-out-soft);
+  background: var(--color-s1);
+  border: 1px solid var(--color-hairline);
+  border-radius: 0.75rem;
+  transition: background 0.3s var(--ease-out-soft),
+    border-color 0.3s var(--ease-out-soft), transform 0.3s var(--ease-out-soft);
 }
 
 @media (hover: hover) {
   .card-hover:hover {
-    border-color: rgba(240, 178, 60, 0.4);
-    background: #16161c;
-    transform: translateY(-3px);
+    background: var(--color-s2);
+    border-color: var(--color-hairline-strong);
+    transform: translateY(-2px);
   }
 }
 
-/* Radial accent bloom used behind the hero video and final CTA */
+/* The bloom is permitted in exactly two places: hero VSL and closing band. */
 .bloom {
   position: absolute;
   border-radius: 9999px;
   pointer-events: none;
-  filter: blur(70px);
+  filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(240, 178, 60, 0.55) 0%,
-    rgba(240, 178, 60, 0.22) 40%,
-    transparent 70%
+    rgba(229, 50, 47, 0.5) 0%,
+    rgba(229, 50, 47, 0.18) 45%,
+    transparent 72%
   );
 }
 
-/* Hero grid floor (ref 2's receding perspective grid) — pure CSS, no image */
 .grid-floor {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 10%, transparent 75%);
-  -webkit-mask-image: radial-gradient(
-    ellipse 90% 60% at 50% 0%,
-    #000 10%,
-    transparent 75%
-  );
+  background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, #000 10%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, #000 10%, transparent 72%);
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Buttons: pill, matching the reference pages ---------- */
 
 .btn {
   display: inline-flex;
@@ -172,121 +160,94 @@ body {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.90625rem;
   letter-spacing: -0.01em;
   white-space: nowrap;
-  transition: transform 0.2s var(--ease-out-soft),
-    box-shadow 0.3s var(--ease-out-soft), background 0.25s var(--ease-out-soft);
-  /* 48px min target on touch devices */
   min-height: 3rem;
-  padding: 0.875rem 1.75rem;
-  font-size: 0.9375rem;
+  padding: 0.8125rem 1.5rem;
+  transition: background 0.22s var(--ease-out-soft),
+    transform 0.22s var(--ease-out-soft), box-shadow 0.28s var(--ease-out-soft);
 }
 
-.btn-gold {
-  background: var(--color-gold);
-  color: #0A0A0A;
-  box-shadow: 0 8px 30px -8px rgba(240, 178, 60, 0.55);
-}
-
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.04);
+.btn-primary {
+  background: var(--color-accent);
   color: #fff;
-  border: 1px solid var(--color-line-strong);
+  box-shadow: 0 8px 30px -8px rgba(229, 50, 47, 0.5);
+}
+
+.btn-secondary {
+  background: var(--color-s2);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
 }
 
 @media (hover: hover) {
-  .btn-gold:hover {
-    background: var(--color-gold-bright);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 38px -8px rgba(240, 178, 60, 0.7);
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 36px -8px rgba(229, 50, 47, 0.62);
   }
-  .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: var(--color-line-strong);
+  .btn-secondary:hover {
+    background: var(--color-s3);
   }
 }
 
-.btn:active {
-  transform: translateY(0) scale(0.985);
-}
+.btn:active { transform: translateY(0) scale(0.987); }
 
-/* ---------- Marquee (ref 2: two rows, opposite directions) ---------- */
+/* ---------- Marquee ---------- */
 
-@keyframes marquee-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@keyframes marquee-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
-}
+@keyframes marquee-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-}
-.marquee-left { animation: marquee-left 42s linear infinite; }
-.marquee-right { animation: marquee-right 42s linear infinite; }
+.marquee-track { display: flex; width: max-content; will-change: transform; }
+.marquee-left  { animation: marquee-left 46s linear infinite; }
+.marquee-right { animation: marquee-right 46s linear infinite; }
 
-/* ---------- Entrance animation ---------- */
+/* ---------- Entrance ---------- */
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.rise { animation: rise 0.6s var(--ease-out-soft) both; }
 
-.rise {
-  animation: rise 0.7s var(--ease-out-soft) both;
-}
-
-/* ---------- Range slider (calculator) ---------- */
+/* ---------- Range input ---------- */
 
 .range {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 6px;
+  height: 4px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--color-hairline-strong);
   outline: none;
 }
-
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  /* oversized thumb: comfortable to drag with a thumb on a phone */
-  width: 26px;
-  height: 26px;
+  width: 26px; height: 26px;          /* ≥26px thumb per DESIGN.md */
   border-radius: 9999px;
-  background: var(--color-gold);
+  background: var(--color-ink);
   cursor: pointer;
-  border: 3px solid #0B0B11;
-  box-shadow: 0 0 0 1px rgba(240, 178, 60, 0.5), 0 4px 14px rgba(240, 178, 60, 0.4);
+  border: 6px solid var(--color-s3);
+  box-shadow: 0 0 0 1px var(--color-hairline-strong);
 }
-
 .range::-moz-range-thumb {
-  width: 26px;
-  height: 26px;
+  width: 26px; height: 26px;
   border-radius: 9999px;
-  background: var(--color-gold);
+  background: var(--color-ink);
   cursor: pointer;
-  border: 3px solid #0B0B11;
-  box-shadow: 0 0 0 1px rgba(240, 178, 60, 0.5), 0 4px 14px rgba(240, 178, 60, 0.4);
+  border: 6px solid var(--color-s3);
+  box-shadow: 0 0 0 1px var(--color-hairline-strong);
 }
-
-/* ---------- Accessibility ---------- */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .marquee-left,
-  .marquee-right { animation: none !important; }
+  .marquee-left, .marquee-right { animation: none !important; }
 }

@@ -7,7 +7,7 @@ import { Section, SectionIntro, Check } from "./ui";
 type Status = "idle" | "sending" | "done" | "error";
 
 const field =
-  "w-full rounded-xl border border-line-strong bg-white/[0.03] px-4 py-3.5 text-[15px] text-white placeholder:text-white/30 outline-none transition-colors focus:border-gold/60 focus:bg-white/[0.05]";
+  "w-full rounded-xl border border-hairline-strong bg-white/[0.03] px-4 py-3.5 text-[15px] text-white placeholder:text-white/30 outline-none transition-colors focus:border-accent/60 focus:bg-white/[0.05]";
 const labelCls = "mb-2 block text-[12.5px] font-medium text-white/60";
 
 export function ApplyForm() {
@@ -40,11 +40,11 @@ export function ApplyForm() {
     return (
       <Section id="apply">
         <div className="card mx-auto max-w-xl p-8 text-center sm:p-12">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15">
-            <Check className="h-6 w-6 text-gold" />
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent/15">
+            <Check className="h-6 w-6 text-accent" />
           </div>
-          <h2 className="h-card mt-6 text-2xl sm:text-3xl">You&apos;re in the queue.</h2>
-          <p className="body-muted mt-3.5 text-[15px] text-pretty">
+          <h2 className="t-card mt-6 text-2xl sm:text-3xl">You&apos;re in the queue.</h2>
+          <p className="t-body mt-3.5 text-[15px] text-pretty">
             We&apos;ll review your offer and reply within one business day with whether we
             have reps matched to it.
           </p>
@@ -53,7 +53,7 @@ export function ApplyForm() {
               href={brand.calendarUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-gold mt-7 w-full sm:w-auto"
+              className="btn btn-primary mt-7 w-full sm:w-auto"
             >
               Skip the wait — book your intake call
             </a>
@@ -112,7 +112,7 @@ export function ApplyForm() {
             <label htmlFor="role" className={labelCls}>What do you need?</label>
             <select id="role" name="role" defaultValue={applyForm.roles[0]} className={field}>
               {applyForm.roles.map((r) => (
-                <option key={r} value={r} className="bg-ink-2">{r}</option>
+                <option key={r} value={r} className="bg-s1">{r}</option>
               ))}
             </select>
           </div>
@@ -120,7 +120,7 @@ export function ApplyForm() {
             <label htmlFor="price" className={labelCls}>Your offer price</label>
             <select id="price" name="price" defaultValue={applyForm.priceBands[2]} className={field}>
               {applyForm.priceBands.map((p) => (
-                <option key={p} value={p} className="bg-ink-2">{p}</option>
+                <option key={p} value={p} className="bg-s1">{p}</option>
               ))}
             </select>
           </div>
@@ -129,7 +129,7 @@ export function ApplyForm() {
             <label htmlFor="volume" className={labelCls}>Qualified calls booked per month</label>
             <select id="volume" name="volume" defaultValue={applyForm.volumeBands[1]} className={field}>
               {applyForm.volumeBands.map((v) => (
-                <option key={v} value={v} className="bg-ink-2">{v}</option>
+                <option key={v} value={v} className="bg-s1">{v}</option>
               ))}
             </select>
           </div>
@@ -155,7 +155,7 @@ export function ApplyForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="btn btn-gold mt-7 w-full !text-base disabled:cursor-not-allowed disabled:opacity-60"
+          className="btn btn-primary mt-7 w-full !text-base disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? "Sending…" : "Get Matched With A Closer"}
         </button>

@@ -12,7 +12,7 @@ export function Faq() {
     <Section id="faq">
       <SectionIntro eyebrow={faq.eyebrow} heading={faq.heading} />
 
-      <div className="mx-auto mt-12 max-w-3xl divide-y divide-line border-y border-line sm:mt-14">
+      <div className="mx-auto mt-12 max-w-3xl divide-y divide-hairline border-y border-hairline sm:mt-14">
         {faq.items.map((item, i) => {
           const isOpen = open === i;
           return (
@@ -27,7 +27,7 @@ export function Faq() {
                 >
                   <span
                     className={`text-[15px] font-semibold leading-snug tracking-tight transition-colors sm:text-[17px] ${
-                      isOpen ? "text-gold" : "text-white"
+                      isOpen ? "text-accent" : "text-white"
                     }`}
                   >
                     {item.q}
@@ -36,8 +36,8 @@ export function Faq() {
                     aria-hidden
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                       isOpen
-                        ? "rotate-45 border-gold/50 bg-gold/15 text-gold"
-                        : "border-line-strong text-white/50"
+                        ? "rotate-45 border-accent/50 bg-accent/15 text-accent"
+                        : "border-hairline-strong text-white/50"
                     }`}
                   >
                     <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -51,7 +51,7 @@ export function Faq() {
                 hidden={!isOpen}
                 className="pb-6 pr-10"
               >
-                <p className="body-muted text-[14px] text-pretty sm:text-[15px]">
+                <p className="t-body text-[14px] text-pretty sm:text-[15px]">
                   {item.a}
                 </p>
               </div>

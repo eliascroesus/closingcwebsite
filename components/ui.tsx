@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 type HeadingParts = { pre: string; accent: string; post?: string };
 
 /**
- * The signature pairing from the reference pages: heavy title-case sans with
- * a single italic-serif accent phrase. Used for every section heading so the
- * page keeps one rhythm top to bottom.
+ * Sentence-case display type, one family, weight 600, negative tracking.
+ * DESIGN.md bans the italic-serif accent word outright — the "accent" part of
+ * a heading is now just the rest of the sentence, set in the same face.
  */
 export function Heading({
   parts,
@@ -16,30 +16,30 @@ export function Heading({
   as?: "h1" | "h2" | "h3";
   className?: string;
 }) {
-  return (
-    <Tag className={`h-section text-balance ${className}`}>
-      {parts.pre}
-      {parts.pre && " "}
-      <span className="serif text-gold">{parts.accent}</span>
-      {parts.post}
-    </Tag>
-  );
+  const text = [parts.pre, parts.accent, parts.post].filter(Boolean).join(" ").replace(/\s+([,.])/g, "$1");
+  return <Tag className={`t-section text-balance ${className}`}>{text}</Tag>;
 }
 
-export function Eyebrow({ children }: { children: ReactNode }) {
+/** Mono, uppercase, positive tracking — taxonomy, not headline. Never red. */
+export function Eyebrow({
+  children,
+  align = "center",
+}: {
+  children: ReactNode;
+  align?: "center" | "left";
+}) {
   return (
-    <p className="eyebrow flex items-center justify-center gap-2">
-      <span aria-hidden className="h-px w-5 bg-gold/50" />
+    <p
+      className={`t-eyebrow flex items-center gap-2.5 ${
+        align === "center" ? "justify-center" : "justify-start"
+      }`}
+    >
+      <span aria-hidden className="h-px w-6 bg-hairline-strong" />
       {children}
-      <span aria-hidden className="h-px w-5 bg-gold/50" />
     </p>
   );
 }
 
-/**
- * Every section shares this wrapper so horizontal gutters and vertical rhythm
- * stay identical across breakpoints. Gutters step up 20px → 24px → 32px.
- */
 export function Section({
   id,
   children,
@@ -55,10 +55,10 @@ export function Section({
     <section
       id={id}
       className={`relative px-5 sm:px-6 lg:px-8 ${
-        tight ? "py-12 sm:py-14" : "py-14 sm:py-18 lg:py-24"
+        tight ? "py-12 sm:py-14" : "py-14 sm:py-18 lg:py-22"
       } ${className}`}
     >
-      <div className="mx-auto w-full max-w-5xl">{children}</div>
+      <div className="mx-auto w-full max-w-[1120px]">{children}</div>
     </section>
   );
 }
@@ -73,13 +73,11 @@ export function SectionIntro({
   sub?: string;
 }) {
   return (
-    <div className="mx-auto max-w-3xl text-center">
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <Heading parts={heading} className="mt-3.5" />
+    <div className="max-w-2xl">
+      <Eyebrow align="left">{eyebrow}</Eyebrow>
+      <Heading parts={heading} className="mt-4 !text-left" />
       {sub && (
-        <p className="body-muted mx-auto mt-3.5 max-w-xl text-[14.5px] sm:text-[15.5px] text-pretty">
-          {sub}
-        </p>
+        <p className="t-body mt-4 max-w-xl text-[15px] text-pretty">{sub}</p>
       )}
     </div>
   );
@@ -88,45 +86,34 @@ export function SectionIntro({
 export function CTA({
   children,
   href = "#apply",
-  variant = "gold",
+  variant = "primary",
   className = "",
 }: {
   children: ReactNode;
   href?: string;
-  variant?: "gold" | "ghost";
+  variant?: "primary" | "secondary";
   className?: string;
 }) {
   return (
     <a
       href={href}
-      className={`btn ${variant === "gold" ? "btn-gold" : "btn-ghost"} ${className}`}
+      className={`btn ${variant === "primary" ? "btn-primary" : "btn-secondary"} ${className}`}
     >
       {children}
-      <svg
-        aria-hidden
-        viewBox="0 0 16 16"
-        className="h-3.5 w-3.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M3 8h10M9 4l4 4-4 4" />
-      </svg>
     </a>
   );
 }
 
+/** Neutral by default — DESIGN.md forbids tinting checkmarks with the accent. */
 export function Check({ className = "" }: { className?: string }) {
   return (
     <svg
       aria-hidden
       viewBox="0 0 20 20"
-      className={`h-4 w-4 shrink-0 ${className}`}
+      className={`h-3.5 w-3.5 shrink-0 ${className}`}
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.5"
+      strokeWidth="2.25"
       strokeLinecap="round"
       strokeLinejoin="round"
     >

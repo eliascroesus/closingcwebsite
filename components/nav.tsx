@@ -35,7 +35,7 @@ export function Nav() {
           aria-label="Main"
           className={`mx-auto flex w-full max-w-6xl items-center justify-between gap-3 rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5 ${
             scrolled || open
-              ? "border-line-strong bg-ink/85 backdrop-blur-xl"
+              ? "border-hairline-strong bg-canvas/85 backdrop-blur-xl"
               : "border-transparent bg-transparent"
           }`}
         >
@@ -45,7 +45,7 @@ export function Nav() {
           >
             <Crown />
             <span>
-              Closing<span className="text-gold">King</span>
+              Closing<span className="text-accent">King</span>
             </span>
           </a>
 
@@ -68,7 +68,7 @@ export function Nav() {
                 reachable at every width, including 320px. */}
             <a
               href="#apply"
-              className="btn btn-gold !min-h-0 !px-4 !py-2 !text-[13px] sm:!px-5 sm:!py-2.5 sm:!text-sm"
+              className="btn btn-primary !min-h-0 !px-4 !py-2 !text-[13px] sm:!px-5 sm:!py-2.5 sm:!text-sm"
             >
               Get Matched
             </a>
@@ -78,7 +78,7 @@ export function Nav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-line-strong text-white lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline-strong text-white lg:hidden"
             >
               <span className="relative block h-3.5 w-4">
                 <span
@@ -106,7 +106,7 @@ export function Nav() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="fixed inset-0 z-40 bg-ink/97 backdrop-blur-xl lg:hidden"
+        className="fixed inset-0 z-40 bg-canvas/97 backdrop-blur-xl lg:hidden"
       >
         <div className="flex h-full flex-col justify-center px-6 pb-20">
           <ul className="space-y-1">
@@ -116,7 +116,7 @@ export function Nav() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   style={{ animationDelay: `${i * 45}ms` }}
-                  className="rise block border-b border-line py-5 text-2xl font-bold tracking-tight text-white/90 sm:text-3xl"
+                  className="rise block border-b border-hairline py-5 text-2xl font-bold tracking-tight text-white/90 sm:text-3xl"
                 >
                   {item.label}
                 </a>
@@ -126,7 +126,7 @@ export function Nav() {
           <a
             href="#apply"
             onClick={() => setOpen(false)}
-            className="btn btn-gold mt-9 w-full !text-base"
+            className="btn btn-primary mt-9 w-full !text-base"
           >
             Get Matched With A Closer
           </a>
@@ -150,7 +150,7 @@ function Crown() {
     <svg
       aria-hidden
       viewBox="0 0 24 24"
-      className="h-[18px] w-[18px] text-gold sm:h-5 sm:w-5"
+      className="h-[18px] w-[18px] text-accent sm:h-5 sm:w-5"
       fill="currentColor"
     >
       <path d="M3 8.5l3.4 3L12 4l5.6 7.5 3.4-3-1.7 9.5H4.7L3 8.5zM4.9 20h14.2v1.6H4.9V20z" />
