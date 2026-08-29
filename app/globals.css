@@ -12,12 +12,12 @@
      growth, which suits a business paid on closed deals, and it is the one
      high-contrast direction none of the reference pages use. Neutrals carry a
      faint green bias so the greys read chosen. */
-  --color-canvas: #0A0614;
-  --color-s1: #150F26;
-  --color-s2: #1C1531;
-  --color-s3: #251C3F;
-  --color-hairline: #2F2449;
-  --color-hairline-strong: #423263;
+  --color-canvas: #070310;
+  --color-s1: #120C21;
+  --color-s2: #18112B;
+  --color-s3: #201736;
+  --color-hairline: #2A1F42;
+  --color-hairline-strong: #3B2C5A;
 
   --color-accent: #B07CFF;
   --color-accent-hover: #C79EFF;
@@ -109,11 +109,17 @@ body {
    what marks them as taxonomy rather than headline. */
 /* The accent half of the hero headline, glowing as in the reference */
 .t-hero-accent {
+  font-family: var(--font-accent-serif), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
   color: var(--color-accent);
-  text-shadow: 0 0 44px rgba(176, 124, 255, 0.5), 0 0 15px rgba(176, 124, 255, 0.28);
-  font-size: 1.14em;
+  text-shadow: 0 0 46px rgba(176, 124, 255, 0.5), 0 0 15px rgba(176, 124, 255, 0.28);
+  /* Serif x-height runs short next to the heavy sans above it */
+  font-size: 1.34em;
+  letter-spacing: -0.01em;
   display: block;
-  line-height: 1.02;
+  line-height: 1.06;
+  padding-bottom: 0.06em;
 }
 
 .t-eyebrow {
@@ -157,8 +163,8 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(176, 124, 255, 0.45) 0%,
-    rgba(176, 124, 255, 0.15) 45%,
+    rgba(176, 124, 255, 0.34) 0%,
+    rgba(176, 124, 255, 0.11) 45%,
     transparent 72%
   );
 }
@@ -176,9 +182,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(176, 124, 255, 0.34) 0%, rgba(140, 90, 230, 0.1) 46%, transparent 74%),
-    radial-gradient(50% 24% at 80% 6%, rgba(120, 100, 255, 0.10) 0%, transparent 60%),
-    linear-gradient(180deg, #1B0F38 0%, #0C0719 38%, var(--color-canvas) 66%);
+    radial-gradient(closest-side at 50% -4%, rgba(150, 100, 240, 0.2) 0%, rgba(110, 70, 200, 0.06) 46%, transparent 72%),
+    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.06) 0%, transparent 58%),
+    linear-gradient(180deg, #150929 0%, #0B0518 36%, var(--color-canvas) 62%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
@@ -191,7 +197,7 @@ body {
   transform: translateX(-50%);
   border-radius: 9999px;
   filter: blur(70px);
-  background: radial-gradient(circle, rgba(176, 124, 255, 0.38) 0%, rgba(150, 100, 240, 0.1) 44%, transparent 68%);
+  background: radial-gradient(circle, rgba(160, 110, 245, 0.26) 0%, rgba(130, 85, 220, 0.07) 44%, transparent 68%);
 }
 
 /* 5 — film grain. One SVG turbulence tile, tiled; kills the plastic look. */

@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0A0614 canvas → #150F26 → #1C1531 → #251C3F) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#070310 canvas → #120C21 → #18112B → #201736) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
   primary: "#B07CFF"
@@ -12,14 +12,14 @@ colors:
   ink-muted: "#A79DBD"
   ink-subtle: "#7B7095"
   ink-tertiary: "#574E6D"
-  canvas: "#0A0614"
-  surface-1: "#150F26"
-  surface-2: "#1C1531"
-  surface-3: "#251C3F"
-  hairline: "#2F2449"
-  hairline-strong: "#423263"
+  canvas: "#070310"
+  surface-1: "#120C21"
+  surface-2: "#18112B"
+  surface-3: "#201736"
+  hairline: "#2A1F42"
+  hairline-strong: "#3B2C5A"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#0A0614"
+  inverse-ink: "#070310"
   bloom: "rgba(176,124,255,0.45)"
 
 typography:
@@ -56,10 +56,10 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#0A0614` | Page ground |
-| surface-1 | `#150F26` | Default cards, panels |
-| surface-2 | `#1C1531` | Hovered / featured cards |
-| surface-3 | `#251C3F` | Inputs, chips, nested surfaces |
+| canvas | `#070310` | Page ground |
+| surface-1 | `#120C21` | Default cards, panels |
+| surface-2 | `#18112B` | Hovered / featured cards |
+| surface-3 | `#201736` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
 `{colors.primary}` purple appears ONLY on:
@@ -86,6 +86,7 @@ Two families, deliberately different registers:
   `.t-card`, `.t-stat`). Tight, neutral, heavy.
 - **Instrument Sans** — body, UI, form fields, everything else.
 - **Geist Mono** — eyebrows and numeric labels only.
+- **Playfair Display italic** — the hero's accent line and nothing else.
 
 - Display runs at **weight 680** in the hero, 600 for section headings. Never 800.
 - Negative tracking scales with size: −2.4px at 60px (≈4%), −1.0px at 32px, 0 at body.
@@ -101,10 +102,18 @@ looked striking but only fit two or three words; that left no room to say
 anything, so it was reverted. A headline that states the whole offer beats a
 bigger one that states a category.
 
+### The one italic serif
+`.t-hero-accent` — the second line of the H1 — is set in Playfair Display
+italic, matching how the reference page sets its own payoff phrase. It is
+sized at 1.34em because a serif's x-height runs short beside the heavy sans
+above it, and it carries the accent colour plus a soft glow.
+
+This is a deliberate, single-instance exception requested for the hero. An
+italic serif used *anywhere else* — section headings, card titles, pull quotes
+— is still the clearest tell of a generated page. One line, one place.
+
 ### Forbidden
-- No serif face anywhere.
-- No italic display type. An italic-serif accent word inside a sans headline is
-  the single clearest tell of a generated page — it is banned outright.
+- No serif outside `.t-hero-accent`.
 - No second chromatic accent.
 
 ## Layout
@@ -227,7 +236,10 @@ Gold, red, violet, electric blue, neon yellow and amber were each tried and
 rejected. Two lessons worth keeping: an under-saturated accent on a same-hue
 ground reads as mud (the `#F0B23C` gold), and a near-white accent over a
 saturated ground mixes toward a third colour (yellow over navy went green).
-Purple on a dark purple ground is the current direction: same-family ground
+The ground must stay genuinely dark. An earlier purple pass based the hero
+gradient on `#1B0F38` with the spotlight at 0.34 and read as washed lavender
+rather than dark purple; it is now `#150929` at 0.20. Purple on a dark purple
+ground is the current direction: same-family ground
 and accent, separated by luminance rather than hue, which avoids both failure
 modes above.
 

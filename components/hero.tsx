@@ -59,7 +59,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1A1230] to-[#0B0716] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#150E28] to-[#080411] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -75,7 +75,7 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(176,124,255,0.3),transparent_68%)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(176,124,255,0.2),transparent_66%)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
                   <Crown className="h-3 w-3 text-accent" />

@@ -39,7 +39,7 @@ export const hero = {
   eyebrow: "in 24 hours, you will",
   headline: { pre: "Have A Proven Closer", accent: "On Your Offer", post: "" },
   headlineLine2: "",
-  sub: "300+ vetted reps. Trained on your offer. Taking calls tomorrow morning.",
+  sub: "Select from 300+ vetted closers. Trained on your offer. Taking calls tomorrow.",
   cta: "Book A Call — 4 Spots Left",
   ctaSub: "You pay only when they close.",
   videoLabel: "",
