@@ -7,8 +7,10 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // The hero carries its own wordmark, so the nav stays out of the way until
+  // the visitor has scrolled past it — then it slides in as a sticky CTA bar.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 560);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -30,14 +32,16 @@ export function Nav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 px-3 pt-3 transition-all duration-500 sm:px-5 sm:pt-4 ${
+          scrolled || open
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-4 opacity-0"
+        }`}
+      >
         <nav
           aria-label="Main"
-          className={`mx-auto flex w-full max-w-6xl items-center justify-between gap-3 rounded-full border px-4 py-2.5 transition-all duration-500 sm:px-5 ${
-            scrolled || open
-              ? "border-hairline-strong bg-canvas/85 backdrop-blur-xl"
-              : "border-transparent bg-transparent"
-          }`}
+          className="mx-auto flex w-full max-w-[1080px] items-center justify-between gap-3 rounded-full border border-hairline-strong bg-canvas/80 px-4 py-2.5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:px-5"
         >
           <a
             href="#top"

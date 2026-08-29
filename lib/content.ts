@@ -35,12 +35,13 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "Now placing — limited spots this month",
-  headline: { pre: "Closers Installed", accent: "In 24 Hours", post: "" },
+  eyebrow: "Commission only · Limited spots this month",
+  headline: { pre: "Your Next Closer,", accent: "Live In 24 Hours", post: "" },
   headlineLine2: "",
-  sub: "Pre-vetted closers and setters, placed on your offer with a full SOP.",
+  sub: "We install pre-vetted closers on your offer with a full SOP. You pay only when they close.",
   cta: "Get Matched Today",
   ctaSub: "You pay only when they close.",
+  trust: ["No retainer", "No setup fee", "Cancel anytime"],
   videoLabel: "Watch the 2-minute breakdown",
   videoTitle: "How we install a closer in 24 hours",
 };

@@ -141,57 +141,82 @@ body {
   );
 }
 
-/* Fine dot field — reads as texture, not as a wireframe grid */
-.dot-field {
+/* ---------- Above the fold ----------
+   Five stacked layers, cheap to paint, none of them a stock mesh gradient:
+   a violet-to-canvas wash, concentric rings radiating from behind the VSL,
+   a broad spotlight, a fine dot texture, and film grain over the whole thing.
+   The grain is what stops the gradients reading as flat CSS. */
+
+.field { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+
+/* 1 — vertical wash: light falls from the top, as on the reference pages */
+.field-wash {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
-  background-size: 26px 26px;
-  mask-image: radial-gradient(ellipse 70% 48% at 50% 8%, #000 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 48% at 50% 8%, #000 0%, transparent 70%);
-  opacity: 0.5;
+  background:
+    radial-gradient(120% 62% at 50% -12%, rgba(124, 92, 255, 0.30) 0%, rgba(124, 92, 255, 0.07) 42%, transparent 70%),
+    radial-gradient(80% 40% at 78% 4%, rgba(64, 118, 255, 0.16) 0%, transparent 62%),
+    linear-gradient(180deg, #0D0A1A 0%, var(--color-canvas) 58%);
 }
 
-/* Two offset violet washes + a cool underlight = depth without a mesh cliché */
-.aurora {
+/* 2 — concentric rings centred on the VSL: a broadcast signal, not a grid */
+.field-rings {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+  left: 50%;
+  top: 46%;
+  width: 150vw;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0 68px,
+    rgba(160, 138, 255, 0.075) 68px 69px
+  );
+  mask-image: radial-gradient(circle at center, #000 12%, rgba(0,0,0,0.35) 38%, transparent 62%);
+  -webkit-mask-image: radial-gradient(circle at center, #000 12%, rgba(0,0,0,0.35) 38%, transparent 62%);
 }
-.aurora::before,
-.aurora::after {
-  content: "";
+
+/* 3 — the spotlight that the headline sits inside */
+.field-spot {
   position: absolute;
+  left: 50%;
+  top: -18rem;
+  width: 58rem;
+  height: 40rem;
+  transform: translateX(-50%);
   border-radius: 9999px;
-  filter: blur(90px);
-}
-.aurora::before {
-  width: 46rem;
-  height: 26rem;
-  left: 50%;
-  top: -13rem;
-  transform: translateX(-52%);
-  background: radial-gradient(circle, rgba(124, 92, 255, 0.34) 0%, transparent 68%);
-}
-.aurora::after {
-  width: 34rem;
-  height: 20rem;
-  left: 50%;
-  top: -6rem;
-  transform: translateX(-24%);
-  background: radial-gradient(circle, rgba(56, 108, 255, 0.22) 0%, transparent 70%);
+  filter: blur(70px);
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.36) 0%, rgba(124, 92, 255, 0.08) 46%, transparent 70%);
 }
 
-/* A single hairline horizon under the nav — quiet structure, no gradient bar */
-.horizon {
+/* 4 — dot texture, tight and faint */
+.field-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 64% 44% at 50% 6%, #000 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 64% 44% at 50% 6%, #000 0%, transparent 72%);
+  opacity: 0.42;
+}
+
+/* 5 — film grain. One SVG turbulence tile, tiled; kills the plastic look. */
+.field-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.34;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Bottom seam so the field resolves into the page instead of stopping */
+.field-fade {
   position: absolute;
   inset-inline: 0;
-  top: 0;
-  height: 1px;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.5) 50%, transparent);
+  bottom: 0;
+  height: 14rem;
+  background: linear-gradient(180deg, transparent, var(--color-canvas));
 }
 
 /* ---------- Buttons: pill, matching the reference pages ---------- */
