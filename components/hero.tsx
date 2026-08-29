@@ -14,7 +14,6 @@ export function Hero() {
       <div className="field" aria-hidden>
         <div className="field-wash" />
         <div className="field-spot" />
-        <div className="field-dots" />
         <div className="field-grain" />
         <div className="field-vignette" />
         <div className="field-fade" />
@@ -55,22 +54,12 @@ export function Hero() {
           {hero.sub}
         </p>
 
-        {/* Tiny label with a play marker, directly above the video */}
-        <p
-          className="t-eyebrow rise mt-7 flex items-center justify-center gap-2"
-          style={{ animationDelay: "200ms" }}
-        >
-          <svg aria-hidden viewBox="0 0 12 12" className="h-2.5 w-2.5 text-accent" fill="currentColor">
-            <path d="M3 1.5v9l7-4.5z" />
-          </svg>
-          {hero.videoLabel}
-        </p>
 
         {/* ── VSL: the protagonist. CTA lives underneath it, not above. ── */}
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#0F1A15] to-[#060A08] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(0,220,130,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1A1230] to-[#0B0716] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -86,8 +75,7 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(0,220,130,0.26),transparent_66%)]" />
-                <span aria-hidden className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(176,124,255,0.3),transparent_68%)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
                   <Crown className="h-3 w-3 text-accent" />
@@ -103,8 +91,8 @@ export function Hero() {
                   <span className="mt-2.5 block text-center text-[11.5px] leading-relaxed text-ink-subtle">
                     {hero.videoKicker}
                   </span>
-                  <span className="mt-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(0,220,130,0.75)] transition-transform duration-300 group-hover:scale-105">
-                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#03150C]" fill="currentColor">
+                  <span className="mt-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(176,124,255,0.8)] transition-transform duration-300 group-hover:scale-105">
+                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#120726]" fill="currentColor">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>

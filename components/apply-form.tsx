@@ -157,7 +157,7 @@ export function ApplyForm() {
           disabled={status === "sending"}
           className="btn btn-primary mt-7 w-full !text-base disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "sending" ? "Sending…" : "Get Matched With A Closer"}
+          {status === "sending" ? "Sending…" : "Book My Intake Call"}
         </button>
 
         <p className="mt-4 text-center text-[12px] leading-relaxed text-ink-tertiary">

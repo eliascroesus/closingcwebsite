@@ -74,7 +74,7 @@ export function Nav() {
               href="#apply"
               className="btn btn-primary !min-h-0 !px-4 !py-2 !text-[13px] sm:!px-5 sm:!py-2.5 sm:!text-sm"
             >
-              Get Matched
+              Book A Call
             </a>
             <button
               type="button"
@@ -132,7 +132,7 @@ export function Nav() {
             onClick={() => setOpen(false)}
             className="btn btn-primary mt-9 w-full !text-base"
           >
-            Get Matched With A Closer
+            Book A Call
           </a>
           <p className="mt-4 text-center text-xs text-ink-subtle">
             No retainer. You pay only when they close.

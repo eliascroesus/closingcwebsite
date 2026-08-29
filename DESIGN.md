@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#050706 canvas → #0D100E → #131714 → #1A1F1C) with hairline borders, a single spring green (#00DC82) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0A0614 canvas → #150F26 → #1C1531 → #251C3F) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#00DC82"
-  primary-hover: "#4DEBA8"
-  primary-press: "#00B86D"
+  primary: "#B07CFF"
+  primary-hover: "#C79EFF"
+  primary-press: "#9457E8"
   on-primary: "#FFFFFF"
-  ink: "#F5F8F6"
-  ink-muted: "#9BA5A0"
-  ink-subtle: "#6E7873"
-  ink-tertiary: "#4F5854"
-  canvas: "#050706"
-  surface-1: "#0D100E"
-  surface-2: "#131714"
-  surface-3: "#1A1F1C"
-  hairline: "#242A26"
-  hairline-strong: "#343C37"
+  ink: "#F5F1FC"
+  ink-muted: "#A79DBD"
+  ink-subtle: "#7B7095"
+  ink-tertiary: "#574E6D"
+  canvas: "#0A0614"
+  surface-1: "#150F26"
+  surface-2: "#1C1531"
+  surface-3: "#251C3F"
+  hairline: "#2F2449"
+  hairline-strong: "#423263"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#050706"
-  bloom: "rgba(0,220,130,0.4)"
+  inverse-ink: "#0A0614"
+  bloom: "rgba(176,124,255,0.45)"
 
 typography:
   hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
@@ -56,13 +56,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#050706` | Page ground |
-| surface-1 | `#0D100E` | Default cards, panels |
-| surface-2 | `#131714` | Hovered / featured cards |
-| surface-3 | `#1A1F1C` | Inputs, chips, nested surfaces |
+| canvas | `#0A0614` | Page ground |
+| surface-1 | `#150F26` | Default cards, panels |
+| surface-2 | `#1C1531` | Hovered / featured cards |
+| surface-3 | `#251C3F` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` green appears ONLY on:
+`{colors.primary}` purple appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -80,8 +80,12 @@ at rest, checkmarks, list bullets, or icons. **If the accent is doing decoration
 
 ## Typography
 
-One family, Geist, from 60px display to 12px caption. Geist Mono carries
-eyebrows and numeric labels only.
+Two families, deliberately different registers:
+
+- **Geist** — headlines only (`.t-display`, `.t-section`, `.t-headline`,
+  `.t-card`, `.t-stat`). Tight, neutral, heavy.
+- **Instrument Sans** — body, UI, form fields, everything else.
+- **Geist Mono** — eyebrows and numeric labels only.
 
 - Display runs at **weight 680** in the hero, 600 for section headings. Never 800.
 - Negative tracking scales with size: −2.4px at 60px (≈4%), −1.0px at 32px, 0 at body.
@@ -125,8 +129,8 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 
 ## Components
 
-**`btn-primary`** — green fill, near-black ink, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(0,220,130,0.5)`.
+**`btn-primary`** — purple fill, near-black ink, pill, 12px/24px padding, min 48px tap
+height, colored glow at `0 8px 30px -8px rgba(176,124,255,0.55)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -211,11 +215,11 @@ Rules that follow:
 
 ## Working with a light accent
 
-Spring green sits high in the luminance range, so **anything placed on it
-takes near-black ink** (`on-primary` `#03150C`), never white. The CTA measures
-10.4:1 that way.
+The accent sits high in the luminance range, so **anything placed on it
+takes near-black ink** (`on-primary` `#120726`), never white. The CTA measures
+6.6:1 that way.
 
-Green over a near-black ground has no colour-mixing problem, so the hero wash
+Purple over a near-black ground has no colour-mixing problem, so the hero wash
 may carry the accent rather than being held to a rim.
 
 ### Palette history
@@ -223,8 +227,9 @@ Gold, red, violet, electric blue, neon yellow and amber were each tried and
 rejected. Two lessons worth keeping: an under-saturated accent on a same-hue
 ground reads as mud (the `#F0B23C` gold), and a near-white accent over a
 saturated ground mixes toward a third colour (yellow over navy went green).
-Green on near-black avoids both, and it is the one high-contrast direction
-none of the reference pages use.
+Purple on a dark purple ground is the current direction: same-family ground
+and accent, separated by luminance rather than hue, which avoids both failure
+modes above.
 
 ## The hero field
 

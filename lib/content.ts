@@ -39,10 +39,10 @@ export const hero = {
   eyebrow: "in 24 hours, you will",
   headline: { pre: "Have A Proven Closer", accent: "On Your Offer", post: "" },
   headlineLine2: "",
-  sub: "From ClosingKing's bench of 300+ vetted closers and setters.",
-  cta: "Get Matched — 4 Spots Left This Month",
+  sub: "300+ vetted reps. Trained on your offer. Taking calls tomorrow morning.",
+  cta: "Book A Call — 4 Spots Left",
   ctaSub: "You pay only when they close.",
-  videoLabel: "Watch the 2-minute breakdown",
+  videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
   videoKicker: "300+ vetted reps. Commission only.",
 };
@@ -162,7 +162,7 @@ export const closers = {
 export const finalCta = {
   heading: "Ready To Stop Hiring Closers?",
   sub: "One 30-minute intake. If your offer is a fit, your rep is live tomorrow.",
-  cta: "Get Matched Today",
+  cta: "Book A Call",
   note: "No retainer. You pay only when they close.",
 };
 
