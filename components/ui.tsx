@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ctaHref } from "@/lib/content";
 
 type HeadingParts = { pre: string; accent: string; post?: string };
 
@@ -85,7 +86,7 @@ export function SectionIntro({
 
 export function CTA({
   children,
-  href = "#apply",
+  href = ctaHref,
   variant = "primary",
   className = "",
 }: {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { brand, nav } from "@/lib/content";
+import { brand, ctaHref, nav } from "@/lib/content";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -71,7 +71,7 @@ export function Nav() {
             {/* The CTA pill never collapses into the hamburger — it stays
                 reachable at every width, including 320px. */}
             <a
-              href="#apply"
+              href={ctaHref}
               className="btn btn-primary !min-h-0 !px-4 !py-2 !text-[13px] sm:!px-5 sm:!py-2.5 sm:!text-sm"
             >
               Book A Call
@@ -128,7 +128,7 @@ export function Nav() {
             ))}
           </ul>
           <a
-            href="#apply"
+            href={ctaHref}
             onClick={() => setOpen(false)}
             className="btn btn-primary mt-9 w-full !text-base"
           >

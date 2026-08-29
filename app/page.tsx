@@ -1,16 +1,14 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Faq } from "@/components/faq";
-import { ApplyForm } from "@/components/apply-form";
 import {
-  Marquee, Pricing, How, Guarantee,
-  Audience, ForClosers, FinalCta, Footer,
+  Marquee, Pricing, How, Guarantee, ForClosers, FinalCta, Footer,
 } from "@/components/sections";
 
 /**
  * Order follows the buyer's decision sequence:
  * what is it → what does it cost → how does it work →
- * what if it goes wrong → am I a fit → objections → book.
+ * what if it goes wrong → objections → book.
  */
 export default function Page() {
   return (
@@ -22,10 +20,8 @@ export default function Page() {
         <Pricing />
         <How />
         <Guarantee />
-        <Audience />
         <Faq />
         <ForClosers />
-        <ApplyForm />
         <FinalCta />
       </main>
       <Footer />

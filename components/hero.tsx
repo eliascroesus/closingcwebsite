@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { brand, hero, stats } from "@/lib/content";
+import { brand, ctaHref, hero, stats } from "@/lib/content";
 
 const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL || "";
 
@@ -113,7 +113,7 @@ export function Hero() {
 
         {/* CTA under the video — watch, then act */}
         <div className="rise mt-6 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
-          <a href="#apply" className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
+          <a href={ctaHref} className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
             {hero.cta}
           </a>
         </div>

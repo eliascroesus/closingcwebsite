@@ -185,9 +185,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(155, 100, 245, 0.17) 0%, rgba(110, 64, 205, 0.05) 46%, transparent 72%),
-    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.04) 0%, transparent 58%),
-    linear-gradient(180deg, #190A42 0%, #100628 30%, var(--color-canvas) 56%);
+    radial-gradient(closest-side at 50% -4%, rgba(150, 96, 240, 0.1) 0%, rgba(105, 60, 200, 0.03) 44%, transparent 68%),
+    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.025) 0%, transparent 56%),
+    linear-gradient(180deg, #120730 0%, #0E0724 22%, var(--color-canvas) 46%);
 }
 
 /* 3 — the spotlight that the headline sits inside */

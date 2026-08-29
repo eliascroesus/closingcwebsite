@@ -203,13 +203,16 @@ The page follows the buyer's decision sequence, not our org chart. A visitor
 deciding whether to book a call asks, in this order:
 
 1. **What is this?** — hero, VSL, stat bar
-2. **What does it cost me?** — pricing. First question for a commission-only
-   offer, so it gets the first section after the fold.
-3. **How does it work?** — the four-step install
-4. **What if it goes wrong?** — the swap guarantee
-5. **What's it worth to me?** — the calculator, once cost and risk are settled
-6. **Am I a fit?** — who this is for
-7. **Anything left?** — FAQ, then the form
+2. **What does it cost me?** the pricing block. First question for a
+   commission-only offer, so it gets the first section after the fold.
+3. **How does it work?** the four-step install
+4. **What if it goes wrong?** the swap guarantee
+5. **Anything left?** the FAQ
+
+A calculator, a testimonials block, a problem-agitation block, a pillars block,
+a who-this-is-for grid and an inline form were each built and then cut. The
+pattern in every case: they asked for attention before earning it. Sections
+earn their place by answering a question the visitor is already asking.
 
 Problem-agitation sections were removed: the visitor already knows hiring
 closers is painful, so restating it spends attention without buying trust.
@@ -274,6 +277,10 @@ background instead of the headline.
 Keep the wash luminous. An earlier pass based it on `#0D0A1A` with grain at
 0.34 `overlay`; it read as murk. Light should look like it falls onto the
 content, never like the page is dim.
+
+There is no form on the page. Every CTA points at `ctaHref` in
+`lib/content.ts`, which reads `NEXT_PUBLIC_CALENDAR_URL` and falls back to a
+mailto. If a section is ever removed, check for anchors left pointing at it.
 
 The nav is hidden over the hero and slides in past 560px, so the hero carries
 its own wordmark — on one row with the status chip, to start the fold higher.

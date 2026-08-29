@@ -27,6 +27,12 @@ export const stats = [
   { value: "5–7%", label: "Our cut of closed deals" },
 ];
 
+/** Every CTA points here. Set NEXT_PUBLIC_CALENDAR_URL to a Calendly or
+ *  Cal.com link; without it the buttons fall back to an email. */
+export const ctaHref =
+  process.env.NEXT_PUBLIC_CALENDAR_URL ||
+  "mailto:hello@closingking.com?subject=Booking%20an%20intake%20call";
+
 export const nav = [
   { label: "Pricing", href: "#pricing" },
   { label: "How It Works", href: "#how" },
@@ -103,29 +109,7 @@ export const guarantee = {
   ],
 };
 
-/* 4 — Am I a fit? */
-export const audience = {
-  eyebrow: "Who this is for",
-  heading: { pre: "Who This Is", accent: "For", post: "" },
-  sub: "If calls are booked and closing is the bottleneck, this is built for you.",
-  items: [
-    { title: "Coaches & Consultants", body: "High-ticket, sold on a call" },
-    { title: "Marketing Agencies", body: "Retainer and performance deals" },
-    { title: "Info & Education", body: "Courses and masterminds" },
-    { title: "B2B Services", body: "Long cycles, real follow-up" },
-    { title: "SaaS & Software", body: "Demo-to-close at any ACV" },
-    { title: "Real Estate", body: "Investor and buyer calls" },
-    { title: "Financial Services", body: "Consultative, compliance-aware" },
-    { title: "Med Spas & Aesthetics", body: "High-ticket consults" },
-    { title: "Home Services", body: "Phone-closed estimates" },
-  ],
-  notFor: {
-    title: "Who it isn't for",
-    body: "No converting offer or no lead flow? A closer won't fix that. We'll say so on the intake call.",
-  },
-};
-
-/* 5 — Remaining objections */
+/* 4 — Remaining objections */
 export const faq = {
   eyebrow: "Questions",
   heading: { pre: "Frequently Asked", accent: "Questions", post: "" },
@@ -156,15 +140,6 @@ export const finalCta = {
   sub: "One 30-minute intake. If your offer is a fit, your rep is live tomorrow.",
   cta: "Book A Call",
   note: "No retainer. You pay only when they close.",
-};
-
-export const applyForm = {
-  eyebrow: "Get started",
-  heading: { pre: "Tell Us About Your", accent: "Offer", post: "" },
-  sub: "60 seconds. We reply within one business day.",
-  roles: ["A closer", "A setter", "Both", "Not sure yet"],
-  priceBands: ["Under $1,000", "$1,000 – $2,999", "$3,000 – $4,999", "$5,000 – $9,999", "$10,000+"],
-  volumeBands: ["Under 20", "20 – 49", "50 – 99", "100 – 199", "200+"],
 };
 
 export const legal = {

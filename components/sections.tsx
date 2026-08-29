@@ -1,6 +1,5 @@
 import {
-  tools, how, pricing, guarantee,
-  audience, closers, finalCta, brand, legal,
+  tools, how, pricing, guarantee, closers, finalCta, brand, legal, ctaHref,
 } from "@/lib/content";
 import { Section, SectionIntro, Heading, CTA, Check } from "./ui";
 
@@ -155,30 +154,6 @@ export function Guarantee() {
   );
 }
 
-/* ---------------- 6. Who it's for ---------------- */
-
-export function Audience() {
-  return (
-    <Section id="audience">
-      <SectionIntro eyebrow={audience.eyebrow} heading={audience.heading} sub={audience.sub} />
-      <div className="mt-9 grid grid-cols-2 gap-2.5 lg:grid-cols-3">
-        {audience.items.map((a) => (
-          <div key={a.title} className="card card-hover p-4">
-            <h3 className="text-[13.5px] font-semibold leading-snug tracking-tight">{a.title}</h3>
-            <p className="mt-1 text-[12px] leading-snug text-ink-subtle">{a.body}</p>
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 rounded-xl border border-dashed border-hairline-strong p-5 text-center">
-        <h3 className="text-[13.5px] font-semibold">{audience.notFor.title}</h3>
-        <p className="t-body mx-auto mt-1.5 max-w-lg text-[13px] text-pretty">
-          {audience.notFor.body}
-        </p>
-      </div>
-    </Section>
-  );
-}
-
 /* ---------------- For closers (secondary audience) ---------------- */
 
 export function ForClosers() {
@@ -190,7 +165,7 @@ export function ForClosers() {
           <Heading parts={closers.heading} className="mt-3 !text-left !text-[1.5rem]" />
           <p className="t-body mt-2.5 text-[13.5px] text-pretty">{closers.body}</p>
         </div>
-        <CTA href="#apply" variant="secondary" className="shrink-0">
+        <CTA href={ctaHref} variant="secondary" className="shrink-0">
           {closers.cta}
         </CTA>
       </div>
@@ -208,7 +183,7 @@ export function FinalCta() {
         <h2 className="t-section text-balance">{finalCta.heading}</h2>
         <p className="t-body mx-auto mt-4 max-w-md text-[15px] text-pretty">{finalCta.sub}</p>
         <div className="mt-8 flex flex-col items-center">
-          <a href="#apply" className="btn btn-primary w-full max-w-xs sm:w-auto">
+          <a href={ctaHref} className="btn btn-primary w-full max-w-xs sm:w-auto">
             {finalCta.cta}
           </a>
           <p className="mt-3 text-[12.5px] text-ink-subtle">{finalCta.note}</p>
