@@ -8,26 +8,26 @@
    ============================================================ */
 
 @theme {
-  /* Very dark blue ground with a neon-yellow accent — maximum voltage, and
-     the two sit at opposite ends of the spectrum so the accent never muddies.
-     Neutrals keep a blue bias so the greys read chosen. */
-  --color-canvas: #04091A;
-  --color-s1: #0A1128;
-  --color-s2: #0E1733;
-  --color-s3: #131D40;
-  --color-hairline: #1B2749;
-  --color-hairline-strong: #283761;
+  /* True black ground, saturated amber-orange accent. Fully saturated rather
+     than the desaturated gold of an earlier pass, which read as mustard.
+     Neutrals carry a faint warm bias so the greys read chosen. */
+  --color-canvas: #000000;
+  --color-s1: #0D0C0B;
+  --color-s2: #141311;
+  --color-s3: #1C1A17;
+  --color-hairline: #262320;
+  --color-hairline-strong: #37332C;
 
-  --color-accent: #E6FF33;
-  --color-accent-hover: #F1FF70;
-  --color-accent-press: #C6DF16;
-  /* The accent is near-white in luminance, so anything on it must be dark. */
-  --color-on-accent: #04091A;
+  --color-accent: #FFA119;
+  --color-accent-hover: #FFB84D;
+  --color-accent-press: #E0850A;
+  /* Amber is light, so anything sitting on it takes near-black ink. */
+  --color-on-accent: #140F05;
 
-  --color-ink: #EEF2FB;
-  --color-ink-muted: #98A6C4;
-  --color-ink-subtle: #6A7A9C;
-  --color-ink-tertiary: #4C5B7C;
+  --color-ink: #FAF9F7;
+  --color-ink-muted: #A8A29A;
+  --color-ink-subtle: #7A746C;
+  --color-ink-tertiary: #56514A;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -141,8 +141,8 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(230, 255, 51, 0.34) 0%,
-    rgba(230, 255, 51, 0.1) 45%,
+    rgba(255, 161, 25, 0.42) 0%,
+    rgba(255, 161, 25, 0.14) 45%,
     transparent 72%
   );
 }
@@ -160,9 +160,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(96, 150, 255, 0.42) 0%, rgba(38, 92, 220, 0.16) 46%, transparent 78%),
-    radial-gradient(52% 26% at 80% 6%, rgba(230, 255, 51, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #0A1840 0%, #060E24 40%, var(--color-canvas) 68%);
+    radial-gradient(closest-side at 50% -4%, rgba(255, 176, 64, 0.34) 0%, rgba(255, 128, 20, 0.1) 46%, transparent 76%),
+    radial-gradient(50% 24% at 80% 6%, rgba(255, 96, 32, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, #1C1206 0%, #0A0703 38%, var(--color-canvas) 66%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
@@ -175,7 +175,7 @@ body {
   transform: translateX(-50%);
   border-radius: 9999px;
   filter: blur(70px);
-  background: radial-gradient(circle, rgba(120, 170, 255, 0.44) 0%, rgba(46, 110, 230, 0.12) 44%, transparent 68%);
+  background: radial-gradient(circle, rgba(255, 176, 64, 0.4) 0%, rgba(255, 140, 26, 0.1) 44%, transparent 68%);
 }
 
 /* 4 — dot texture, tight and faint */
@@ -204,7 +204,7 @@ body {
 .field-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 82% 74% at 50% 24%, transparent 42%, rgba(1, 4, 12, 0.76) 100%);
+  background: radial-gradient(ellipse 82% 74% at 50% 24%, transparent 42%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 /* Bottom seam so the field resolves into the page instead of stopping */
@@ -238,7 +238,7 @@ body {
   background: var(--color-accent);
   color: var(--color-on-accent);
   font-weight: 600;
-  box-shadow: 0 8px 30px -8px rgba(230, 255, 51, 0.45);
+  box-shadow: 0 8px 30px -8px rgba(255, 161, 25, 0.5);
 }
 
 .btn-secondary {
@@ -251,7 +251,7 @@ body {
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 12px 36px -8px rgba(230, 255, 51, 0.6);
+    box-shadow: 0 12px 36px -8px rgba(255, 161, 25, 0.68);
   }
   .btn-secondary:hover {
     background: var(--color-s3);

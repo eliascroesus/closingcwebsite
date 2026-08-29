@@ -68,7 +68,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#0F1A3A] to-[#070C1C] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(230,255,51,0.32),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1B1610] to-[#0A0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(255,161,25,0.42),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -84,7 +84,7 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(230,255,51,0.1),transparent_58%)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,161,25,0.28),transparent_66%)]" />
                 <span aria-hidden className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
@@ -98,8 +98,8 @@ export function Hero() {
                     <br />
                     in 24 hours
                   </span>
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(230,255,51,0.6)] transition-transform duration-300 group-hover:scale-105">
-                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-canvas" fill="currentColor">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(255,161,25,0.75)] transition-transform duration-300 group-hover:scale-105">
+                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#140F05]" fill="currentColor">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>

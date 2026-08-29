@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#04091A canvas → #0A1128 → #0E1733 → #131D40) with hairline borders, a single neon yellow (#E6FF33) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#000000 canvas → #0D0C0B → #141311 → #1C1A17) with hairline borders, a single saturated amber-orange (#FFA119) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#E6FF33"
-  primary-hover: "#F1FF70"
-  primary-press: "#C6DF16"
+  primary: "#FFA119"
+  primary-hover: "#FFB84D"
+  primary-press: "#E0850A"
   on-primary: "#FFFFFF"
-  ink: "#EEF2FB"
-  ink-muted: "#98A6C4"
-  ink-subtle: "#6A7A9C"
-  ink-tertiary: "#4C5B7C"
-  canvas: "#04091A"
-  surface-1: "#0A1128"
-  surface-2: "#0E1733"
-  surface-3: "#131D40"
-  hairline: "#1B2749"
-  hairline-strong: "#283761"
+  ink: "#FAF9F7"
+  ink-muted: "#A8A29A"
+  ink-subtle: "#7A746C"
+  ink-tertiary: "#56514A"
+  canvas: "#000000"
+  surface-1: "#0D0C0B"
+  surface-2: "#141311"
+  surface-3: "#1C1A17"
+  hairline: "#262320"
+  hairline-strong: "#37332C"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#04091A"
-  bloom: "rgba(230,255,51,0.34)"
+  inverse-ink: "#000000"
+  bloom: "rgba(255,161,25,0.42)"
 
 typography:
   hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
@@ -56,13 +56,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#04091A` | Page ground |
-| surface-1 | `#0A1128` | Default cards, panels |
-| surface-2 | `#0E1733` | Hovered / featured cards |
-| surface-3 | `#131D40` | Inputs, chips, nested surfaces |
+| canvas | `#000000` | Page ground |
+| surface-1 | `#0D0C0B` | Default cards, panels |
+| surface-2 | `#141311` | Hovered / featured cards |
+| surface-3 | `#1C1A17` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` neon yellow appears ONLY on:
+`{colors.primary}` amber appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -125,8 +125,8 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 
 ## Components
 
-**`btn-primary`** — neon fill, dark ink, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(230,255,51,0.45)`.
+**`btn-primary`** — amber fill, near-black ink, pill, 12px/24px padding, min 48px tap
+height, colored glow at `0 8px 30px -8px rgba(255,161,25,0.5)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -190,16 +190,21 @@ deciding whether to book a call asks, in this order:
 Problem-agitation sections were removed: the visitor already knows hiring
 closers is painful, so restating it spends attention without buying trust.
 
-## Working with a near-white accent
+## Working with a light warm accent
 
-Neon yellow sits at the top of the luminance range, which changes two rules
-that a mid-tone accent never forces:
+Amber sits high in the luminance range, so **anything placed on it takes
+near-black ink** (`on-primary` `#140F05`), never white. The CTA measures 9.4:1
+that way.
 
-- **Anything placed on the accent must be dark ink** (`on-primary` `#04091A`),
-  never white. The CTA measures 17.7:1 that way. White on neon is unreadable.
-- **The hero wash stays blue, not yellow.** Yellow light over a navy ground
-  mixes toward green and reads as murk. The accent appears as a tight rim on
-  the video panel and the CTA glow, never as a broad wash.
+Unlike a yellow-on-navy pairing, amber over black has no colour-mixing
+problem, so the hero wash may carry the accent warmly rather than being held
+to a rim.
+
+### Why this amber and not the earlier gold
+An early pass used `#F0B23C` and read as mustard. Two causes, both fixed here:
+it was under-saturated, and it sat on a warm-grey ground (`#06060A` with warm
+neutrals) that muddied it. This accent is fully saturated and sits on **pure
+black** with only a faint warm bias in the greys, so it reads hot.
 
 ## The hero field
 
