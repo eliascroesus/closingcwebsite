@@ -20,16 +20,15 @@ export function Hero() {
         <div className="field-fade" />
       </div>
 
-      <div className="relative mx-auto max-w-[1080px] px-5 pb-14 pt-10 sm:px-6 sm:pt-14">
-        {/* Wordmark sits in the hero itself — the nav only arrives on scroll */}
-        <div className="rise flex justify-center">
+      <div className="relative mx-auto max-w-[1080px] px-5 pb-14 pt-9 sm:px-6 sm:pt-12">
+        {/* Wordmark and status share one row so the fold starts higher.
+            The nav only arrives on scroll, so this is the only branding here. */}
+        <div className="rise flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
           <a href="#top" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
             <Crown className="h-[18px] w-[18px] text-accent" />
             <span>Closing<span className="text-accent">King</span></span>
           </a>
-        </div>
-
-        <div className="rise mt-7 flex justify-center" style={{ animationDelay: "50ms" }}>
+          <span aria-hidden className="hidden h-4 w-px bg-hairline-strong sm:block" />
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.09] px-3 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
@@ -40,7 +39,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="t-display rise mx-auto mt-5 max-w-3xl text-center text-balance"
+          className="t-display rise mx-auto mt-7 max-w-3xl text-center text-balance"
           style={{ animationDelay: "110ms" }}
         >
           <span className="block">{hero.headline.pre}</span>
@@ -58,7 +57,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-8 max-w-2xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[56%] h-[88%] w-[94%] -translate-x-1/2 -translate-y-1/2" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-s1 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(124,92,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1A1730] to-[#0E0C1A] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(124,92,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -74,10 +73,10 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(124,92,255,0.5),transparent_66%)]" />
-                <span aria-hidden className="absolute inset-0 opacity-[0.1] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(124,92,255,0.6),transparent_70%)]" />
+                <span aria-hidden className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
 
-                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm">
+                <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
                   <Crown className="h-3 w-3 text-accent" />
                   <span className="text-[10px] font-medium text-ink-muted">ClosingKing</span>
                 </span>
@@ -95,7 +94,7 @@ export function Hero() {
                   </span>
                 </span>
 
-                <span className="t-eyebrow absolute inset-x-0 bottom-4 text-center !text-ink-tertiary">
+                <span className="t-eyebrow absolute inset-x-0 bottom-4 text-center !text-ink-muted">
                   {hero.videoLabel}
                 </span>
 
@@ -114,21 +113,13 @@ export function Hero() {
           <a href="#apply" className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
             {hero.cta}
           </a>
-          <p className="mt-3.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[12.5px] text-ink-subtle">
-            {hero.trust.map((t, i) => (
-              <span key={t} className="flex items-center gap-2.5">
-                {i > 0 && <span aria-hidden className="h-0.5 w-0.5 rounded-full bg-ink-tertiary" />}
-                {t}
-              </span>
-            ))}
-          </p>
         </div>
 
-        <dl className="rise mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4" style={{ animationDelay: "350ms" }}>
+        <dl className="rise mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4" style={{ animationDelay: "350ms" }}>
           {stats.map((s) => (
             <div key={s.label} className="card px-4 py-5 backdrop-blur-sm sm:px-5">
               <dt className="t-stat text-accent">{s.value}</dt>
-              <dd className="mt-2 text-[12.5px] leading-snug text-ink-subtle">{s.label}</dd>
+              <dd className="mt-2 text-[13px] font-medium leading-snug text-ink">{s.label}</dd>
             </div>
           ))}
         </dl>

@@ -4,13 +4,13 @@ import { Calculator } from "@/components/calculator";
 import { Faq } from "@/components/faq";
 import { ApplyForm } from "@/components/apply-form";
 import {
-  Marquee, Pricing, Testimonials, How, Guarantee,
+  Marquee, Pricing, How, Guarantee,
   Audience, ForClosers, FinalCta, Footer,
 } from "@/components/sections";
 
 /**
  * Order follows the buyer's decision sequence:
- * what is it → what does it cost → does it work → how does it work →
+ * what is it → what does it cost → how does it work →
  * what if it goes wrong → what's it worth → am I a fit → objections → book.
  */
 export default function Page() {
@@ -21,7 +21,6 @@ export default function Page() {
         <Hero />
         <Marquee />
         <Pricing />
-        <Testimonials />
         <How />
         <Guarantee />
         <Calculator />

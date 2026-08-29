@@ -1,5 +1,5 @@
 import {
-  tools, how, pricing, guarantee, testimonials,
+  tools, how, pricing, guarantee,
   audience, closers, finalCta, brand, legal,
 } from "@/lib/content";
 import { Section, SectionIntro, Heading, CTA, Check } from "./ui";
@@ -86,38 +86,6 @@ export function Pricing() {
 
       <div className="mt-8 flex justify-center">
         <CTA>{pricing.cta}</CTA>
-      </div>
-    </Section>
-  );
-}
-
-/* ---------------- 2. Does it work ---------------- */
-
-export function Testimonials() {
-  if (!testimonials.length) return null;
-  return (
-    <Section id="results" className="bg-s1/40">
-      <SectionIntro
-        eyebrow="Client results"
-        heading={{ pre: "What Clients", accent: "Say", post: "" }}
-      />
-      <div className="mt-9 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {testimonials.map((t, i) => (
-          <figure key={i} className="card card-hover flex w-[80vw] shrink-0 snap-center flex-col p-5 sm:w-auto">
-            <blockquote className="flex-1 text-[13.5px] leading-relaxed text-ink-muted text-pretty">
-              “{t.quote}”
-            </blockquote>
-            <figcaption className="mt-4 flex items-center gap-2.5 border-t border-hairline pt-4">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-s3 text-[12px] font-medium text-ink-subtle">
-                {t.name.trim().charAt(0)}
-              </span>
-              <span className="min-w-0">
-                <span className="block truncate text-[12.5px] font-medium">{t.name}</span>
-                <span className="block truncate text-[11.5px] text-ink-subtle">{t.role}</span>
-              </span>
-            </figcaption>
-          </figure>
-        ))}
       </div>
     </Section>
   );
@@ -276,7 +244,6 @@ export function Footer() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-12 gap-y-2">
             {[
               { label: "Pricing", href: "#pricing" },
-              { label: "Results", href: "#results" },
               { label: "How It Works", href: "#how" },
               { label: "Calculator", href: "#calculator" },
               { label: "For Closers", href: "#closers" },

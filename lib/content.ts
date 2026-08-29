@@ -29,19 +29,17 @@ export const stats = [
 
 export const nav = [
   { label: "Pricing", href: "#pricing" },
-  { label: "Results", href: "#results" },
   { label: "How It Works", href: "#how" },
   { label: "FAQ", href: "#faq" },
 ];
 
 export const hero = {
-  eyebrow: "Commission only · Limited spots this month",
+  eyebrow: "Commission only · Limited spots",
   headline: { pre: "Your Next Closer,", accent: "Live In 24 Hours", post: "" },
   headlineLine2: "",
   sub: "We install pre-vetted closers on your offer with a full SOP. You pay only when they close.",
   cta: "Get Matched Today",
   ctaSub: "You pay only when they close.",
-  trust: ["No retainer", "No setup fee", "Cancel anytime"],
   videoLabel: "Watch the 2-minute breakdown",
   videoTitle: "How we install a closer in 24 hours",
 };
@@ -76,19 +74,7 @@ export const pricing = {
   cta: "See If Your Offer Qualifies",
 };
 
-/* 2 — Does it work? */
-/* !!! PLACEHOLDER TESTIMONIALS — illustrative examples, NOT real clients.
-   Replace with genuine, permissioned quotes, or set to [] to hide the
-   section. Publishing invented testimonials is deceptive and, in most
-   markets, illegal. */
-export const testimonials = [
-  { quote: "Had someone on our calls the next day with a full rundown of the offer. I didn't write a single onboarding doc.", name: "PLACEHOLDER — replace", role: "Founder, coaching offer" },
-  { quote: "The coaching is the part I didn't expect. Our rep's close rate moved every month because someone reviewed his calls.", name: "PLACEHOLDER — replace", role: "Owner, B2B agency" },
-  { quote: "First rep wasn't right for our price point. Said so Tuesday, replacement was live Wednesday.", name: "PLACEHOLDER — replace", role: "Director, education offer" },
-  { quote: "Commission-only meant there was no scenario where we lost money testing it. Nothing to decide.", name: "PLACEHOLDER — replace", role: "Co-founder, SaaS" },
-];
-
-/* 3 — How does it actually work? */
+/* 2 — How does it actually work? */
 export const how = {
   eyebrow: "How it works",
   heading: { pre: "How We Install", accent: "Your Closer", post: "" },
@@ -101,7 +87,7 @@ export const how = {
   ],
 };
 
-/* 4 — What if it goes wrong? */
+/* 3 — What if it goes wrong? */
 export const guarantee = {
   eyebrow: "Zero risk",
   heading: { pre: "Wrong Fit?", accent: "Swapped In 24 Hours", post: "" },
@@ -114,7 +100,7 @@ export const guarantee = {
   ],
 };
 
-/* 5 — What's it worth to me? */
+/* 4 — What's it worth to me? */
 export const calculator = {
   eyebrow: "Run the numbers",
   heading: { pre: "How Much You're", accent: "Losing", post: " Each Month" },
@@ -122,7 +108,7 @@ export const calculator = {
   disclaimer: "Illustrative only. Uses the numbers you enter — not a projection or guarantee.",
 };
 
-/* 6 — Am I a fit? */
+/* 5 — Am I a fit? */
 export const audience = {
   eyebrow: "Who this is for",
   heading: { pre: "Who This Is", accent: "For", post: "" },
@@ -144,7 +130,7 @@ export const audience = {
   },
 };
 
-/* 7 — Remaining objections */
+/* 6 — Remaining objections */
 export const faq = {
   eyebrow: "Questions",
   heading: { pre: "Frequently Asked", accent: "Questions", post: "" },

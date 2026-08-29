@@ -125,8 +125,11 @@ height, colored glow at `0 8px 30px -8px rgba(229,50,47,0.5)`.
 `surface-2` with `hairline-strong`; no transform beyond −2px, no red border.
 
 **`vsl-panel`** — `rounded.xl`, 1px `hairline-strong`, a designed thumbnail
-(brand chip, display headline, play button, optional founder inset) over a red
-floor-glow, wrapped in the hero bloom. Never an empty frame.
+(brand chip, display headline, play button, optional founder inset) over a
+violet floor-glow, wrapped in the hero bloom. Its interior is lifted with a
+gradient so it sits inside the hero field rather than punching a hole in it.
+Never an empty frame. The primary CTA sits **below** this panel — the video is
+the pitch, so the ask comes after it.
 
 **`eyebrow`** — Geist Mono, 11px, uppercase, +1.2px tracking, `ink-subtle`.
 Optional 1px hairline rule to its left. Not red.
@@ -169,12 +172,29 @@ deciding whether to book a call asks, in this order:
 1. **What is this?** — hero, VSL, stat bar
 2. **What does it cost me?** — pricing. First question for a commission-only
    offer, so it gets the first section after the fold.
-3. **Does it work?** — client results
-4. **How does it work?** — the four-step install
-5. **What if it goes wrong?** — the swap guarantee
-6. **What's it worth to me?** — the calculator, once cost and risk are settled
-7. **Am I a fit?** — who this is for
-8. **Anything left?** — FAQ, then the form
+3. **How does it work?** — the four-step install
+4. **What if it goes wrong?** — the swap guarantee
+5. **What's it worth to me?** — the calculator, once cost and risk are settled
+6. **Am I a fit?** — who this is for
+7. **Anything left?** — FAQ, then the form
 
 Problem-agitation sections were removed: the visitor already knows hiring
 closers is painful, so restating it spends attention without buying trust.
+
+## The hero field
+
+Five stacked layers, in paint order. None is a stock mesh gradient, and the
+grain is what keeps the rest from reading as flat CSS:
+
+1. `field-wash` — violet-to-canvas vertical wash with a cooler blue offset
+2. `field-rings` — concentric rings radiating from behind the VSL
+3. `field-spot` — a broad spotlight the headline sits inside
+4. `field-dots` — fine dot texture, radially masked
+5. `field-grain` — inline SVG turbulence at low opacity, `soft-light`
+
+Keep the wash luminous. An earlier pass based it on `#0D0A1A` with grain at
+0.34 `overlay`; it read as murk. Light should look like it falls onto the
+content, never like the page is dim.
+
+The nav is hidden over the hero and slides in past 560px, so the hero carries
+its own wordmark — on one row with the status chip, to start the fold higher.
