@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#08061A canvas → #0E0B26 → #131031 → #19153F) with hairline borders, a periwinkle indigo (#968AFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#04090C canvas → #0A1318 → #0F1B21 → #14242C) with hairline borders, a cyan (#22D3EE) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#968AFF"
-  primary-hover: "#B0A7FF"
-  primary-press: "#7A6BE8"
+  primary: "#22D3EE"
+  primary-hover: "#5FE3F5"
+  primary-press: "#12B0CA"
   on-primary: "#FFFFFF"
-  ink: "#F1F0FB"
-  ink-muted: "#A09BC4"
-  ink-subtle: "#78729F"
-  ink-tertiary: "#524C76"
-  canvas: "#08061A"
-  surface-1: "#0E0B26"
-  surface-2: "#131031"
-  surface-3: "#19153F"
-  hairline: "#241F54"
-  hairline-strong: "#322B74"
+  ink: "#EEF6F8"
+  ink-muted: "#97A9B0"
+  ink-subtle: "#6B7D85"
+  ink-tertiary: "#4B5A61"
+  canvas: "#04090C"
+  surface-1: "#0A1318"
+  surface-2: "#0F1B21"
+  surface-3: "#14242C"
+  hairline: "#1C333C"
+  hairline-strong: "#294A57"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#08061A"
-  bloom: "rgba(150,138,255,0.34)"
+  inverse-ink: "#04090C"
+  bloom: "rgba(34,211,238,0.32)"
 
 typography:
   display-xl: { fontFamily: Geist, fontSize: 60px, fontWeight: 600, lineHeight: 1.02, letterSpacing: -2.4px }
@@ -55,13 +55,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#08061A` | Page ground |
-| surface-1 | `#0E0B26` | Default cards, panels |
-| surface-2 | `#131031` | Hovered / featured cards |
-| surface-3 | `#19153F` | Inputs, chips, nested surfaces |
+| canvas | `#04090C` | Page ground |
+| surface-1 | `#0A1318` | Default cards, panels |
+| surface-2 | `#0F1B21` | Hovered / featured cards |
+| surface-3 | `#14242C` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` purple appears ONLY on:
+`{colors.primary}` cyan appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -150,8 +150,8 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 
 ## Components
 
-**`btn-primary`** — purple fill, near-black ink, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(150,138,255,0.55)`.
+**`btn-primary`** — cyan fill, near-black ink, pill, 12px/24px padding, min 48px tap
+height, colored glow at `0 8px 30px -8px rgba(34,211,238,0.5)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -251,11 +251,11 @@ Gold, red, violet, electric blue, neon yellow and amber were each tried and
 rejected. Two lessons worth keeping: an under-saturated accent on a same-hue
 ground reads as mud (the `#F0B23C` gold), and a near-white accent over a
 saturated ground mixes toward a third colour (yellow over navy went green).
-**Stay off the magenta side of violet.** `#B07CFF` sits at hue 268 and read as
-pink once the serif ran at display size; large type amplifies a hue cast that
-is invisible at body size. The accent is now hue 246 and the ground hue 240,
-so both sit in blue-violet. Anything above hue ~258 will start to read pink
-again.
+**The violet family was abandoned.** Two attempts read as pink at display
+size: `#B07CFF` (hue 268) obviously, and `#968AFF` (hue 246) still. The
+lesson is that any accent carrying a meaningful red channel will read warm
+once it runs at 116px, however cool it looks in a swatch. Cyan has no red
+component at all, which is why it holds.
 
 The ground must be **both dark and saturated**, which took three passes to
 land. `#1B0F38` at 0.34 spotlight read as washed lavender. Dropping to
