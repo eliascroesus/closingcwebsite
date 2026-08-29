@@ -26,6 +26,7 @@
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-anton), "Arial Narrow", ui-sans-serif, sans-serif;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -61,6 +62,17 @@ body {
   font-size: clamp(2.25rem, 5.2vw, 3.875rem);
   line-height: 1.0;
   letter-spacing: -0.042em;
+}
+
+/* Hero only. The reference sets its headline ~7x its subhead; that ratio is
+   what makes the fold land, so this is deliberately enormous. */
+.t-hero {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(3.5rem, 15vw, 8rem);
+  line-height: 0.86;
+  letter-spacing: -0.015em;
 }
 
 .t-section {
@@ -154,10 +166,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(115% 58% at 50% -10%, rgba(150, 122, 255, 0.42) 0%, rgba(124, 92, 255, 0.12) 38%, transparent 66%),
-    radial-gradient(70% 34% at 76% 2%, rgba(96, 148, 255, 0.20) 0%, transparent 58%),
-    radial-gradient(60% 30% at 22% 6%, rgba(168, 116, 255, 0.14) 0%, transparent 60%),
-    linear-gradient(180deg, #16123A 0%, #0C0A18 34%, var(--color-canvas) 62%);
+    radial-gradient(closest-side at 50% -4%, rgba(184, 160, 255, 0.5) 0%, rgba(124, 92, 255, 0.2) 46%, transparent 78%),
+    radial-gradient(60% 30% at 78% 6%, rgba(96, 148, 255, 0.16) 0%, transparent 62%),
+    linear-gradient(180deg, #1A1442 0%, #0D0A1C 40%, var(--color-canvas) 68%);
 }
 
 /* 2 — concentric rings centred on the VSL: a broadcast signal, not a grid */
@@ -209,6 +220,14 @@ body {
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
+}
+
+/* Vignette — pulls the corners down so the centre reads as lit, like the
+   darkened room photograph the reference uses. */
+.field-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 82% 74% at 50% 24%, transparent 42%, rgba(4, 3, 10, 0.72) 100%);
 }
 
 /* Bottom seam so the field resolves into the page instead of stopping */

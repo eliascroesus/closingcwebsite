@@ -346,3 +346,52 @@ All four pages share a formula:
 - Nav bars with 6+ links — needs a hamburger with a persistent CTA pill outside it
 - Long inline forms in the hero pushing all proof below 3 screens of scroll
 - Interactive inputs where the mobile keyboard covers the result
+
+---
+
+## Daniel G / WCC — above the fold, measured
+
+Re-analysed because our own fold kept reading as "off". The proportions are the
+whole trick, and they are nothing like a typical SaaS hero.
+
+Reading down the first screen:
+
+1. **Thin nav**, full width, small type. Logo left, two links centre, red pill
+   right. It takes maybe 6% of the fold and gets out of the way.
+2. **A headline that fills the width.** "WCC CERTIFIED" — *two words* — set in a
+   heavy condensed uppercase face at roughly 8–9% of viewport width per
+   character. It is far and away the largest thing on the page. The product
+   name IS the headline; the promise lives in the subhead.
+3. **A circular certification seal** overlapping the headline's top-right,
+   breaking the type's bounding box. Credential as ornament.
+4. **A small subhead, two lines**, immediately under the headline with very
+   little gap. Perhaps a seventh the size of the headline. Formula:
+   *"How to [stop pain], [stop pain], and [outcome] within [timeframe].
+   [Risk reversal]."*
+5. **A tiny uppercase video label** with a red play triangle:
+   "▶ WATCH THIS TWO-MINUTE OVERVIEW VIDEO BELOW".
+6. **The video, which is not large** — roughly 40% of viewport width, well
+   under half the fold's height.
+
+### The two ratios that matter
+
+- **Headline to subhead is about 7:1.** Enormous display, small supporting
+  copy. Most heroes run 3:1 and read timid by comparison.
+- **The video is smaller than the headline block.** Our build had this
+  inverted — an oversized video panel with a modest headline, which is exactly
+  why it read as off. The headline is the hook; the video is the proof that
+  follows it.
+
+### Everything is tightly stacked
+
+Gaps between headline, subhead, label and video are small. There is no
+breathing room in the reference at all — the fold is dense on purpose, so the
+whole pitch lands in one screen without scrolling.
+
+### Background
+
+A real photograph — a dark, blue-tinted room shot — pushed way down in
+brightness. It supplies depth and a sense of place that no gradient does. With
+no photograph available, the closest honest substitute is a lit-stage
+treatment: a bright spotlight from top centre falling off into a heavy vignette
+at the edges, so the fold reads as a lit environment rather than a flat panel.

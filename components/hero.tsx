@@ -17,10 +17,11 @@ export function Hero() {
         <div className="field-spot" />
         <div className="field-dots" />
         <div className="field-grain" />
+        <div className="field-vignette" />
         <div className="field-fade" />
       </div>
 
-      <div className="relative mx-auto max-w-[1080px] px-5 pb-14 pt-9 sm:px-6 sm:pt-12">
+      <div className="relative mx-auto max-w-[1080px] px-5 pb-14 pt-8 sm:px-6 sm:pt-10">
         {/* Wordmark and status share one row so the fold starts higher.
             The nav only arrives on scroll, so this is the only branding here. */}
         <div className="rise flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
@@ -39,7 +40,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="t-display rise mx-auto mt-7 max-w-3xl text-center text-balance"
+          className="t-hero rise mt-8 text-center"
           style={{ animationDelay: "110ms" }}
         >
           <span className="block">{hero.headline.pre}</span>
@@ -47,14 +48,25 @@ export function Hero() {
         </h1>
 
         <p
-          className="t-body rise mx-auto mt-4 max-w-[46ch] text-center text-[15.5px] text-pretty sm:text-[17px]"
+          className="rise mx-auto mt-4 max-w-[52ch] text-center text-[14.5px] leading-relaxed text-ink-muted text-pretty sm:mt-5 sm:text-[16px]"
           style={{ animationDelay: "170ms" }}
         >
           {hero.sub}
         </p>
 
+        {/* Tiny label with a play marker, directly above the video */}
+        <p
+          className="t-eyebrow rise mt-7 flex items-center justify-center gap-2"
+          style={{ animationDelay: "200ms" }}
+        >
+          <svg aria-hidden viewBox="0 0 12 12" className="h-2.5 w-2.5 text-accent" fill="currentColor">
+            <path d="M3 1.5v9l7-4.5z" />
+          </svg>
+          {hero.videoLabel}
+        </p>
+
         {/* ── VSL: the protagonist. CTA lives underneath it, not above. ── */}
-        <div className="rise relative mx-auto mt-8 max-w-2xl" style={{ animationDelay: "230ms" }}>
+        <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[56%] h-[88%] w-[94%] -translate-x-1/2 -translate-y-1/2" />
 
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1A1730] to-[#0E0C1A] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(124,92,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
@@ -81,7 +93,7 @@ export function Hero() {
                   <span className="text-[10px] font-medium text-ink-muted">ClosingKing</span>
                 </span>
 
-                <span className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-6">
+                <span className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6">
                   <span className="block text-center text-[clamp(1.3rem,4vw,2.25rem)] font-semibold leading-[1.05] tracking-[-0.038em] text-ink">
                     Install a closer
                     <br />
@@ -92,10 +104,6 @@ export function Hero() {
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>
-                </span>
-
-                <span className="t-eyebrow absolute inset-x-0 bottom-4 text-center !text-ink-muted">
-                  {hero.videoLabel}
                 </span>
 
                 {brand.founderImage && (
@@ -109,13 +117,13 @@ export function Hero() {
         </div>
 
         {/* CTA under the video — watch, then act */}
-        <div className="rise mt-7 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
+        <div className="rise mt-6 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
           <a href="#apply" className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
             {hero.cta}
           </a>
         </div>
 
-        <dl className="rise mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4" style={{ animationDelay: "350ms" }}>
+        <dl className="rise mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4" style={{ animationDelay: "350ms" }}>
           {stats.map((s) => (
             <div key={s.label} className="card px-4 py-5 backdrop-blur-sm sm:px-5">
               <dt className="t-stat text-accent">{s.value}</dt>

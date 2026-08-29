@@ -35,9 +35,11 @@ export const nav = [
 
 export const hero = {
   eyebrow: "Commission only · Limited spots",
-  headline: { pre: "Your Next Closer,", accent: "Live In 24 Hours", post: "" },
+  // Poster headline: short enough to run at display scale. The promise lives
+  // in the subhead, as it does on the reference page.
+  headline: { pre: "Closers", accent: "On Demand", post: "" },
   headlineLine2: "",
-  sub: "We install pre-vetted closers on your offer with a full SOP. You pay only when they close.",
+  sub: "How to put a proven closer on your offer in 24 hours — without job posts, vetting, or a dollar upfront.",
   cta: "Get Matched Today",
   ctaSub: "You pay only when they close.",
   videoLabel: "Watch the 2-minute breakdown",

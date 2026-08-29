@@ -23,6 +23,7 @@ colors:
   bloom: "rgba(124,92,255,0.55)"
 
 typography:
+  hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
   display-xl: { fontFamily: Geist, fontSize: 60px, fontWeight: 600, lineHeight: 1.02, letterSpacing: -2.4px }
   display-lg: { fontFamily: Geist, fontSize: 44px, fontWeight: 600, lineHeight: 1.06, letterSpacing: -1.6px }
   display-md: { fontFamily: Geist, fontSize: 32px, fontWeight: 600, lineHeight: 1.12, letterSpacing: -1.0px }
@@ -87,6 +88,20 @@ eyebrows and numeric labels only.
 - Eyebrows invert this: Geist Mono, uppercase, **+1.2px positive tracking**. The
   contrast against negative-tracked display is what marks them as taxonomy.
 - Sentence case for display and headlines. Uppercase only for mono eyebrows.
+
+### The hero headline is the one exception
+The H1 is set in **Anton**, a heavy condensed grotesque, uppercase, at poster
+scale — `clamp(3.5rem, 15vw, 8rem)` with 0.86 line-height. It is the only
+place this face appears; everything else is Geist. The reference fold runs its
+headline about **7:1 against its subhead**, and that ratio is what makes the
+pitch land. Ours measures 8:1 at desktop, 7.2:1 at tablet.
+
+Two rules follow from it:
+- Keep the headline to **two or three words** so it can run at this size. The
+  promise belongs in the subhead, not the headline.
+- The **video must be smaller than the headline block**. An oversized video
+  under a modest headline is what made earlier passes read as off — the
+  headline is the hook, the video is the proof that follows it.
 
 ### Forbidden
 - No serif face anywhere.
