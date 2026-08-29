@@ -8,25 +8,26 @@
    ============================================================ */
 
 @theme {
-  --color-canvas: #08070D;
-  --color-s1: #101018;
-  --color-s2: #16151F;
-  --color-s3: #1C1B26;
-  --color-hairline: #232232;
-  --color-hairline-strong: #2E2C40;
+  /* Deep navy ground, electric blue accent. Neutrals carry the same blue
+     bias so the greys read chosen rather than inherited. */
+  --color-canvas: #060A14;
+  --color-s1: #0D1424;
+  --color-s2: #131C30;
+  --color-s3: #18223A;
+  --color-hairline: #1E2A44;
+  --color-hairline-strong: #2C3C5E;
 
-  --color-accent: #7C5CFF;
-  --color-accent-hover: #9A80FF;
-  --color-accent-press: #6746E8;
+  --color-accent: #2E7FFF;
+  --color-accent-hover: #5C9DFF;
+  --color-accent-press: #1D63D8;
 
-  --color-ink: #F4F3F7;
-  --color-ink-muted: #A5A2B3;
-  --color-ink-subtle: #74718A;
-  --color-ink-tertiary: #56536B;
+  --color-ink: #EEF3FB;
+  --color-ink-muted: #9DABC4;
+  --color-ink-subtle: #6C7C99;
+  --color-ink-tertiary: #4E5C78;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-display: var(--font-anton), "Arial Narrow", ui-sans-serif, sans-serif;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -59,21 +60,11 @@ body {
 
 .t-display {
   font-weight: 680;
-  font-size: clamp(2.25rem, 5.2vw, 3.875rem);
-  line-height: 1.0;
-  letter-spacing: -0.042em;
+  font-size: clamp(2.125rem, 4.6vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.038em;
 }
 
-/* Hero only. The reference sets its headline ~7x its subhead; that ratio is
-   what makes the fold land, so this is deliberately enormous. */
-.t-hero {
-  font-family: var(--font-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(3.5rem, 15vw, 8rem);
-  line-height: 0.86;
-  letter-spacing: -0.015em;
-}
 
 .t-section {
   font-weight: 600;
@@ -147,8 +138,8 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(124, 92, 255, 0.55) 0%,
-    rgba(124, 92, 255, 0.2) 45%,
+    rgba(46, 127, 255, 0.6) 0%,
+    rgba(46, 127, 255, 0.22) 45%,
     transparent 72%
   );
 }
@@ -166,26 +157,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(184, 160, 255, 0.5) 0%, rgba(124, 92, 255, 0.2) 46%, transparent 78%),
-    radial-gradient(60% 30% at 78% 6%, rgba(96, 148, 255, 0.16) 0%, transparent 62%),
-    linear-gradient(180deg, #1A1442 0%, #0D0A1C 40%, var(--color-canvas) 68%);
-}
-
-/* 2 — concentric rings centred on the VSL: a broadcast signal, not a grid */
-.field-rings {
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  width: 150vw;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  background: repeating-radial-gradient(
-    circle at center,
-    transparent 0 68px,
-    rgba(178, 158, 255, 0.13) 68px 69px
-  );
-  mask-image: radial-gradient(circle at center, #000 12%, rgba(0,0,0,0.35) 38%, transparent 62%);
-  -webkit-mask-image: radial-gradient(circle at center, #000 12%, rgba(0,0,0,0.35) 38%, transparent 62%);
+    radial-gradient(closest-side at 50% -4%, rgba(120, 180, 255, 0.52) 0%, rgba(46, 127, 255, 0.22) 46%, transparent 78%),
+    radial-gradient(58% 28% at 80% 8%, rgba(64, 224, 255, 0.14) 0%, transparent 62%),
+    linear-gradient(180deg, #0C1E4A 0%, #08122A 40%, var(--color-canvas) 68%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
@@ -198,7 +172,7 @@ body {
   transform: translateX(-50%);
   border-radius: 9999px;
   filter: blur(70px);
-  background: radial-gradient(circle, rgba(163, 138, 255, 0.5) 0%, rgba(124, 92, 255, 0.12) 44%, transparent 68%);
+  background: radial-gradient(circle, rgba(120, 180, 255, 0.52) 0%, rgba(46, 127, 255, 0.14) 44%, transparent 68%);
 }
 
 /* 4 — dot texture, tight and faint */
@@ -227,7 +201,7 @@ body {
 .field-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 82% 74% at 50% 24%, transparent 42%, rgba(4, 3, 10, 0.72) 100%);
+  background: radial-gradient(ellipse 82% 74% at 50% 24%, transparent 42%, rgba(2, 5, 12, 0.74) 100%);
 }
 
 /* Bottom seam so the field resolves into the page instead of stopping */
@@ -260,7 +234,7 @@ body {
 .btn-primary {
   background: var(--color-accent);
   color: #fff;
-  box-shadow: 0 8px 30px -8px rgba(124, 92, 255, 0.55);
+  box-shadow: 0 8px 30px -8px rgba(46, 127, 255, 0.6);
 }
 
 .btn-secondary {
@@ -273,7 +247,7 @@ body {
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 12px 36px -8px rgba(124, 92, 255, 0.68);
+    box-shadow: 0 12px 36px -8px rgba(46, 127, 255, 0.75);
   }
   .btn-secondary:hover {
     background: var(--color-s3);

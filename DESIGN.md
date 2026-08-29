@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#08080B canvas → #101014 → #16161B → #1C1C22) with hairline borders, a single saturated violet (#7C5CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#060A14 canvas → #0D1424 → #131C30 → #18223A) with hairline borders, a single electric blue (#2E7FFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#7C5CFF"
-  primary-hover: "#9A80FF"
-  primary-press: "#6746E8"
+  primary: "#2E7FFF"
+  primary-hover: "#5C9DFF"
+  primary-press: "#1D63D8"
   on-primary: "#FFFFFF"
-  ink: "#F4F3F7"
-  ink-muted: "#A5A2B3"
-  ink-subtle: "#74718A"
-  ink-tertiary: "#56536B"
-  canvas: "#08070D"
-  surface-1: "#101018"
-  surface-2: "#16151F"
-  surface-3: "#1C1B26"
-  hairline: "#232232"
-  hairline-strong: "#2E2C40"
+  ink: "#EEF3FB"
+  ink-muted: "#9DABC4"
+  ink-subtle: "#6C7C99"
+  ink-tertiary: "#4E5C78"
+  canvas: "#060A14"
+  surface-1: "#0D1424"
+  surface-2: "#131C30"
+  surface-3: "#18223A"
+  hairline: "#1E2A44"
+  hairline-strong: "#2C3C5E"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#08070D"
-  bloom: "rgba(124,92,255,0.55)"
+  inverse-ink: "#060A14"
+  bloom: "rgba(46,127,255,0.6)"
 
 typography:
   hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
@@ -56,13 +56,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#08080B` | Page ground |
-| surface-1 | `#101014` | Default cards, panels |
-| surface-2 | `#16161B` | Hovered / featured cards |
-| surface-3 | `#1C1C22` | Inputs, chips, nested surfaces |
+| canvas | `#060A14` | Page ground |
+| surface-1 | `#0D1424` | Default cards, panels |
+| surface-2 | `#131C30` | Hovered / featured cards |
+| surface-3 | `#18223A` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` red appears ONLY on:
+`{colors.primary}` blue appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -72,7 +72,7 @@ never by white gaps. Four steps only — do not skip levels.
    reference pages. Exactly one heading on the page may carry it.
 
 It never appears on: section headings below the hero, body copy, card borders
-at rest, checkmarks, list bullets, or icons. **If red is doing decoration, remove it.**
+at rest, checkmarks, list bullets, or icons. **If the accent is doing decoration, remove it.**
 
 ### Text
 `ink` headlines · `ink-muted` body · `ink-subtle` captions and meta ·
@@ -89,19 +89,13 @@ eyebrows and numeric labels only.
   contrast against negative-tracked display is what marks them as taxonomy.
 - Sentence case for display and headlines. Uppercase only for mono eyebrows.
 
-### The hero headline is the one exception
-The H1 is set in **Anton**, a heavy condensed grotesque, uppercase, at poster
-scale — `clamp(3.5rem, 15vw, 8rem)` with 0.86 line-height. It is the only
-place this face appears; everything else is Geist. The reference fold runs its
-headline about **7:1 against its subhead**, and that ratio is what makes the
-pitch land. Ours measures 8:1 at desktop, 7.2:1 at tablet.
+### Headline sizing
 
-Two rules follow from it:
-- Keep the headline to **two or three words** so it can run at this size. The
-  promise belongs in the subhead, not the headline.
-- The **video must be smaller than the headline block**. An oversized video
-  under a modest headline is what made earlier passes read as off — the
-  headline is the hook, the video is the proof that follows it.
+The H1 is Geist at `clamp(2.125rem, 4.6vw, 3.5rem)` — sized to carry a full
+sentence. An earlier pass ran it at poster scale in a condensed face, which
+looked striking but only fit two or three words; that left no room to say
+anything, so it was reverted. A headline that states the whole offer beats a
+bigger one that states a category.
 
 ### Forbidden
 - No serif face anywhere.
@@ -141,7 +135,7 @@ height, colored glow at `0 8px 30px -8px rgba(229,50,47,0.5)`.
 
 **`vsl-panel`** — `rounded.xl`, 1px `hairline-strong`, a designed thumbnail
 (brand chip, display headline, play button, optional founder inset) over a
-violet floor-glow, wrapped in the hero bloom. Its interior is lifted with a
+blue floor-glow, wrapped in the hero bloom. Its interior is lifted with a
 gradient so it sits inside the hero field rather than punching a hole in it.
 Never an empty frame. The primary CTA sits **below** this panel — the video is
 the pitch, so the ask comes after it.
@@ -202,10 +196,13 @@ Five stacked layers, in paint order. None is a stock mesh gradient, and the
 grain is what keeps the rest from reading as flat CSS:
 
 1. `field-wash` — violet-to-canvas vertical wash with a cooler blue offset
-2. `field-rings` — concentric rings radiating from behind the VSL
-3. `field-spot` — a broad spotlight the headline sits inside
-4. `field-dots` — fine dot texture, radially masked
-5. `field-grain` — inline SVG turbulence at low opacity, `soft-light`
+2. `field-spot` — a broad spotlight the headline sits inside
+3. `field-dots` — fine dot texture, radially masked
+4. `field-grain` — inline SVG turbulence at low opacity, `soft-light`
+5. `field-vignette` — pulls the corners down so the centre reads as lit
+
+A concentric-ring layer was tried here and removed: it drew attention to the
+background instead of the headline.
 
 Keep the wash luminous. An earlier pass based it on `#0D0A1A` with grain at
 0.34 `overlay`; it read as murk. Light should look like it falls onto the

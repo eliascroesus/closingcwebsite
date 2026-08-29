@@ -1,16 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Anton } from "next/font/google";
 import "./globals.css";
 
-// Hero display only. Heavy condensed grotesque, the face the reference hero uses.
-const anton = Anton({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-anton",
-  display: "swap",
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://closingking.com";
 
@@ -46,7 +38,7 @@ export const metadata: Metadata = {
 
 // Dark-only site: tell the UA so form controls and scrollbars render dark too.
 export const viewport: Viewport = {
-  themeColor: "#08080B",
+  themeColor: "#060A14",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -59,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${anton.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <a
           href="#main"

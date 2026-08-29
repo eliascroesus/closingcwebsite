@@ -13,7 +13,6 @@ export function Hero() {
       {/* Layered field — see .field-* in globals.css */}
       <div className="field" aria-hidden>
         <div className="field-wash" />
-        <div className="field-rings" />
         <div className="field-spot" />
         <div className="field-dots" />
         <div className="field-grain" />
@@ -40,11 +39,11 @@ export function Hero() {
         </div>
 
         <h1
-          className="t-hero rise mt-8 text-center"
+          className="t-display rise mx-auto mt-8 max-w-3xl text-center text-balance"
           style={{ animationDelay: "110ms" }}
         >
-          <span className="block">{hero.headline.pre}</span>
-          <span className="block text-accent">{hero.headline.accent}</span>
+          {hero.headline.pre}{" "}
+          <span className="text-accent">{hero.headline.accent}</span>
         </h1>
 
         <p
@@ -69,7 +68,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[56%] h-[88%] w-[94%] -translate-x-1/2 -translate-y-1/2" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1A1730] to-[#0E0C1A] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(124,92,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#132241] to-[#0A1120] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(46,127,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -85,7 +84,7 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(124,92,255,0.6),transparent_70%)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(46,127,255,0.6),transparent_70%)]" />
                 <span aria-hidden className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
@@ -99,7 +98,7 @@ export function Hero() {
                     <br />
                     in 24 hours
                   </span>
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(124,92,255,0.9)] transition-transform duration-300 group-hover:scale-105">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(46,127,255,0.9)] transition-transform duration-300 group-hover:scale-105">
                     <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-white" fill="currentColor">
                       <path d="M8 5v14l11-7z" />
                     </svg>
