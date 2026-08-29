@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#060A14 canvas → #0D1424 → #131C30 → #18223A) with hairline borders, a single electric blue (#2E7FFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#04091A canvas → #0A1128 → #0E1733 → #131D40) with hairline borders, a single neon yellow (#E6FF33) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#2E7FFF"
-  primary-hover: "#5C9DFF"
-  primary-press: "#1D63D8"
+  primary: "#E6FF33"
+  primary-hover: "#F1FF70"
+  primary-press: "#C6DF16"
   on-primary: "#FFFFFF"
-  ink: "#EEF3FB"
-  ink-muted: "#9DABC4"
-  ink-subtle: "#6C7C99"
-  ink-tertiary: "#4E5C78"
-  canvas: "#060A14"
-  surface-1: "#0D1424"
-  surface-2: "#131C30"
-  surface-3: "#18223A"
-  hairline: "#1E2A44"
-  hairline-strong: "#2C3C5E"
+  ink: "#EEF2FB"
+  ink-muted: "#98A6C4"
+  ink-subtle: "#6A7A9C"
+  ink-tertiary: "#4C5B7C"
+  canvas: "#04091A"
+  surface-1: "#0A1128"
+  surface-2: "#0E1733"
+  surface-3: "#131D40"
+  hairline: "#1B2749"
+  hairline-strong: "#283761"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#060A14"
-  bloom: "rgba(46,127,255,0.6)"
+  inverse-ink: "#04091A"
+  bloom: "rgba(230,255,51,0.34)"
 
 typography:
   hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
@@ -56,13 +56,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#060A14` | Page ground |
-| surface-1 | `#0D1424` | Default cards, panels |
-| surface-2 | `#131C30` | Hovered / featured cards |
-| surface-3 | `#18223A` | Inputs, chips, nested surfaces |
+| canvas | `#04091A` | Page ground |
+| surface-1 | `#0A1128` | Default cards, panels |
+| surface-2 | `#0E1733` | Hovered / featured cards |
+| surface-3 | `#131D40` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` blue appears ONLY on:
+`{colors.primary}` neon yellow appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -125,8 +125,8 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 
 ## Components
 
-**`btn-primary`** — red fill, white text, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(229,50,47,0.5)`.
+**`btn-primary`** — neon fill, dark ink, pill, 12px/24px padding, min 48px tap
+height, colored glow at `0 8px 30px -8px rgba(230,255,51,0.45)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -135,7 +135,7 @@ height, colored glow at `0 8px 30px -8px rgba(229,50,47,0.5)`.
 
 **`vsl-panel`** — `rounded.xl`, 1px `hairline-strong`, a designed thumbnail
 (brand chip, display headline, play button, optional founder inset) over a
-blue floor-glow, wrapped in the hero bloom. Its interior is lifted with a
+accent rim, wrapped in the hero bloom. Its interior is lifted with a
 gradient so it sits inside the hero field rather than punching a hole in it.
 Never an empty frame. The primary CTA sits **below** this panel — the video is
 the pitch, so the ask comes after it.
@@ -189,6 +189,17 @@ deciding whether to book a call asks, in this order:
 
 Problem-agitation sections were removed: the visitor already knows hiring
 closers is painful, so restating it spends attention without buying trust.
+
+## Working with a near-white accent
+
+Neon yellow sits at the top of the luminance range, which changes two rules
+that a mid-tone accent never forces:
+
+- **Anything placed on the accent must be dark ink** (`on-primary` `#04091A`),
+  never white. The CTA measures 17.7:1 that way. White on neon is unreadable.
+- **The hero wash stays blue, not yellow.** Yellow light over a navy ground
+  mixes toward green and reads as murk. The accent appears as a tight rim on
+  the video panel and the CTA glow, never as a broad wash.
 
 ## The hero field
 
