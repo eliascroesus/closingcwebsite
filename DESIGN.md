@@ -66,10 +66,12 @@ never by white gaps. Four steps only — do not skip levels.
 2. primary CTA fills,
 3. focus rings,
 4. stat figures and the calculator's headline number,
-5. the hero VSL bloom and the closing CTA band.
+5. the hero VSL bloom and the closing CTA band,
+6. the second line of the H1 only — the hero's payoff phrase, mirroring the
+   reference pages. Exactly one heading on the page may carry it.
 
-It never appears on: section headings, body copy, card borders at rest,
-checkmarks, list bullets, or icons. **If red is doing decoration, remove it.**
+It never appears on: section headings below the hero, body copy, card borders
+at rest, checkmarks, list bullets, or icons. **If red is doing decoration, remove it.**
 
 ### Text
 `ink` headlines · `ink-muted` body · `ink-subtle` captions and meta ·

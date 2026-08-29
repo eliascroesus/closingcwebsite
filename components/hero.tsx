@@ -24,11 +24,15 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Two stacked lines, as in the reference heroes — statement, then payoff */}
         <h1
           className="t-display rise mx-auto mt-5 max-w-3xl text-center text-balance sm:mt-6"
           style={{ animationDelay: "60ms" }}
         >
-          {hero.headline.pre} {hero.headlineLine2} {hero.headline.accent}
+          <span className="block">
+            {[hero.headline.pre, hero.headlineLine2].filter(Boolean).join(" ")}
+          </span>
+          <span className="block text-accent">{hero.headline.accent}</span>
         </h1>
 
         <p
