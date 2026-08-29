@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 // Dark-only site: tell the UA so form controls and scrollbars render dark too.
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#050706",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -55,7 +55,7 @@ export default function RootLayout({
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-medium focus:text-[#140F05]"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:font-medium focus:text-[#03150C]"
         >
           Skip to content
         </a>

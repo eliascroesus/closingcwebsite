@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#000000 canvas → #0D0C0B → #141311 → #1C1A17) with hairline borders, a single saturated amber-orange (#FFA119) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#050706 canvas → #0D100E → #131714 → #1A1F1C) with hairline borders, a single spring green (#00DC82) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#FFA119"
-  primary-hover: "#FFB84D"
-  primary-press: "#E0850A"
+  primary: "#00DC82"
+  primary-hover: "#4DEBA8"
+  primary-press: "#00B86D"
   on-primary: "#FFFFFF"
-  ink: "#FAF9F7"
-  ink-muted: "#A8A29A"
-  ink-subtle: "#7A746C"
-  ink-tertiary: "#56514A"
-  canvas: "#000000"
-  surface-1: "#0D0C0B"
-  surface-2: "#141311"
-  surface-3: "#1C1A17"
-  hairline: "#262320"
-  hairline-strong: "#37332C"
+  ink: "#F5F8F6"
+  ink-muted: "#9BA5A0"
+  ink-subtle: "#6E7873"
+  ink-tertiary: "#4F5854"
+  canvas: "#050706"
+  surface-1: "#0D100E"
+  surface-2: "#131714"
+  surface-3: "#1A1F1C"
+  hairline: "#242A26"
+  hairline-strong: "#343C37"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#000000"
-  bloom: "rgba(255,161,25,0.42)"
+  inverse-ink: "#050706"
+  bloom: "rgba(0,220,130,0.4)"
 
 typography:
   hero:       { fontFamily: Anton, fontSize: 128px, fontWeight: 400, lineHeight: 0.86, letterSpacing: -0.015em, textTransform: uppercase }
@@ -56,13 +56,13 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#000000` | Page ground |
-| surface-1 | `#0D0C0B` | Default cards, panels |
-| surface-2 | `#141311` | Hovered / featured cards |
-| surface-3 | `#1C1A17` | Inputs, chips, nested surfaces |
+| canvas | `#050706` | Page ground |
+| surface-1 | `#0D100E` | Default cards, panels |
+| surface-2 | `#131714` | Hovered / featured cards |
+| surface-3 | `#1A1F1C` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
-`{colors.primary}` amber appears ONLY on:
+`{colors.primary}` green appears ONLY on:
 1. the wordmark's crown,
 2. primary CTA fills,
 3. focus rings,
@@ -125,8 +125,8 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 
 ## Components
 
-**`btn-primary`** — amber fill, near-black ink, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(255,161,25,0.5)`.
+**`btn-primary`** — green fill, near-black ink, pill, 12px/24px padding, min 48px tap
+height, colored glow at `0 8px 30px -8px rgba(0,220,130,0.5)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -190,21 +190,41 @@ deciding whether to book a call asks, in this order:
 Problem-agitation sections were removed: the visitor already knows hiring
 closers is painful, so restating it spends attention without buying trust.
 
-## Working with a light warm accent
+## The fold's copy structure
 
-Amber sits high in the luminance range, so **anything placed on it takes
-near-black ink** (`on-primary` `#140F05`), never white. The CTA measures 9.4:1
-that way.
+Taken from BEC Growth. The pill above the headline is not a label — it is the
+**first clause of a sentence the headline finishes**:
 
-Unlike a yellow-on-navy pairing, amber over black has no colour-mixing
-problem, so the hero wash may carry the accent warmly rather than being held
-to a rim.
+> *pill:* in 24 hours, you will
+> *line 1:* Have A Proven Closer
+> *line 2:* On Your Offer
 
-### Why this amber and not the earlier gold
-An early pass used `#F0B23C` and read as mustard. Two causes, both fixed here:
-it was under-saturated, and it sat on a warm-grey ground (`#06060A` with warm
-neutrals) that muddied it. This accent is fully saturated and sits on **pure
-black** with only a faint warm bias in the greys, so it reads hot.
+Rules that follow:
+- The pill is **lowercase sentence case**, in the accent colour — not a mono
+  uppercase eyebrow. It only works if it reads as speech.
+- **Line 2 is larger than line 1** (1.14em) and carries the accent plus a soft
+  text-glow (`.t-hero-accent`). The reference sets it in an italic serif; we
+  get the same hierarchy from size, colour and glow, because the italic-serif
+  accent is banned elsewhere in this document.
+- The subhead is **one line** that qualifies the claim, never a paragraph.
+- The CTA carries scarcity, not just an action.
+
+## Working with a light accent
+
+Spring green sits high in the luminance range, so **anything placed on it
+takes near-black ink** (`on-primary` `#03150C`), never white. The CTA measures
+10.4:1 that way.
+
+Green over a near-black ground has no colour-mixing problem, so the hero wash
+may carry the accent rather than being held to a rim.
+
+### Palette history
+Gold, red, violet, electric blue, neon yellow and amber were each tried and
+rejected. Two lessons worth keeping: an under-saturated accent on a same-hue
+ground reads as mud (the `#F0B23C` gold), and a near-white accent over a
+saturated ground mixes toward a third colour (yellow over navy went green).
+Green on near-black avoids both, and it is the one high-contrast direction
+none of the reference pages use.
 
 ## The hero field
 

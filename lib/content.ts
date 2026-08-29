@@ -34,14 +34,17 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "Commission only · Limited spots",
-  headline: { pre: "Put A Proven Closer On Your Offer", accent: "In 24 Hours", post: "" },
+  // The pill opens a sentence the headline finishes:
+  // "in 24 hours, you will / have a proven closer / on your offer"
+  eyebrow: "in 24 hours, you will",
+  headline: { pre: "Have A Proven Closer", accent: "On Your Offer", post: "" },
   headlineLine2: "",
-  sub: "No job posts. No vetting. No retainer — you pay only when they close.",
-  cta: "Get Matched Today",
+  sub: "From ClosingKing's bench of 300+ vetted closers and setters.",
+  cta: "Get Matched — 4 Spots Left This Month",
   ctaSub: "You pay only when they close.",
   videoLabel: "Watch the 2-minute breakdown",
   videoTitle: "How we install a closer in 24 hours",
+  videoKicker: "300+ vetted reps. Commission only.",
 };
 
 export const tools = [

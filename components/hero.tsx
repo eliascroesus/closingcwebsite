@@ -29,12 +29,14 @@ export function Hero() {
             <span>Closing<span className="text-accent">King</span></span>
           </a>
           <span aria-hidden className="hidden h-4 w-px bg-hairline-strong sm:block" />
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/[0.09] px-3 py-1.5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.08] px-3.5 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
-            <span className="t-eyebrow !text-ink-muted">{hero.eyebrow}</span>
+            <span className="text-[13px] font-medium tracking-tight text-accent">
+              {hero.eyebrow}
+            </span>
           </div>
         </div>
 
@@ -42,8 +44,8 @@ export function Hero() {
           className="t-display rise mx-auto mt-8 max-w-3xl text-center text-balance"
           style={{ animationDelay: "110ms" }}
         >
-          {hero.headline.pre}{" "}
-          <span className="text-accent">{hero.headline.accent}</span>
+          <span className="block">{hero.headline.pre}</span>
+          <span className="t-hero-accent">{hero.headline.accent}</span>
         </h1>
 
         <p
@@ -68,7 +70,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1B1610] to-[#0A0806] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(255,161,25,0.42),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#0F1A15] to-[#060A08] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(0,220,130,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -84,7 +86,7 @@ export function Hero() {
                 aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
                 className="group relative block h-full w-full text-left"
               >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(255,161,25,0.28),transparent_66%)]" />
+                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(0,220,130,0.26),transparent_66%)]" />
                 <span aria-hidden className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_78%_72%_at_50%_100%,#000,transparent)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
@@ -92,24 +94,30 @@ export function Hero() {
                   <span className="text-[10px] font-medium text-ink-muted">ClosingKing</span>
                 </span>
 
-                <span className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6">
-                  <span className="block text-center text-[clamp(1.3rem,4vw,2.25rem)] font-semibold leading-[1.05] tracking-[-0.038em] text-ink">
-                    Install a closer
+                <span className="absolute inset-0 flex flex-col items-center justify-center px-6">
+                  <span className="block text-center text-[clamp(1.35rem,4.2vw,2.35rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-ink">
+                    install a closer
                     <br />
                     in 24 hours
                   </span>
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(255,161,25,0.75)] transition-transform duration-300 group-hover:scale-105">
-                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#140F05]" fill="currentColor">
+                  <span className="mt-2.5 block text-center text-[11.5px] leading-relaxed text-ink-subtle">
+                    {hero.videoKicker}
+                  </span>
+                  <span className="mt-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(0,220,130,0.75)] transition-transform duration-300 group-hover:scale-105">
+                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#03150C]" fill="currentColor">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </span>
                 </span>
 
+                {/* Founder inset, rounded-square as in the reference. Set
+                    brand.founderImage in lib/content.ts to switch it on. */}
                 {brand.founderImage && (
-                  <span className="absolute bottom-4 right-4 hidden h-16 w-16 overflow-hidden rounded-full border border-hairline-strong bg-s3 sm:block">
+                  <span className="absolute bottom-4 right-4 hidden h-20 w-20 overflow-hidden rounded-2xl border border-hairline-strong bg-s3 sm:block">
                     <img src={brand.founderImage} alt="" className="h-full w-full object-cover" />
                   </span>
                 )}
+
               </button>
             )}
           </div>

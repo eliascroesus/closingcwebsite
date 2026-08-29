@@ -8,26 +8,27 @@
    ============================================================ */
 
 @theme {
-  /* True black ground, saturated amber-orange accent. Fully saturated rather
-     than the desaturated gold of an earlier pass, which read as mustard.
-     Neutrals carry a faint warm bias so the greys read chosen. */
-  --color-canvas: #000000;
-  --color-s1: #0D0C0B;
-  --color-s2: #141311;
-  --color-s3: #1C1A17;
-  --color-hairline: #262320;
-  --color-hairline-strong: #37332C;
+  /* Near-black ground with a spring-green accent. Green reads as revenue and
+     growth, which suits a business paid on closed deals, and it is the one
+     high-contrast direction none of the reference pages use. Neutrals carry a
+     faint green bias so the greys read chosen. */
+  --color-canvas: #050706;
+  --color-s1: #0D100E;
+  --color-s2: #131714;
+  --color-s3: #1A1F1C;
+  --color-hairline: #242A26;
+  --color-hairline-strong: #343C37;
 
-  --color-accent: #FFA119;
-  --color-accent-hover: #FFB84D;
-  --color-accent-press: #E0850A;
-  /* Amber is light, so anything sitting on it takes near-black ink. */
-  --color-on-accent: #140F05;
+  --color-accent: #00DC82;
+  --color-accent-hover: #4DEBA8;
+  --color-accent-press: #00B86D;
+  /* The accent is light, so anything sitting on it takes near-black ink. */
+  --color-on-accent: #03150C;
 
-  --color-ink: #FAF9F7;
-  --color-ink-muted: #A8A29A;
-  --color-ink-subtle: #7A746C;
-  --color-ink-tertiary: #56514A;
+  --color-ink: #F5F8F6;
+  --color-ink-muted: #9BA5A0;
+  --color-ink-subtle: #6E7873;
+  --color-ink-tertiary: #4F5854;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -100,6 +101,15 @@ body {
 
 /* Eyebrows invert the tracking — mono, uppercase, positive. This contrast is
    what marks them as taxonomy rather than headline. */
+/* The accent half of the hero headline, glowing as in the reference */
+.t-hero-accent {
+  color: var(--color-accent);
+  text-shadow: 0 0 42px rgba(0, 220, 130, 0.45), 0 0 14px rgba(0, 220, 130, 0.25);
+  font-size: 1.14em;
+  display: block;
+  line-height: 1.02;
+}
+
 .t-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -141,8 +151,8 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(255, 161, 25, 0.42) 0%,
-    rgba(255, 161, 25, 0.14) 45%,
+    rgba(0, 220, 130, 0.4) 0%,
+    rgba(0, 220, 130, 0.13) 45%,
     transparent 72%
   );
 }
@@ -160,9 +170,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(255, 176, 64, 0.34) 0%, rgba(255, 128, 20, 0.1) 46%, transparent 76%),
-    radial-gradient(50% 24% at 80% 6%, rgba(255, 96, 32, 0.10) 0%, transparent 60%),
-    linear-gradient(180deg, #1C1206 0%, #0A0703 38%, var(--color-canvas) 66%);
+    radial-gradient(closest-side at 50% -4%, rgba(0, 220, 130, 0.26) 0%, rgba(0, 180, 110, 0.08) 46%, transparent 74%),
+    radial-gradient(50% 24% at 80% 6%, rgba(0, 200, 160, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #04170F 0%, #040A07 38%, var(--color-canvas) 66%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
@@ -175,7 +185,7 @@ body {
   transform: translateX(-50%);
   border-radius: 9999px;
   filter: blur(70px);
-  background: radial-gradient(circle, rgba(255, 176, 64, 0.4) 0%, rgba(255, 140, 26, 0.1) 44%, transparent 68%);
+  background: radial-gradient(circle, rgba(0, 220, 130, 0.34) 0%, rgba(0, 190, 120, 0.09) 44%, transparent 68%);
 }
 
 /* 4 — dot texture, tight and faint */
@@ -238,7 +248,7 @@ body {
   background: var(--color-accent);
   color: var(--color-on-accent);
   font-weight: 600;
-  box-shadow: 0 8px 30px -8px rgba(255, 161, 25, 0.5);
+  box-shadow: 0 8px 30px -8px rgba(0, 220, 130, 0.5);
 }
 
 .btn-secondary {
@@ -251,7 +261,7 @@ body {
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 12px 36px -8px rgba(255, 161, 25, 0.68);
+    box-shadow: 0 12px 36px -8px rgba(0, 220, 130, 0.68);
   }
   .btn-secondary:hover {
     background: var(--color-s3);
