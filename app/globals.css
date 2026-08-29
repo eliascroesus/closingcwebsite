@@ -13,11 +13,11 @@
      high-contrast direction none of the reference pages use. Neutrals carry a
      faint green bias so the greys read chosen. */
   --color-canvas: #0C0620;
-  --color-s1: #170C33;
-  --color-s2: #1D1140;
-  --color-s3: #26174F;
-  --color-hairline: #32205C;
-  --color-hairline-strong: #452E7C;
+  --color-s1: #150932;
+  --color-s2: #1B0D40;
+  --color-s3: #23124F;
+  --color-hairline: #301C5C;
+  --color-hairline-strong: #422880;
 
   --color-accent: #B07CFF;
   --color-accent-hover: #C79EFF;
@@ -67,7 +67,7 @@ body {
   font-family: var(--font-heading);
   font-weight: 680;
   font-size: clamp(2.375rem, 5.2vw, 4rem);
-  line-height: 1.06;
+  line-height: 0.97;
   letter-spacing: -0.038em;
 }
 
@@ -117,12 +117,12 @@ body {
   /* Instrument Serif has a tall x-height, so it needs far less upsizing than a
      didone would. Line-height under 1 plus a negative top margin closes the
      gap the larger size opens between the two headline lines. */
-  font-size: 1.16em;
-  letter-spacing: -0.015em;
+  font-size: 1.52em;
+  letter-spacing: -0.02em;
   display: block;
-  line-height: 0.94;
-  margin-top: -0.04em;
-  padding-bottom: 0.08em;
+  line-height: 0.84;
+  margin-top: -0.02em;
+  padding-bottom: 0.1em;
 }
 
 .t-eyebrow {

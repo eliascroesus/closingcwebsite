@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0C0620 canvas → #170C33 → #1D1140 → #26174F) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0C0620 canvas → #150932 → #1B0D40 → #23124F) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
   primary: "#B07CFF"
@@ -13,11 +13,11 @@ colors:
   ink-subtle: "#8175A6"
   ink-tertiary: "#5B4E7D"
   canvas: "#0C0620"
-  surface-1: "#170C33"
-  surface-2: "#1D1140"
-  surface-3: "#26174F"
-  hairline: "#32205C"
-  hairline-strong: "#452E7C"
+  surface-1: "#150932"
+  surface-2: "#1B0D40"
+  surface-3: "#23124F"
+  hairline: "#301C5C"
+  hairline-strong: "#422880"
   inverse-canvas: "#FFFFFF"
   inverse-ink: "#0C0620"
   bloom: "rgba(176,124,255,0.45)"
@@ -57,9 +57,9 @@ never by white gaps. Four steps only — do not skip levels.
 | Level | Value | Use |
 |---|---|---|
 | canvas | `#0C0620` | Page ground |
-| surface-1 | `#170C33` | Default cards, panels |
-| surface-2 | `#1D1140` | Hovered / featured cards |
-| surface-3 | `#26174F` | Inputs, chips, nested surfaces |
+| surface-1 | `#150932` | Default cards, panels |
+| surface-2 | `#1B0D40` | Hovered / featured cards |
+| surface-3 | `#23124F` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
 `{colors.primary}` purple appears ONLY on:
@@ -109,11 +109,14 @@ Display was tried first and rejected: it is a high-contrast didone with ball
 terminals and reads decorative, where the reference uses a moderate-contrast
 modern serif.
 
-Its metrics have to be tuned, or the two headline lines drift apart:
-`font-size: 1.16em` (Instrument Serif has a tall x-height, so it needs far
-less upsizing than a didone), `line-height: 0.94`, and `margin-top: -0.04em`.
-Together these close what was a ~20px gap to roughly −3px, so the sans and
-serif lines read as one locked block.
+Its metrics have to be tuned, or the two headline lines drift apart. Current
+values: `font-size: 1.52em`, `line-height: 0.84`, `margin-top: -0.02em`,
+`padding-bottom: 0.1em`. At a 64px sans line that puts the serif at 97px with
+a −2px gap between the two.
+
+**The rule:** whenever the serif's size changes, its line-height must come
+down with it. A larger font-size on its own opens the gap — the two moves are
+a pair, not independent. `.t-display` sits at `line-height: 0.97` to match.
 
 This is a deliberate, single-instance exception requested for the hero. An
 italic serif used *anywhere else* — section headings, card titles, pull quotes
