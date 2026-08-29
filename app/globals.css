@@ -12,23 +12,23 @@
      growth, which suits a business paid on closed deals, and it is the one
      high-contrast direction none of the reference pages use. Neutrals carry a
      faint green bias so the greys read chosen. */
-  --color-canvas: #0C0620;
-  --color-s1: #110726;
-  --color-s2: #170A33;
-  --color-s3: #1E0F42;
-  --color-hairline: #301C5C;
-  --color-hairline-strong: #422880;
+  --color-canvas: #08061A;
+  --color-s1: #0E0B26;
+  --color-s2: #131031;
+  --color-s3: #19153F;
+  --color-hairline: #241F54;
+  --color-hairline-strong: #322B74;
 
-  --color-accent: #B07CFF;
-  --color-accent-hover: #C79EFF;
-  --color-accent-press: #9457E8;
+  --color-accent: #968AFF;
+  --color-accent-hover: #B0A7FF;
+  --color-accent-press: #7A6BE8;
   /* The accent is light, so anything sitting on it takes near-black ink. */
-  --color-on-accent: #120726;
+  --color-on-accent: #0A0820;
 
-  --color-ink: #F5F1FC;
-  --color-ink-muted: #AC9FCB;
-  --color-ink-subtle: #8175A6;
-  --color-ink-tertiary: #5B4E7D;
+  --color-ink: #F1F0FB;
+  --color-ink-muted: #A09BC4;
+  --color-ink-subtle: #78729F;
+  --color-ink-tertiary: #524C76;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -113,7 +113,7 @@ body {
   font-style: italic;
   font-weight: 600;
   color: var(--color-accent);
-  text-shadow: 0 0 40px rgba(176, 124, 255, 0.45), 0 0 14px rgba(176, 124, 255, 0.25);
+  text-shadow: 0 0 40px rgba(150, 138, 255, 0.42), 0 0 14px rgba(150, 138, 255, 0.22);
   /* Instrument Serif has a tall x-height, so it needs far less upsizing than a
      didone would. Line-height under 1 plus a negative top margin closes the
      gap the larger size opens between the two headline lines. */
@@ -166,8 +166,8 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(176, 124, 255, 0.34) 0%,
-    rgba(176, 124, 255, 0.11) 45%,
+    rgba(150, 138, 255, 0.34) 0%,
+    rgba(150, 138, 255, 0.11) 45%,
     transparent 72%
   );
 }
@@ -185,9 +185,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(150, 96, 240, 0.1) 0%, rgba(105, 60, 200, 0.03) 44%, transparent 68%),
-    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.025) 0%, transparent 56%),
-    linear-gradient(180deg, #120730 0%, #0E0724 22%, var(--color-canvas) 46%);
+    radial-gradient(closest-side at 50% -4%, rgba(130, 122, 245, 0.1) 0%, rgba(88, 80, 205, 0.03) 44%, transparent 68%),
+    radial-gradient(50% 24% at 80% 6%, rgba(84, 92, 225, 0.025) 0%, transparent 56%),
+    linear-gradient(180deg, #0F0C2C 0%, #0B0920 22%, var(--color-canvas) 46%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
@@ -200,7 +200,7 @@ body {
   transform: translateX(-50%);
   border-radius: 9999px;
   filter: blur(70px);
-  background: radial-gradient(circle, rgba(160, 110, 245, 0.26) 0%, rgba(130, 85, 220, 0.07) 44%, transparent 68%);
+  background: radial-gradient(circle, rgba(140, 132, 245, 0.26) 0%, rgba(110, 102, 220, 0.07) 44%, transparent 68%);
 }
 
 /* 5 — film grain. One SVG turbulence tile, tiled; kills the plastic look. */
@@ -252,7 +252,7 @@ body {
   background: var(--color-accent);
   color: var(--color-on-accent);
   font-weight: 600;
-  box-shadow: 0 8px 30px -8px rgba(176, 124, 255, 0.55);
+  box-shadow: 0 8px 30px -8px rgba(150, 138, 255, 0.55);
 }
 
 .btn-secondary {
@@ -265,7 +265,7 @@ body {
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 12px 36px -8px rgba(176, 124, 255, 0.72);
+    box-shadow: 0 12px 36px -8px rgba(150, 138, 255, 0.72);
   }
   .btn-secondary:hover {
     background: var(--color-s3);

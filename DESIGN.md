@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#0C0620 canvas → #110726 → #170A33 → #1E0F42) with hairline borders, a brighter purple (#B07CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#08061A canvas → #0E0B26 → #131031 → #19153F) with hairline borders, a periwinkle indigo (#968AFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#B07CFF"
-  primary-hover: "#C79EFF"
-  primary-press: "#9457E8"
+  primary: "#968AFF"
+  primary-hover: "#B0A7FF"
+  primary-press: "#7A6BE8"
   on-primary: "#FFFFFF"
-  ink: "#F5F1FC"
-  ink-muted: "#AC9FCB"
-  ink-subtle: "#8175A6"
-  ink-tertiary: "#5B4E7D"
-  canvas: "#0C0620"
-  surface-1: "#110726"
-  surface-2: "#170A33"
-  surface-3: "#1E0F42"
-  hairline: "#301C5C"
-  hairline-strong: "#422880"
+  ink: "#F1F0FB"
+  ink-muted: "#A09BC4"
+  ink-subtle: "#78729F"
+  ink-tertiary: "#524C76"
+  canvas: "#08061A"
+  surface-1: "#0E0B26"
+  surface-2: "#131031"
+  surface-3: "#19153F"
+  hairline: "#241F54"
+  hairline-strong: "#322B74"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#0C0620"
-  bloom: "rgba(176,124,255,0.45)"
+  inverse-ink: "#08061A"
+  bloom: "rgba(150,138,255,0.34)"
 
 typography:
   display-xl: { fontFamily: Geist, fontSize: 60px, fontWeight: 600, lineHeight: 1.02, letterSpacing: -2.4px }
@@ -55,10 +55,10 @@ never by white gaps. Four steps only — do not skip levels.
 
 | Level | Value | Use |
 |---|---|---|
-| canvas | `#0C0620` | Page ground |
-| surface-1 | `#110726` | Default cards, panels |
-| surface-2 | `#170A33` | Hovered / featured cards |
-| surface-3 | `#1E0F42` | Inputs, chips, nested surfaces |
+| canvas | `#08061A` | Page ground |
+| surface-1 | `#0E0B26` | Default cards, panels |
+| surface-2 | `#131031` | Hovered / featured cards |
+| surface-3 | `#19153F` | Inputs, chips, nested surfaces |
 
 ### Accent scarcity — the governing rule
 `{colors.primary}` purple appears ONLY on:
@@ -151,7 +151,7 @@ Inputs `{rounded.md}` 8px. Chips `{rounded.sm}` 6px.
 ## Components
 
 **`btn-primary`** — purple fill, near-black ink, pill, 12px/24px padding, min 48px tap
-height, colored glow at `0 8px 30px -8px rgba(176,124,255,0.55)`.
+height, colored glow at `0 8px 30px -8px rgba(150,138,255,0.55)`.
 
 **`btn-secondary`** — `surface-2` fill, `ink` text, 1px `hairline-strong`, pill.
 
@@ -251,6 +251,12 @@ Gold, red, violet, electric blue, neon yellow and amber were each tried and
 rejected. Two lessons worth keeping: an under-saturated accent on a same-hue
 ground reads as mud (the `#F0B23C` gold), and a near-white accent over a
 saturated ground mixes toward a third colour (yellow over navy went green).
+**Stay off the magenta side of violet.** `#B07CFF` sits at hue 268 and read as
+pink once the serif ran at display size; large type amplifies a hue cast that
+is invisible at body size. The accent is now hue 246 and the ground hue 240,
+so both sit in blue-violet. Anything above hue ~258 will start to read pink
+again.
+
 The ground must be **both dark and saturated**, which took three passes to
 land. `#1B0F38` at 0.34 spotlight read as washed lavender. Dropping to
 `#150929` at 0.20 fixed the brightness but went grey-purple — desaturated, not
