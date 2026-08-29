@@ -4,10 +4,15 @@ import { Calculator } from "@/components/calculator";
 import { Faq } from "@/components/faq";
 import { ApplyForm } from "@/components/apply-form";
 import {
-  Marquee, Problem, How, Pillars, Pricing, Guarantee,
-  Testimonials, Audience, ForClosers, FinalCta, Footer,
+  Marquee, Pricing, Testimonials, How, Guarantee,
+  Audience, ForClosers, FinalCta, Footer,
 } from "@/components/sections";
 
+/**
+ * Order follows the buyer's decision sequence:
+ * what is it → what does it cost → does it work → how does it work →
+ * what if it goes wrong → what's it worth → am I a fit → objections → book.
+ */
 export default function Page() {
   return (
     <>
@@ -15,16 +20,14 @@ export default function Page() {
       <main id="main">
         <Hero />
         <Marquee />
-        <Problem />
-        <How />
-        <Pillars />
-        <Calculator />
         <Pricing />
-        <Guarantee />
         <Testimonials />
+        <How />
+        <Guarantee />
+        <Calculator />
         <Audience />
-        <ForClosers />
         <Faq />
+        <ForClosers />
         <ApplyForm />
         <FinalCta />
       </main>

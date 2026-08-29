@@ -10,9 +10,10 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="grid-floor" aria-hidden />
+      <div className="aurora" aria-hidden />
+      <div className="dot-field" aria-hidden />
 
-      <div className="relative mx-auto max-w-[1120px] px-5 pb-12 pt-20 sm:px-6 sm:pb-14 sm:pt-24 lg:pt-26">
+      <div className="relative mx-auto max-w-[1080px] px-5 pb-12 pt-20 sm:px-6 sm:pb-14 sm:pt-22">
         {/* Status chip — mono, neutral. The dot is the only red here. */}
         <div className="rise flex justify-center">
           <div className="inline-flex items-center gap-2 rounded-md border border-hairline bg-s1 px-2.5 py-1.5">
@@ -56,7 +57,7 @@ export function Hero() {
             className="bloom left-1/2 top-[58%] h-[95%] w-[100%] -translate-x-1/2 -translate-y-1/2"
           />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-s1 shadow-[0_0_70px_-14px_rgba(229,50,47,0.55)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-s1 shadow-[0_0_70px_-14px_rgba(124,92,255,0.5),inset_0_1px_0_0_rgba(255,255,255,0.07)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
@@ -74,11 +75,11 @@ export function Hero() {
               >
                 <span
                   aria-hidden
-                  className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_118%,rgba(229,50,47,0.5),transparent_60%)]"
+                  className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_118%,rgba(124,92,255,0.55),transparent_68%)]"
                 />
                 <span
                   aria-hidden
-                  className="absolute inset-0 opacity-[0.09] [background-image:linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_100%,#000,transparent)]"
+                  className="absolute inset-0 opacity-[0.09] [background-image:radial-gradient(circle_at_center,#fff_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_75%_70%_at_50%_100%,#000,transparent)]"
                 />
 
                 <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:left-5 sm:top-5">
@@ -88,7 +89,7 @@ export function Hero() {
                   </span>
                 </span>
 
-                <span className="absolute inset-x-0 top-1/2 -translate-y-[58%] px-6 text-center">
+                <span className="absolute inset-x-0 top-[38%] -translate-y-1/2 px-6 text-center">
                   <span className="block text-[clamp(1.3rem,4.2vw,2.4rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-ink">
                     Install a closer
                     <br />
@@ -96,7 +97,7 @@ export function Hero() {
                   </span>
                 </span>
 
-                <span className="absolute left-1/2 top-[72%] flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent shadow-[0_8px_32px_-6px_rgba(229,50,47,0.75)] transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
+                <span className="absolute left-1/2 top-[68%] flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent shadow-[0_8px_32px_-6px_rgba(124,92,255,0.8)] transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
                   <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-white" fill="currentColor">
                     <path d="M8 5v14l11-7z" />
                   </svg>

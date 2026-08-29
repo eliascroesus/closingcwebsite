@@ -1,26 +1,26 @@
 ---
 version: alpha
 name: ClosingKing-design-system
-description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#08080B canvas → #101014 → #16161B → #1C1C22) with hairline borders, a single saturated red (#E5322F) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
+description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#08080B canvas → #101014 → #16161B → #1C1C22) with hairline borders, a single saturated violet (#7C5CFF) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
-  primary: "#E5322F"
-  primary-hover: "#FF4A44"
-  primary-press: "#C82724"
+  primary: "#7C5CFF"
+  primary-hover: "#9A80FF"
+  primary-press: "#6746E8"
   on-primary: "#FFFFFF"
-  ink: "#F5F5F7"
-  ink-muted: "#A1A1AA"
-  ink-subtle: "#71717A"
-  ink-tertiary: "#52525B"
-  canvas: "#08080B"
-  surface-1: "#101014"
-  surface-2: "#16161B"
-  surface-3: "#1C1C22"
-  hairline: "#232329"
-  hairline-strong: "#2E2E36"
+  ink: "#F4F3F7"
+  ink-muted: "#A5A2B3"
+  ink-subtle: "#74718A"
+  ink-tertiary: "#56536B"
+  canvas: "#08070D"
+  surface-1: "#101018"
+  surface-2: "#16151F"
+  surface-3: "#1C1B26"
+  hairline: "#232232"
+  hairline-strong: "#2E2C40"
   inverse-canvas: "#FFFFFF"
-  inverse-ink: "#08080B"
-  bloom: "rgba(229,50,47,0.55)"
+  inverse-ink: "#08070D"
+  bloom: "rgba(124,92,255,0.55)"
 
 typography:
   display-xl: { fontFamily: Geist, fontSize: 60px, fontWeight: 600, lineHeight: 1.02, letterSpacing: -2.4px }
@@ -82,7 +82,7 @@ at rest, checkmarks, list bullets, or icons. **If red is doing decoration, remov
 One family, Geist, from 60px display to 12px caption. Geist Mono carries
 eyebrows and numeric labels only.
 
-- Display ceiling is **weight 600**. Never 700+, never 800.
+- Display runs at **weight 680** in the hero, 600 for section headings. Never 800.
 - Negative tracking scales with size: −2.4px at 60px (≈4%), −1.0px at 32px, 0 at body.
 - Eyebrows invert this: Geist Mono, uppercase, **+1.2px positive tracking**. The
   contrast against negative-tracked display is what marks them as taxonomy.
@@ -96,7 +96,7 @@ eyebrows and numeric labels only.
 
 ## Layout
 
-- Content max width **1120px**; prose columns cap at 60ch.
+- Content max width **1080px**; prose columns cap at 60ch.
 - Section rhythm `{spacing.section}` 88px desktop, 56px mobile.
 - Card grids 3-up desktop → 2-up tablet → 1-up mobile. Nine-item grids stay
   2-up on mobile; a nine-card single column is dead scroll.
@@ -160,3 +160,21 @@ Optional 1px hairline rule to its left. Not red.
 | 480 | display-xl 60px → 34px; stat grid 2×2; comparison table → stacked rows |
 
 Touch targets ≥48px for CTAs and inputs. Range inputs get a 26px thumb.
+
+## Section order
+
+The page follows the buyer's decision sequence, not our org chart. A visitor
+deciding whether to book a call asks, in this order:
+
+1. **What is this?** — hero, VSL, stat bar
+2. **What does it cost me?** — pricing. First question for a commission-only
+   offer, so it gets the first section after the fold.
+3. **Does it work?** — client results
+4. **How does it work?** — the four-step install
+5. **What if it goes wrong?** — the swap guarantee
+6. **What's it worth to me?** — the calculator, once cost and risk are settled
+7. **Am I a fit?** — who this is for
+8. **Anything left?** — FAQ, then the form
+
+Problem-agitation sections were removed: the visitor already knows hiring
+closers is painful, so restating it spends attention without buying trust.

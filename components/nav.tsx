@@ -55,7 +55,7 @@ export function Nav() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-[13.5px] font-medium text-white/60 transition-colors hover:text-white"
+                  className="text-[13.5px] font-medium text-ink-subtle transition-colors hover:text-ink"
                 >
                   {item.label}
                 </a>
@@ -78,7 +78,7 @@ export function Nav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline-strong text-white lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline-strong text-ink lg:hidden"
             >
               <span className="relative block h-3.5 w-4">
                 <span
@@ -116,7 +116,7 @@ export function Nav() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   style={{ animationDelay: `${i * 45}ms` }}
-                  className="rise block border-b border-hairline py-5 text-2xl font-bold tracking-tight text-white/90 sm:text-3xl"
+                  className="rise block border-b border-hairline py-5 text-2xl font-bold tracking-tight text-ink/90 sm:text-3xl"
                 >
                   {item.label}
                 </a>
@@ -130,12 +130,12 @@ export function Nav() {
           >
             Get Matched With A Closer
           </a>
-          <p className="mt-4 text-center text-xs text-white/40">
+          <p className="mt-4 text-center text-xs text-ink-subtle">
             No retainer. You pay only when they close.
           </p>
           <a
             href={`mailto:${brand.email}`}
-            className="mt-6 text-center text-sm text-white/50 underline underline-offset-4"
+            className="mt-6 text-center text-sm text-ink/50 underline underline-offset-4"
           >
             {brand.email}
           </a>

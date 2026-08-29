@@ -8,21 +8,21 @@
    ============================================================ */
 
 @theme {
-  --color-canvas: #08080B;
-  --color-s1: #101014;
-  --color-s2: #16161B;
-  --color-s3: #1C1C22;
-  --color-hairline: #232329;
-  --color-hairline-strong: #2E2E36;
+  --color-canvas: #08070D;
+  --color-s1: #101018;
+  --color-s2: #16151F;
+  --color-s3: #1C1B26;
+  --color-hairline: #232232;
+  --color-hairline-strong: #2E2C40;
 
-  --color-accent: #E5322F;
-  --color-accent-hover: #FF4A44;
-  --color-accent-press: #C82724;
+  --color-accent: #7C5CFF;
+  --color-accent-hover: #9A80FF;
+  --color-accent-press: #6746E8;
 
-  --color-ink: #F5F5F7;
-  --color-ink-muted: #A1A1AA;
-  --color-ink-subtle: #71717A;
-  --color-ink-tertiary: #52525B;
+  --color-ink: #F4F3F7;
+  --color-ink-muted: #A5A2B3;
+  --color-ink-subtle: #74718A;
+  --color-ink-tertiary: #56536B;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -57,10 +57,10 @@ body {
 /* ---------- Type scale: one family, negative tracking with size ---------- */
 
 .t-display {
-  font-weight: 600;                 /* display ceiling — never 700+ */
-  font-size: clamp(2.125rem, 5.4vw, 3.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-weight: 680;
+  font-size: clamp(2.25rem, 5.2vw, 3.875rem);
+  line-height: 1.0;
+  letter-spacing: -0.042em;
 }
 
 .t-section {
@@ -135,21 +135,63 @@ body {
   filter: blur(80px);
   background: radial-gradient(
     circle,
-    rgba(229, 50, 47, 0.5) 0%,
-    rgba(229, 50, 47, 0.18) 45%,
+    rgba(124, 92, 255, 0.55) 0%,
+    rgba(124, 92, 255, 0.2) 45%,
     transparent 72%
   );
 }
 
-.grid-floor {
+/* Fine dot field — reads as texture, not as a wireframe grid */
+.dot-field {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, #000 10%, transparent 72%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 0%, #000 10%, transparent 72%);
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse 70% 48% at 50% 8%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 48% at 50% 8%, #000 0%, transparent 70%);
+  opacity: 0.5;
+}
+
+/* Two offset violet washes + a cool underlight = depth without a mesh cliché */
+.aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+}
+.aurora::before {
+  width: 46rem;
+  height: 26rem;
+  left: 50%;
+  top: -13rem;
+  transform: translateX(-52%);
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.34) 0%, transparent 68%);
+}
+.aurora::after {
+  width: 34rem;
+  height: 20rem;
+  left: 50%;
+  top: -6rem;
+  transform: translateX(-24%);
+  background: radial-gradient(circle, rgba(56, 108, 255, 0.22) 0%, transparent 70%);
+}
+
+/* A single hairline horizon under the nav — quiet structure, no gradient bar */
+.horizon {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.5) 50%, transparent);
 }
 
 /* ---------- Buttons: pill, matching the reference pages ---------- */
@@ -173,7 +215,7 @@ body {
 .btn-primary {
   background: var(--color-accent);
   color: #fff;
-  box-shadow: 0 8px 30px -8px rgba(229, 50, 47, 0.5);
+  box-shadow: 0 8px 30px -8px rgba(124, 92, 255, 0.55);
 }
 
 .btn-secondary {
@@ -186,7 +228,7 @@ body {
   .btn-primary:hover {
     background: var(--color-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 12px 36px -8px rgba(229, 50, 47, 0.62);
+    box-shadow: 0 12px 36px -8px rgba(124, 92, 255, 0.68);
   }
   .btn-secondary:hover {
     background: var(--color-s3);

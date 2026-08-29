@@ -37,7 +37,7 @@ function Slider({
   return (
     <div>
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="text-[13px] font-medium text-white/70 sm:text-sm">
+        <label htmlFor={id} className="text-[13px] font-medium text-ink-muted sm:text-sm">
           {label}
         </label>
         <output htmlFor={id} data-ck={`out-${id}`} className="text-lg font-bold tabular-nums text-accent sm:text-xl">
@@ -55,7 +55,7 @@ function Slider({
         value={value}
         onChange={(e) => set(Number(e.target.value))}
       />
-      {hint && <p className="mt-2 text-[11.5px] text-white/35">{hint}</p>}
+      {hint && <p className="mt-2 text-[11.5px] text-ink-tertiary">{hint}</p>}
     </div>
   );
 }
@@ -94,14 +94,14 @@ export function Calculator() {
           {/* RESULT — rendered first on mobile so the number stays visible
               above the thumb while sliders are dragged; moves right on desktop. */}
           <div className="order-1 border-b border-hairline bg-[radial-gradient(ellipse_at_50%_0%,rgba(240,178,60,0.18),transparent_65%)] p-5 sm:p-7 lg:order-2 lg:border-b-0 lg:border-l lg:p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/40">
+            <p className="t-eyebrow">
               Added revenue per month
             </p>
             <p data-ck="added" className="mt-2 text-[2.5rem] font-extrabold leading-none tracking-tight text-accent tabular-nums sm:text-[3.25rem]">
               {r.added >= 0 ? "+" : "−"}
               {money(Math.abs(r.added))}
             </p>
-            <p data-ck="vs" className="mt-2.5 text-[13px] text-white/45">
+            <p data-ck="vs" className="mt-2.5 text-[13px] text-ink-subtle">
               vs. {money(r.currentRev)}/mo at your current close rate
             </p>
 
@@ -113,13 +113,13 @@ export function Calculator() {
             </dl>
 
             <div className="mt-6 flex items-center justify-between gap-4 rounded-xl border border-accent/25 bg-accent/[0.07] px-4 py-3.5">
-              <span className="text-[13px] font-medium text-white/75">
+              <span className="text-[13px] font-medium text-ink-muted">
                 Upfront cost to start
               </span>
               <span className="text-xl font-extrabold text-accent sm:text-2xl">$0</span>
             </div>
 
-            <p className="mt-5 text-[11px] leading-relaxed text-white/30">
+            <p className="mt-5 text-[11px] leading-relaxed text-ink-tertiary">
               {calculator.disclaimer}
             </p>
           </div>
@@ -189,17 +189,17 @@ function Row({
 }) {
   return (
     <div className="flex items-center justify-between gap-4 py-3">
-      <dt className={`text-[13px] ${muted ? "text-white/40" : "text-white/65"}`}>
+      <dt className={`text-[13px] ${muted ? "text-ink-subtle" : "text-ink-muted"}`}>
         {label}
       </dt>
       <dd
         data-ck={hook}
         className={`tabular-nums ${
           strong
-            ? "text-base font-bold text-white sm:text-lg"
+            ? "text-base font-bold text-ink sm:text-lg"
             : muted
-              ? "text-[13px] text-white/40"
-              : "text-sm font-semibold text-white/85"
+              ? "text-[13px] text-ink-subtle"
+              : "text-sm font-semibold text-ink/85"
         }`}
       >
         {value}

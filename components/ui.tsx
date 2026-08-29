@@ -58,7 +58,7 @@ export function Section({
         tight ? "py-12 sm:py-14" : "py-14 sm:py-18 lg:py-22"
       } ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1120px]">{children}</div>
+      <div className="mx-auto w-full max-w-[1080px]">{children}</div>
     </section>
   );
 }

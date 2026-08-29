@@ -7,8 +7,8 @@ import { Section, SectionIntro, Check } from "./ui";
 type Status = "idle" | "sending" | "done" | "error";
 
 const field =
-  "w-full rounded-xl border border-hairline-strong bg-white/[0.03] px-4 py-3.5 text-[15px] text-white placeholder:text-white/30 outline-none transition-colors focus:border-accent/60 focus:bg-white/[0.05]";
-const labelCls = "mb-2 block text-[12.5px] font-medium text-white/60";
+  "w-full rounded-xl border border-hairline-strong bg-s3 px-4 py-3.5 text-[15px] text-ink placeholder:text-ink-tertiary outline-none transition-colors focus:border-accent/60 focus:bg-s2";
+const labelCls = "mb-2 block text-[12.5px] font-medium text-ink-subtle";
 
 export function ApplyForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -136,7 +136,7 @@ export function ApplyForm() {
 
           <div className="sm:col-span-2">
             <label htmlFor="message" className={labelCls}>
-              Anything else about your offer? <span className="text-white/30">(optional)</span>
+              Anything else about your offer? <span className="text-ink-tertiary">(optional)</span>
             </label>
             <textarea
               id="message" name="message" rows={3}
@@ -160,7 +160,7 @@ export function ApplyForm() {
           {status === "sending" ? "Sending…" : "Get Matched With A Closer"}
         </button>
 
-        <p className="mt-4 text-center text-[12px] leading-relaxed text-white/35">
+        <p className="mt-4 text-center text-[12px] leading-relaxed text-ink-tertiary">
           No retainer. No setup fee. You pay only when they close. We reply within one
           business day — and if your offer isn&apos;t a fit, we&apos;ll tell you straight.
         </p>

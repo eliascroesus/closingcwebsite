@@ -27,7 +27,7 @@ export function Faq() {
                 >
                   <span
                     className={`text-[15px] font-semibold leading-snug tracking-tight transition-colors sm:text-[17px] ${
-                      isOpen ? "text-accent" : "text-white"
+                      isOpen ? "text-accent" : "text-ink"
                     }`}
                   >
                     {item.q}
@@ -37,7 +37,7 @@ export function Faq() {
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                       isOpen
                         ? "rotate-45 border-accent/50 bg-accent/15 text-accent"
-                        : "border-hairline-strong text-white/50"
+                        : "border-hairline-strong text-ink/50"
                     }`}
                   >
                     <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
