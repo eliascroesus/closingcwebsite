@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Instrument_Sans, Playfair_Display } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 // Body and UI. Geist carries headlines; this carries everything else, so the
@@ -14,9 +14,9 @@ const instrumentSans = Instrument_Sans({
 
 // The hero's accent line only — a high-contrast italic serif, matching the
 // reference page's treatment of its own payoff phrase.
-const playfair = Playfair_Display({
+const accentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: "500",
+  weight: "400",
   style: "italic",
   variable: "--font-accent-serif",
   display: "swap",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 // Dark-only site: tell the UA so form controls and scrollbars render dark too.
 export const viewport: Viewport = {
-  themeColor: "#070310",
+  themeColor: "#0C0620",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSans.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${instrumentSans.variable} ${accentSerif.variable}`}>
       <body>
         <a
           href="#main"

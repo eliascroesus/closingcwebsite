@@ -48,7 +48,7 @@ export function Hero() {
         </h1>
 
         <p
-          className="rise mx-auto mt-4 max-w-[52ch] text-center text-[14.5px] leading-relaxed text-ink-muted text-pretty sm:mt-5 sm:text-[16px]"
+          className="rise mx-auto mt-5 max-w-[58ch] text-center text-[14.5px] leading-relaxed text-ink-muted text-balance sm:mt-6 sm:text-[16px]"
           style={{ animationDelay: "170ms" }}
         >
           {hero.sub}
@@ -59,7 +59,7 @@ export function Hero() {
         <div className="rise relative mx-auto mt-4 max-w-xl" style={{ animationDelay: "230ms" }}>
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#150E28] to-[#080411] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#1B0F3D] to-[#0D0722] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(176,124,255,0.45),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
                 src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}

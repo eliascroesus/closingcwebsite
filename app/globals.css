@@ -12,12 +12,12 @@
      growth, which suits a business paid on closed deals, and it is the one
      high-contrast direction none of the reference pages use. Neutrals carry a
      faint green bias so the greys read chosen. */
-  --color-canvas: #070310;
-  --color-s1: #120C21;
-  --color-s2: #18112B;
-  --color-s3: #201736;
-  --color-hairline: #2A1F42;
-  --color-hairline-strong: #3B2C5A;
+  --color-canvas: #0C0620;
+  --color-s1: #170C33;
+  --color-s2: #1D1140;
+  --color-s3: #26174F;
+  --color-hairline: #32205C;
+  --color-hairline-strong: #452E7C;
 
   --color-accent: #B07CFF;
   --color-accent-hover: #C79EFF;
@@ -26,9 +26,9 @@
   --color-on-accent: #120726;
 
   --color-ink: #F5F1FC;
-  --color-ink-muted: #A79DBD;
-  --color-ink-subtle: #7B7095;
-  --color-ink-tertiary: #574E6D;
+  --color-ink-muted: #AC9FCB;
+  --color-ink-subtle: #8175A6;
+  --color-ink-tertiary: #5B4E7D;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -111,15 +111,18 @@ body {
 .t-hero-accent {
   font-family: var(--font-accent-serif), ui-serif, Georgia, serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-accent);
-  text-shadow: 0 0 46px rgba(176, 124, 255, 0.5), 0 0 15px rgba(176, 124, 255, 0.28);
-  /* Serif x-height runs short next to the heavy sans above it */
-  font-size: 1.34em;
-  letter-spacing: -0.01em;
+  text-shadow: 0 0 40px rgba(176, 124, 255, 0.45), 0 0 14px rgba(176, 124, 255, 0.25);
+  /* Instrument Serif has a tall x-height, so it needs far less upsizing than a
+     didone would. Line-height under 1 plus a negative top margin closes the
+     gap the larger size opens between the two headline lines. */
+  font-size: 1.16em;
+  letter-spacing: -0.015em;
   display: block;
-  line-height: 1.06;
-  padding-bottom: 0.06em;
+  line-height: 0.94;
+  margin-top: -0.04em;
+  padding-bottom: 0.08em;
 }
 
 .t-eyebrow {
@@ -182,9 +185,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(closest-side at 50% -4%, rgba(150, 100, 240, 0.2) 0%, rgba(110, 70, 200, 0.06) 46%, transparent 72%),
-    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.06) 0%, transparent 58%),
-    linear-gradient(180deg, #150929 0%, #0B0518 36%, var(--color-canvas) 62%);
+    radial-gradient(closest-side at 50% -4%, rgba(155, 100, 245, 0.17) 0%, rgba(110, 64, 205, 0.05) 46%, transparent 72%),
+    radial-gradient(50% 24% at 80% 6%, rgba(100, 80, 220, 0.04) 0%, transparent 58%),
+    linear-gradient(180deg, #190A42 0%, #100628 30%, var(--color-canvas) 56%);
 }
 
 /* 3 — the spotlight that the headline sits inside */
