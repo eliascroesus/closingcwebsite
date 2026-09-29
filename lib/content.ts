@@ -17,6 +17,10 @@ export const brand = {
   email: "hello@closingcircle.com",
   calendarUrl: process.env.NEXT_PUBLIC_CALENDAR_URL || "",
   founderImage: "", // e.g. "/founder.jpg" to show the hero inset
+  // Hero VSL. Loom embed URL; NEXT_PUBLIC_VIDEO_URL overrides it if set.
+  videoUrl:
+    process.env.NEXT_PUBLIC_VIDEO_URL ||
+    "https://www.loom.com/embed/cd873a31473c49f9a6b96d3e0ce005fa",
 };
 
 /* !!! PLACEHOLDER — use numbers you can defend. */

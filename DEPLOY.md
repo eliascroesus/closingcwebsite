@@ -56,7 +56,7 @@ only returns an error to the visitor if *all* of them fail.
 |---|---|---|
 | `LEAD_FROM_EMAIL` | `ClosingCircle <leads@closingcircle.com>` | Sender address. Must be on a domain verified in Resend. Falls back to Resend's shared `onboarding@resend.dev`. |
 | `NEXT_PUBLIC_SITE_URL` | `https://closingcircle.com` | Canonical URL for SEO tags and social preview cards. Set this once your domain is live. |
-| `NEXT_PUBLIC_VIDEO_URL` | `https://www.youtube.com/embed/abc123` | Turns the hero video card into a real player. Must be an **embed** URL. Unset = designed placeholder. |
+| `NEXT_PUBLIC_VIDEO_URL` | `https://www.loom.com/embed/ID` | Overrides the hero VSL. A Loom embed is already set in `lib/content.ts`, so this is only needed to swap videos without a code change. Must be an **embed** URL. |
 | `NEXT_PUBLIC_CALENDAR_URL` | `https://calendly.com/closingcircle/intake` | Shows a "book your intake call" button on the form's success screen. |
 
 > `NEXT_PUBLIC_*` variables are compiled into the browser bundle and are

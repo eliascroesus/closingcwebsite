@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { brand, ctaHref, hero, stats } from "@/lib/content";
 
-const videoUrl = process.env.NEXT_PUBLIC_VIDEO_URL || "";
+const videoUrl = brand.videoUrl;
 
 export function Hero() {
   const [playing, setPlaying] = useState(false);
@@ -62,9 +62,9 @@ export function Hero() {
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#0C2028] to-[#050C10] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(34,211,238,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
             {playing && videoUrl ? (
               <iframe
-                src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
+                src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1&hideEmbedTopBar=true`}
                 title={hero.videoTitle}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 allowFullScreen
                 className="h-full w-full"
               />
