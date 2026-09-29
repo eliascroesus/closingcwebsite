@@ -23,8 +23,8 @@ export const brand = {
 export const stats = [
   { value: "300+", label: "Vetted reps on the bench" },
   { value: "24 hrs", label: "Match to first live call" },
-  { value: "$1,000", label: "One-time access, then nothing" },
-  { value: "0%", label: "Our cut of your closed deals" },
+  { value: "$0", label: "Upfront to get started" },
+  { value: "5–7%", label: "Of closed deals, or $1,000 once" },
 ];
 
 /** Every CTA points here. Set NEXT_PUBLIC_CALENDAR_URL to a Calendly or
@@ -46,8 +46,8 @@ export const hero = {
   headline: { pre: "Have A Proven Closer", accent: "On Your Offer", post: "" },
   headlineLine2: "",
   sub: "Select from 300+ vetted closers. Trained on your offer. Taking calls tomorrow.",
-  cta: "Book A Call. 4 Spots Left",
-  ctaSub: "One-time access fee. We take 0% of your deals.",
+  cta: "Book A Call",
+  ctaSub: "Commission only, or one flat access fee. Your choice.",
   videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
   videoKicker: "300+ vetted reps. Commission only.",
@@ -61,19 +61,44 @@ export const tools = [
 /* 1 — What does it cost? The first question, so it gets the first section. */
 export const pricing = {
   eyebrow: "What it costs",
-  heading: { pre: "Pay Once.", accent: "Keep The Rest", post: "" },
-  sub: "One access fee. We never take a percentage of your closed deals.",
-  split: [
-    { label: "One-time access fee", value: "$1,000", note: "Lifetime access to the whole bench" },
-    { label: "Our cut of your deals", value: "0%", note: "We never touch your closed revenue" },
-    { label: "Your closer takes", value: "~10%", note: "Standard commission, paid direct to the rep" },
+  heading: { pre: "Two Ways To", accent: "Pay", post: "" },
+  sub: "Give us a share of what closes, or buy access once and keep every deal after.",
+  plans: [
+    {
+      name: "Commission",
+      price: "5–7%",
+      unit: "of collected revenue",
+      lead: "$0 upfront",
+      body: "We take 5 to 7% on deals your rep closes, on top of their standard ~10%. Nothing on deals that do not close.",
+      points: [
+        "No upfront cost, ever",
+        "No retainer and no minimum",
+        "We only earn when you do",
+        "15 to 20% total per closed deal",
+      ],
+    },
+    {
+      name: "One-time access",
+      price: "$1,000",
+      unit: "once, then nothing",
+      lead: "0% of your deals",
+      body: "Pay once for lifetime access to the whole bench. We never take a percentage, so your rep's ~10% is your only cost per deal.",
+      points: [
+        "Lifetime access to every rep",
+        "We take 0% of closed revenue",
+        "Unlimited swaps at no cost",
+        "You keep far more per deal",
+      ],
+      featured: true,
+      badge: "Cheaper past a few deals",
+    },
   ],
   compare: {
     heading: "Versus hiring direct",
     rows: [
-      { label: "Upfront cost", old: "Job ads, your time", ck: "$1,000, once" },
+      { label: "Upfront cost", old: "Job ads, your time", ck: "$0, or $1,000 once" },
       { label: "Monthly base salary", old: "$3,000 to $5,000", ck: "None" },
-      { label: "Cut of your closed deals", old: "Recruiter fee per hire", ck: "0%" },
+      { label: "Cut of your closed deals", old: "Recruiter fee per hire", ck: "5 to 7%, or 0%" },
       { label: "Time to first call", old: "2 to 4 weeks", ck: "24 hours" },
       { label: "Vetting", old: "15+ hours per hire", ck: "Already done" },
       { label: "Bad-hire risk", old: "Yours", ck: "Ours" },
@@ -102,7 +127,7 @@ export const how = {
 export const guarantee = {
   eyebrow: "Zero risk",
   heading: { pre: "Wrong Fit?", accent: "Swapped In 24 Hours", post: "" },
-  body: "Tell us and we replace them from the same vetted bench, live within a day. Swaps are unlimited and cost nothing; your access fee already covers them.",
+  body: "Tell us and we replace them from the same vetted bench, live within a day. Swaps are unlimited and cost nothing on either pricing option.",
   points: [
     "Swap any time, any reason",
     "Replacement live within 24 hours",
@@ -116,10 +141,10 @@ export const faq = {
   eyebrow: "Questions",
   heading: { pre: "Frequently Asked", accent: "Questions", post: "" },
   items: [
-    { q: "What does it cost me?", a: "A one-time $1,000 access fee. That is the whole cost. We take 0% of your closed deals, so the only ongoing sales expense is your closer's own standard commission of around 10%, paid direct to them. You keep the rest." },
-    { q: "What does the $1,000 actually get me?", a: "Lifetime access to every closer and setter on the bench, the SOP build for your offer, onboarding, our ongoing coaching of your rep, and unlimited swaps. Pay it once and it never comes up again." },
-    { q: "Is there anything ongoing?", a: "No retainer, no monthly fee, and no percentage of your revenue. After the access fee we do not invoice you again." },
-    { q: "Why a fee instead of a percentage?", a: "A cut of every deal, forever, costs you far more than a single fee, and it puts us between you and your own revenue. One fee keeps it simple and leaves more margin per deal with you." },
+    { q: "What does it cost me?", a: "Two options. Commission: nothing upfront, and we take 5 to 7% of collected revenue on deals your rep closes, on top of their standard ~10%. Or a one-time $1,000 access fee, after which we take 0% of your deals forever and your rep's ~10% is the only cost per deal." },
+    { q: "Which option should I pick?", a: "Commission if you want to test with zero risk, since you pay nothing until a deal closes. The $1,000 access fee if you expect real volume, because past a few closed deals it works out far cheaper and you keep more of every deal after that." },
+    { q: "What does the $1,000 include?", a: "Lifetime access to every closer and setter on the bench, the SOP build for your offer, onboarding, our ongoing coaching of your rep, and unlimited swaps. Pay it once and it never comes up again." },
+    { q: "Can I switch between the two?", a: "Yes. Start on commission and move to the access fee whenever the volume justifies it. We will tell you when the maths tips over." },
     { q: "How fast can a rep start?", a: "Intake today, matched the same day, live on your calls the next morning. Vetting is already done and we write the SOP for you." },
     { q: "What if the rep isn't a fit?", a: "Tell us and we swap them. A replacement from the same bench is live within 24 hours. No fee, no penalty." },
     { q: "Do I need my own leads?", a: "Yes. We supply and manage sales talent, not leads. You need an offer that converts and calls getting booked." },
@@ -151,10 +176,10 @@ export const finalCta = {
   heading: "Ready To Stop Hiring Closers?",
   sub: "One 30-minute intake. If your offer is a fit, your rep is live tomorrow.",
   cta: "Book A Call",
-  note: "One-time $1,000 access. We take 0% of your deals.",
+  note: "Commission only, or one flat access fee. No retainer either way.",
 };
 
 export const legal = {
   disclaimer:
-    "ClosingKing places and manages independent sales representatives. Access is a one-time fee; commission on closed deals is paid by you direct to your representative, and ClosingKing takes no percentage of it. We are not a lead generation service and do not guarantee any specific result, revenue figure or close rate. Figures shown are illustrative and are not a promise of earnings.",
+    "ClosingKing places and manages independent sales representatives. Clients choose either a share of collected revenue on closed deals or a one-time access fee; under the access fee, ClosingKing takes no percentage of closed revenue. Representative commission is paid by you direct to your representative. We are not a lead generation service and do not guarantee any specific result, revenue figure or close rate. Figures shown are illustrative and are not a promise of earnings.",
 };

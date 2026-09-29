@@ -41,15 +41,37 @@ export function Pricing() {
     <Section id="pricing">
       <SectionIntro eyebrow={pricing.eyebrow} heading={pricing.heading} sub={pricing.sub} />
 
-      <div className="mt-9 grid gap-3 md:grid-cols-3">
-        {pricing.split.map((s, i) => (
+      {/* Two plans side by side. The access fee is marked as the better
+          value past a few deals, but commission stays first because it is
+          the zero-risk way in. */}
+      <div className="mt-9 grid gap-3 md:grid-cols-2">
+        {pricing.plans.map((plan) => (
           <div
-            key={s.label}
-            className={`card p-5 text-center ${i === 2 ? "border-accent/35 bg-s2" : ""}`}
+            key={plan.name}
+            className={`card relative flex flex-col p-6 sm:p-7 ${
+              plan.featured ? "border-accent/40 bg-s2" : ""
+            }`}
           >
-            <p className="text-[12.5px] text-ink-subtle">{s.label}</p>
-            <p className="t-stat mt-1.5 text-accent">{s.value}</p>
-            <p className="mt-2 text-[12.5px] text-ink-subtle">{s.note}</p>
+            {plan.badge && (
+              <span className="absolute right-5 top-5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10.5px] font-medium text-accent">
+                {plan.badge}
+              </span>
+            )}
+            <p className="t-eyebrow">{plan.name}</p>
+            <p className="mt-4 flex items-baseline gap-2">
+              <span className="t-stat text-accent">{plan.price}</span>
+              <span className="text-[13px] text-ink-subtle">{plan.unit}</span>
+            </p>
+            <p className="mt-1.5 text-[13px] font-medium text-ink">{plan.lead}</p>
+            <p className="t-body mt-3.5 flex-1 text-[13.5px] text-pretty">{plan.body}</p>
+            <ul className="mt-5 space-y-2 border-t border-hairline pt-5">
+              {plan.points.map((pt) => (
+                <li key={pt} className="flex items-start gap-2.5 text-[13px] text-ink-muted">
+                  <Check className="mt-0.5 text-ink-subtle" />
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

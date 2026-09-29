@@ -48,15 +48,18 @@ day — because we're pulling from the same bench, not restarting a hiring proce
 
 ## Pricing model
 
-**A one-time access fee. No percentage of closed deals.**
+**Two options. The client picks.**
 
-- **$1,000 once** for lifetime access to the entire bench
-- ClosingKing takes **0%** of closed revenue
-- The closer takes their standard **~10%**, paid direct by the client
+*Commission* — no upfront cost at all. The closer takes their standard ~10%;
+we take 5-7% on top, so 15-20% of collected revenue per closed deal. Nothing
+on deals that don't close.
 
-The fee covers the SOP build, onboarding, our ongoing coaching of the rep, and
-unlimited swaps. Compared with a percentage model, the client keeps far more
-margin per deal and we never sit between them and their own revenue.
+*One-time access* — $1,000 once for lifetime access to the entire bench, after
+which we take 0% of closed revenue. The client pays only their rep's ~10%.
+
+Commission is the zero-risk way in and stays the default pitch. The access fee
+becomes the cheaper option past a few closed deals, and clients can move from
+one to the other. Either way there is no retainer, and swaps are free.
 
 ## Core positioning
 
@@ -66,7 +69,7 @@ instead of collecting a placement fee and disappearing.
 
 ## Message hierarchy (most to least important)
 
-1. **One fee, then nothing.** $1,000 once. We take 0% of your deals.
+1. **No upfront cost to start.** Commission only, or one flat access fee.
 2. **Speed.** Placed today, closing tomorrow. Not a week of onboarding.
 3. **Pre-vetted bench.** Hundreds of proven reps, not a pile of applicants.
 4. **Managed, not just placed.** Ongoing coaching, mocks, and data — rep
