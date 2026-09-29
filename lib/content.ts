@@ -21,6 +21,9 @@ export const brand = {
   videoUrl:
     process.env.NEXT_PUBLIC_VIDEO_URL ||
     "https://www.loom.com/embed/cd873a31473c49f9a6b96d3e0ce005fa",
+  // Where to send people if the embed is blocked (strict CSP, ad blocker,
+  // locked-down corporate network). Same video, opened on Loom directly.
+  videoShareUrl: "https://www.loom.com/share/cd873a31473c49f9a6b96d3e0ce005fa",
 };
 
 /* !!! PLACEHOLDER — use numbers you can defend. */

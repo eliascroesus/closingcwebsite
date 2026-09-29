@@ -7,7 +7,6 @@ const videoUrl = brand.videoUrl;
 
 export function Hero() {
   const [playing, setPlaying] = useState(false);
-
   return (
     <section id="top" className="relative isolate overflow-hidden">
       {/* Layered field — see .field-* in globals.css */}
@@ -110,6 +109,21 @@ export function Hero() {
             )}
           </div>
         </div>
+
+        {/* Permanent escape hatch. A CSP-blocked frame and a real
+            cross-origin load both report contentDocument === null, so the
+            block cannot be detected reliably; a visible link always works. */}
+        <p className="rise mt-3 text-center text-[12.5px] text-ink-subtle">
+          Video not loading?{" "}
+          <a
+            href={brand.videoShareUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
+          >
+            Watch it on Loom
+          </a>
+        </p>
 
         {/* CTA under the video — watch, then act */}
         <div className="rise mt-5 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
