@@ -48,14 +48,15 @@ day — because we're pulling from the same bench, not restarting a hiring proce
 
 ## Pricing model
 
-**Pure commission. No upfront fee, no retainer, no setup cost.**
+**A one-time access fee. No percentage of closed deals.**
 
-- The closer takes roughly **10%** of a closed deal (standard industry rate)
-- We take **5–7%** on top for placement, coaching, management, and tooling
-- Total: **15–20% of commission per closed deal**
+- **$1,000 once** for lifetime access to the entire bench
+- ClosingKing takes **0%** of closed revenue
+- The closer takes their standard **~10%**, paid direct by the client
 
-The business pays only when a deal closes. All risk of a bad hire sits with us,
-not the client — if the rep doesn't close, we don't get paid either.
+The fee covers the SOP build, onboarding, our ongoing coaching of the rep, and
+unlimited swaps. Compared with a percentage model, the client keeps far more
+margin per deal and we never sit between them and their own revenue.
 
 ## Core positioning
 
@@ -65,7 +66,7 @@ instead of collecting a placement fee and disappearing.
 
 ## Message hierarchy (most to least important)
 
-1. **No upfront cost.** Commission only — we get paid when you get paid.
+1. **One fee, then nothing.** $1,000 once. We take 0% of your deals.
 2. **Speed.** Placed today, closing tomorrow. Not a week of onboarding.
 3. **Pre-vetted bench.** Hundreds of proven reps, not a pile of applicants.
 4. **Managed, not just placed.** Ongoing coaching, mocks, and data — rep

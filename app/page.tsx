@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Faq } from "@/components/faq";
+import { CloserForm } from "@/components/closer-form";
 import {
   Marquee, Pricing, How, Guarantee, ForClosers, FinalCta, Footer,
 } from "@/components/sections";
@@ -22,6 +23,7 @@ export default function Page() {
         <Guarantee />
         <Faq />
         <ForClosers />
+        <CloserForm />
         <FinalCta />
       </main>
       <Footer />

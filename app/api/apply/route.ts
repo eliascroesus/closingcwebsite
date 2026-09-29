@@ -4,7 +4,8 @@ export const runtime = "nodejs";
 
 type Lead = Record<string, string>;
 
-const REQUIRED = ["name", "email", "phone", "company"] as const;
+// Name and email are the only fields both application shapes share.
+const REQUIRED = ["name", "email"] as const;
 const MAX_LEN = 2000;
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
@@ -43,16 +44,24 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Please enter a valid email." }, { status: 400 });
   }
 
-  const rows: [string, string][] = [
-    ["Name", lead.name],
-    ["Email", lead.email],
-    ["Phone", lead.phone],
-    ["Company / offer", lead.company],
-    ["Needs", lead.role || "—"],
-    ["Offer price", lead.price || "—"],
-    ["Calls per month", lead.volume || "—"],
-    ["Notes", lead.message || "—"],
-  ];
+  // Render whatever the form sent, so both business and closer applications
+  // come through without the route needing to know each shape.
+  const LABELS: Record<string, string> = {
+    applicantType: "Applicant type",
+    name: "Name",
+    email: "Email",
+    whatsapp: "WhatsApp",
+    loom: "Loom video",
+    phone: "Phone",
+    company: "Company / offer",
+    role: "Needs",
+    price: "Offer price",
+    volume: "Calls per month",
+    message: "Notes",
+  };
+  const rows: [string, string][] = Object.entries(lead)
+    .filter(([k, v]) => k !== "company_website" && v)
+    .map(([k, v]) => [LABELS[k] || k, v]);
 
   const html = `
     <h2 style="font-family:system-ui,sans-serif">New ClosingKing lead</h2>
@@ -90,7 +99,7 @@ export async function POST(req: Request) {
           from: LEAD_FROM_EMAIL || "ClosingKing <onboarding@resend.dev>",
           to: LEAD_NOTIFICATION_EMAIL.split(",").map((s) => s.trim()),
           reply_to: lead.email,
-          subject: `New lead: ${lead.name} — ${lead.company}`,
+          subject: `New ${lead.applicantType || "lead"}: ${lead.name}`,
           html,
           text,
         }),

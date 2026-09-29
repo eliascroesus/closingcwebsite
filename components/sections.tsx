@@ -165,7 +165,7 @@ export function ForClosers() {
           <Heading parts={closers.heading} className="mt-3 !text-left !text-[1.5rem]" />
           <p className="t-body mt-2.5 text-[13.5px] text-pretty">{closers.body}</p>
         </div>
-        <CTA href={ctaHref} variant="secondary" className="shrink-0">
+        <CTA href="#closers-apply" variant="secondary" className="shrink-0">
           {closers.cta}
         </CTA>
       </div>
