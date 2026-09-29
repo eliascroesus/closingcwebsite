@@ -84,7 +84,7 @@ export function Pricing() {
         <div className="hidden border-b border-hairline sm:grid sm:grid-cols-[1.1fr_1fr_1fr]">
           <div className="px-5 py-3 sm:px-7" />
           <div className="t-eyebrow px-4 py-3">Hiring direct</div>
-          <div className="t-eyebrow bg-s2 px-4 py-3 !text-ink">ClosingKing</div>
+          <div className="t-eyebrow bg-s2 px-4 py-3 !text-ink">ClosingCircle</div>
         </div>
 
         <div className="divide-y divide-hairline">
@@ -225,9 +225,10 @@ export function Footer() {
           <div className="max-w-xs">
             <p className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
               <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4 text-accent" fill="currentColor">
-                <path d="M3 8.5l3.4 3L12 4l5.6 7.5 3.4-3-1.7 9.5H4.7L3 8.5zM4.9 20h14.2v1.6H4.9V20z" />
+                <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" strokeWidth="2.6" />
+      <circle cx="12" cy="12" r="2.6" fill="currentColor" />
               </svg>
-              Closing<span className="text-accent">King</span>
+              Closing<span className="text-accent">Circle</span>
             </p>
             <p className="t-body mt-2.5 text-[13px]">{brand.tagline}</p>
             <a

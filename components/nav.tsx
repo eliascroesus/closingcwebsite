@@ -47,9 +47,9 @@ export function Nav() {
             href="#top"
             className="flex shrink-0 items-center gap-2 text-[15px] font-extrabold tracking-tight sm:text-base"
           >
-            <Crown />
+            <Mark />
             <span>
-              Closing<span className="text-accent">King</span>
+              Closing<span className="text-accent">Circle</span>
             </span>
           </a>
 
@@ -149,7 +149,7 @@ export function Nav() {
   );
 }
 
-function Crown() {
+function Mark() {
   return (
     <svg
       aria-hidden
@@ -157,7 +157,8 @@ function Crown() {
       className="h-[18px] w-[18px] text-accent sm:h-5 sm:w-5"
       fill="currentColor"
     >
-      <path d="M3 8.5l3.4 3L12 4l5.6 7.5 3.4-3-1.7 9.5H4.7L3 8.5zM4.9 20h14.2v1.6H4.9V20z" />
+      <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" strokeWidth="2.6" />
+      <circle cx="12" cy="12" r="2.6" fill="currentColor" />
     </svg>
   );
 }

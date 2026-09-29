@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: ClosingKing-design-system
+name: ClosingCircle-design-system
 description: "A near-black conversion surface for a commission-only sales-placement agency. Built on a four-step surface ladder (#04090C canvas → #0A1318 → #0F1B21 → #14242C) with hairline borders, a cyan (#22D3EE) used only on the wordmark, primary CTAs, focus rings and stat figures, and one atmospheric red bloom reserved for the hero VSL and the closing CTA. Type is a single geometric grotesque (Geist) from display to body with aggressive negative tracking; technical labels and eyebrows are set in Geist Mono at positive tracking, which carries the taxonomy voice. No serif, no italic display, no second accent, no decorative gradients."
 
 colors:
@@ -40,7 +40,7 @@ rounded: { xs: 4px, sm: 6px, md: 8px, lg: 12px, xl: 16px, pill: 9999px }
 spacing: { xxs: 4px, xs: 8px, sm: 12px, md: 16px, lg: 24px, xl: 32px, xxl: 48px, section: 88px }
 ---
 
-# ClosingKing DESIGN.md
+# ClosingCircle DESIGN.md
 
 Derived from `design-md/linear.app` (surface ladder, accent scarcity, negative
 tracking, hairline elevation) applied to the conversion structure of the

@@ -23,32 +23,32 @@ const accentSerif = Newsreader({
 });
 
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://closingking.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://closingcircle.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ClosingKing — Proven Closers & Setters, Installed In 24 Hours",
-    template: "%s | ClosingKing",
+    default: "ClosingCircle — Proven Closers & Setters, Installed In 24 Hours",
+    template: "%s | ClosingCircle",
   },
   description:
     "We install pre-vetted closers and setters onto your offer with a complete SOP — live on calls in 24 hours. No retainer, no setup fee. You pay only when they close.",
   keywords: [
     "hire closers", "sales closers for hire", "appointment setters",
     "commission only sales reps", "remote closers", "high ticket closers",
-    "sales team outsourcing", "ClosingKing",
+    "sales team outsourcing", "ClosingCircle",
   ],
   openGraph: {
     type: "website",
     url: siteUrl,
-    siteName: "ClosingKing",
-    title: "ClosingKing — Proven Closers & Setters, Installed In 24 Hours",
+    siteName: "ClosingCircle",
+    title: "ClosingCircle — Proven Closers & Setters, Installed In 24 Hours",
     description:
       "Pre-vetted closers and setters installed onto your offer with a complete SOP. Live on calls in 24 hours. Commission only — you pay when they close.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClosingKing — Proven Closers & Setters, Installed In 24 Hours",
+    title: "ClosingCircle — Proven Closers & Setters, Installed In 24 Hours",
     description:
       "Pre-vetted closers installed onto your offer in 24 hours. Commission only.",
   },

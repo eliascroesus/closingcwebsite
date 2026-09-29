@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     .map(([k, v]) => [LABELS[k] || k, v]);
 
   const html = `
-    <h2 style="font-family:system-ui,sans-serif">New ClosingKing lead</h2>
+    <h2 style="font-family:system-ui,sans-serif">New ClosingCircle lead</h2>
     <table style="font-family:system-ui,sans-serif;border-collapse:collapse">
       ${rows
         .map(
@@ -96,7 +96,7 @@ export async function POST(req: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: LEAD_FROM_EMAIL || "ClosingKing <onboarding@resend.dev>",
+          from: LEAD_FROM_EMAIL || "ClosingCircle <onboarding@resend.dev>",
           to: LEAD_NOTIFICATION_EMAIL.split(",").map((s) => s.trim()),
           reply_to: lead.email,
           subject: `New ${lead.applicantType || "lead"}: ${lead.name}`,
@@ -120,7 +120,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           ...lead,
           text,
-          source: "closingking.com",
+          source: "closingcircle.com",
           receivedAt: new Date().toISOString(),
         }),
       });

@@ -1,5 +1,5 @@
 /**
- * ClosingKing — all site copy in one place.
+ * ClosingCircle — all site copy in one place.
  *
  * Section order follows the buyer's decision sequence, not our org chart:
  * cost → proof → process → risk → value → fit → objections → book.
@@ -12,9 +12,9 @@
  */
 
 export const brand = {
-  name: "ClosingKing",
+  name: "ClosingCircle",
   tagline: "Proven closers, installed into your offer.",
-  email: "hello@closingking.com",
+  email: "hello@closingcircle.com",
   calendarUrl: process.env.NEXT_PUBLIC_CALENDAR_URL || "",
   founderImage: "", // e.g. "/founder.jpg" to show the hero inset
 };
@@ -31,7 +31,7 @@ export const stats = [
  *  Cal.com link; without it the buttons fall back to an email. */
 export const ctaHref =
   process.env.NEXT_PUBLIC_CALENDAR_URL ||
-  "mailto:hello@closingking.com?subject=Booking%20an%20intake%20call";
+  "mailto:hello@closingcircle.com?subject=Booking%20an%20intake%20call";
 
 export const nav = [
   { label: "Pricing", href: "#pricing" },
@@ -181,5 +181,5 @@ export const finalCta = {
 
 export const legal = {
   disclaimer:
-    "ClosingKing places and manages independent sales representatives. Clients choose either a share of collected revenue on closed deals or a one-time access fee; under the access fee, ClosingKing takes no percentage of closed revenue. Representative commission is paid by you direct to your representative. We are not a lead generation service and do not guarantee any specific result, revenue figure or close rate. Figures shown are illustrative and are not a promise of earnings.",
+    "ClosingCircle places and manages independent sales representatives. Clients choose either a share of collected revenue on closed deals or a one-time access fee; under the access fee, ClosingCircle takes no percentage of closed revenue. Representative commission is paid by you direct to your representative. We are not a lead generation service and do not guarantee any specific result, revenue figure or close rate. Figures shown are illustrative and are not a promise of earnings.",
 };

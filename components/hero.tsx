@@ -24,8 +24,8 @@ export function Hero() {
             The nav only arrives on scroll, so this is the only branding here. */}
         <div className="rise flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
           <a href="#top" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
-            <Crown className="h-[18px] w-[18px] text-accent" />
-            <span>Closing<span className="text-accent">King</span></span>
+            <Mark className="h-[18px] w-[18px] text-accent" />
+            <span>Closing<span className="text-accent">Circle</span></span>
           </a>
           <span aria-hidden className="hidden h-4 w-px bg-hairline-strong sm:block" />
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.08] px-3.5 py-1.5 backdrop-blur-sm">
@@ -78,8 +78,8 @@ export function Hero() {
                 <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(34,211,238,0.2),transparent_66%)]" />
 
                 <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
-                  <Crown className="h-3 w-3 text-accent" />
-                  <span className="text-[10px] font-medium text-ink-muted">ClosingKing</span>
+                  <Mark className="h-3 w-3 text-accent" />
+                  <span className="text-[10px] font-medium text-ink-muted">ClosingCircle</span>
                 </span>
 
                 <span className="absolute inset-0 flex flex-col items-center justify-center px-6">
@@ -131,10 +131,11 @@ export function Hero() {
   );
 }
 
-function Crown({ className = "" }: { className?: string }) {
+function Mark({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden viewBox="0 0 24 24" className={className} fill="currentColor">
-      <path d="M3 8.5l3.4 3L12 4l5.6 7.5 3.4-3-1.7 9.5H4.7L3 8.5zM4.9 20h14.2v1.6H4.9V20z" />
+    <svg aria-hidden viewBox="0 0 24 24" className={className} fill="none">
+      <circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" strokeWidth="2.6" />
+      <circle cx="12" cy="12" r="2.6" fill="currentColor" />
     </svg>
   );
 }
