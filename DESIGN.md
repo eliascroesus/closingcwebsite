@@ -306,3 +306,38 @@ the fold, while at 1728x1000 and on tablet and phone it stays inside it. If
 the CTA must be visible on a 900px-tall laptop, cap the video near 52rem
 instead; that is the trade, and the hero stack has already been tightened as
 far as it can go without shrinking the headline.
+
+## Third-party embeds
+
+Three of the page's load-bearing blocks live in someone else's iframe: the
+Loom VSL, the Cal.com booking calendar and the Google Form. Each one can be
+refused by a strict CSP, an ad blocker or a locked-down network, and the
+single-file design preview is refused by all three. So every embed follows
+the same rule: **never let a blocked frame become a blank rectangle.**
+
+- Loom and the Google Form carry a permanent text link underneath. A
+  CSP-blocked frame still fires `load`, and both a blocked frame and a real
+  cross-origin load report `contentDocument === null`, so the block cannot be
+  detected. A link that is always visible is the only honest answer.
+- Cal.com loads a script rather than a frame directly, and that *is*
+  detectable: `components/cal-embed.tsx` watches the container, and if nothing
+  has mounted after 8 seconds it swaps the panel for a primary button to
+  `cal.shareUrl`. The spinner never spins forever.
+
+The calendar replaces the hero's "Book A Call" button and sits directly under
+the video: watch, then book, in one scroll. Every other CTA on the page,
+including the sticky nav, is an anchor to `#book` rather than a second
+booking surface.
+
+## Booking and application plumbing
+
+`ctaHref` defaults to `#book`. Set `NEXT_PUBLIC_CALENDAR_URL` only if the
+calendar should move off-page.
+
+The closer application reads `closerForm.googleFormUrl`. With a URL set, the
+Google Form is embedded and submissions land in its responses sheet. Empty,
+`components/closer-apply.tsx` falls back to the native form, which posts to
+`/api/apply`. Google never resizes its own frame, so the height is ours:
+`googleFormHeight` / `googleFormHeightSm` in `lib/content.ts`. Google renders
+on white and exposes no theming hooks; treat that frame as a card of its own
+rather than fighting it.

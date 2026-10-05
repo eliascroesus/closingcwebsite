@@ -25,6 +25,19 @@ export const brand = {
   videoShareUrl: "https://www.loom.com/share/cd873a31473c49f9a6b96d3e0ce005fa",
 };
 
+/** Cal.com inline booking embed. It sits directly under the hero VSL, so the
+ *  visitor watches and books without a second click. Every "Book A Call"
+ *  button on the page just scrolls here. */
+export const cal = {
+  namespace: "closer-setter",
+  link: "eliasminds/closer-setter",
+  origin: "https://app.cal.com",
+  script: "https://app.cal.com/embed/embed.js",
+  // Escape hatch: strict CSP, an ad blocker or a locked-down network can
+  // refuse the frame. Same booking page, opened directly.
+  shareUrl: "https://cal.com/eliasminds/closer-setter",
+};
+
 /* !!! PLACEHOLDER — use numbers you can defend. */
 export const stats = [
   { value: "300+", label: "Vetted reps on the bench" },
@@ -33,11 +46,9 @@ export const stats = [
   { value: "5–7%", label: "Of closed deals, or $1,000 once" },
 ];
 
-/** Every CTA points here. Set NEXT_PUBLIC_CALENDAR_URL to a Calendly or
- *  Cal.com link; without it the buttons fall back to an email. */
-export const ctaHref =
-  process.env.NEXT_PUBLIC_CALENDAR_URL ||
-  "mailto:hello@closingcircle.com?subject=Booking%20an%20intake%20call";
+/** Every CTA points here: the Cal.com embed under the hero video. Set
+ *  NEXT_PUBLIC_CALENDAR_URL to send them to an external booking page instead. */
+export const ctaHref = process.env.NEXT_PUBLIC_CALENDAR_URL || "#book";
 
 export const nav = [
   { label: "Pricing", href: "#pricing" },
@@ -56,6 +67,12 @@ export const hero = {
   ctaSub: "Commission only, or one flat access fee. Your choice.",
   videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
+  bookingLabel: "Pick a time below",
+  bookingSub: "30 minutes. Bring your offer and your numbers. If it fits, your rep is live tomorrow.",
+  bookingFallback: "Calendar not loading?",
+  bookingBlocked:
+    "Your browser blocked the embedded calendar. Open it directly and pick a time there.",
+  bookingFallbackCta: "Book on Cal.com",
 };
 
 export const tools = [
@@ -170,11 +187,26 @@ export const closers = {
 };
 
 export const closerForm = {
-  eyebrow: "Closer application",
-  heading: { pre: "Get On An", accent: "Offer", post: "" },
-  sub: "Four fields. If your track record fits an offer we are placing, we will set up a short call.",
+  eyebrow: "For closers & setters",
+  heading: { pre: "Are You A Closer?", accent: "Apply Below", post: "" },
+  sub: "If you want to get on an offer, fill the form out below. If your track record fits something we are placing, we will set up a short call.",
   submit: "Submit My Application",
   note: "We review every submission and reply on WhatsApp within two business days.",
+
+  /* ── Google Form ────────────────────────────────────────────────
+     Paste the embed URL here and submissions land straight in your
+     Google Form responses sheet. In Google Forms: Send → < > → copy
+     the src from the iframe (it ends in /viewform?embedded=true).
+     Leave it empty and the native form below is used instead, which
+     posts to /api/apply.
+     NEXT_PUBLIC_GOOGLE_FORM_URL overrides it at build time.         */
+  googleFormUrl: process.env.NEXT_PUBLIC_GOOGLE_FORM_URL || "",
+  // Google never resizes its own frame, so the height is ours to set.
+  // Bump this if the form grows past four questions.
+  googleFormHeight: 1050,
+  googleFormHeightSm: 980,
+  fallback: "Form not loading?",
+  fallbackCta: "Open it in a new tab",
 };
 
 export const finalCta = {

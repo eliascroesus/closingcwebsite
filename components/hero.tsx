@@ -1,4 +1,5 @@
-import { brand, ctaHref, hero, stats } from "@/lib/content";
+import { brand, hero, stats } from "@/lib/content";
+import { CalEmbed } from "./cal-embed";
 
 const videoUrl = brand.videoUrl;
 
@@ -85,12 +86,9 @@ export function Hero() {
           </a>
         </p>
 
-        {/* CTA under the video — watch, then act */}
-        <div className="rise mt-5 flex flex-col items-center" style={{ animationDelay: "290ms" }}>
-          <a href={ctaHref} className="btn btn-primary w-full max-w-sm !text-[15.5px] sm:w-auto sm:!px-8">
-            {hero.cta}
-          </a>
-        </div>
+        {/* The calendar, not a button, sits under the video: watch, then book
+            in the same scroll. Every other CTA on the page scrolls here. */}
+        <CalEmbed />
 
         <dl className="rise mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4" style={{ animationDelay: "350ms" }}>
           {stats.map((s) => (
