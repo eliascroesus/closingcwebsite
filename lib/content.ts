@@ -68,7 +68,7 @@ export const hero = {
   videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
   bookingLabel: "Pick a time below",
-  bookingSub: "30 minutes. Bring your offer and your numbers. If it fits, your rep is live tomorrow.",
+  bookingSub: "15 minutes. Bring your offer and your numbers. If it fits, your rep is live tomorrow.",
   bookingFallback: "Calendar not loading?",
   bookingBlocked:
     "Your browser blocked the embedded calendar. Open it directly and pick a time there.",
@@ -138,7 +138,7 @@ export const how = {
   heading: { pre: "How We Install", accent: "Your Closer", post: "" },
   sub: "First call to live calls, in one day.",
   steps: [
-    { n: "01", time: "30 min", title: "Offer intake", body: "We map your offer, buyer and objections into a rep-ready brief." },
+    { n: "01", time: "15 min", title: "Offer intake", body: "We map your offer, buyer and objections into a rep-ready brief." },
     { n: "02", time: "Same day", title: "Rep matched", body: "Matched from 300+ vetted reps who've sold at your price point. You approve." },
     { n: "03", time: "Next morning", title: "Live on calls", body: "Your rep gets the SOP, clears a mock, and takes live calls." },
     { n: "04", time: "Ongoing", title: "Coached monthly", body: "Call reviews, mock drills and tracked KPIs. Close rate climbs." },
@@ -200,7 +200,9 @@ export const closerForm = {
      Leave it empty and the native form below is used instead, which
      posts to /api/apply.
      NEXT_PUBLIC_GOOGLE_FORM_URL overrides it at build time.         */
-  googleFormUrl: process.env.NEXT_PUBLIC_GOOGLE_FORM_URL || "",
+  googleFormUrl:
+    process.env.NEXT_PUBLIC_GOOGLE_FORM_URL ||
+    "https://docs.google.com/forms/d/e/1FAIpQLSeeJrFNvReOsAYNPjyz1BZX5Ot3zOrSYIprbBUxVz38TCV2Xw/viewform?embedded=true",
   // Google never resizes its own frame, so the height is ours to set.
   // Bump this if the form grows past four questions.
   googleFormHeight: 1050,
@@ -211,7 +213,7 @@ export const closerForm = {
 
 export const finalCta = {
   heading: "Ready To Stop Hiring Closers?",
-  sub: "One 30-minute intake. If your offer is a fit, your rep is live tomorrow.",
+  sub: "One 15-minute intake. If your offer is a fit, your rep is live tomorrow.",
   cta: "Book A Call",
   note: "Commission only, or one flat access fee. No retainer either way.",
 };

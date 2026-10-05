@@ -76,7 +76,12 @@ export function CalEmbed() {
     Cal("init", cal.namespace, { origin: cal.origin });
     Cal.ns![cal.namespace]("inline", {
       elementOrSelector: `#${CONTAINER_ID}`,
-      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      config: {
+        layout: "month_view",
+        useSlotsViewOnSmallScreen: "true",
+        theme: "dark",
+        "ui.color-scheme": "dark",
+      },
       calLink: cal.link,
     });
     Cal.ns![cal.namespace]("ui", {
@@ -130,7 +135,7 @@ export function CalEmbed() {
         {hero.bookingSub}
       </p>
 
-      <div className="relative mt-5 overflow-hidden rounded-2xl border border-hairline-strong bg-s1 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.9)]">
+      <div className="relative mt-5">
         {/* The placeholder sits behind the embed, so the panel reads as a
             calendar-shaped surface while Cal paints into it. */}
         {status === "loading" && (

@@ -27,9 +27,10 @@ export function CloserApply() {
       />
 
       <div className="mx-auto mt-9 max-w-xl">
-        {/* Google renders the form on white and gives us no theming hooks,
-            so the frame is treated as a card of its own rather than fought. */}
-        <div className="overflow-hidden rounded-2xl border border-hairline-strong bg-white shadow-[0_24px_60px_-28px_rgba(0,0,0,0.9)]">
+        {/* No border and no panel: Google paints its own surface, and a
+            second frame around it reads as a box inside a box. Rounding the
+            corners is the only thing we impose on it. */}
+        <div className="overflow-hidden rounded-2xl">
           <iframe
             src={src}
             title="Closer application form"

@@ -329,6 +329,20 @@ the video: watch, then book, in one scroll. Every other CTA on the page,
 including the sticky nav, is an anchor to `#book` rather than a second
 booking surface.
 
+**No panel around an embed.** Cal and Google each paint their own surface, so
+wrapping one in a bordered card reads as a box inside a box. The embeds sit
+on the page with nothing but rounded corners.
+
+**Cal renders light unless told twice.** `theme: "dark"` darkens the booker
+but leaves the iframe's own page white, which put a white slab in the middle
+of a black page. `"ui.color-scheme": "dark"` in the same `config` fixes it;
+both ride along in the iframe URL, so the frame loads dark rather than
+repainting. `#cal-inline-closer-setter iframe` also carries a canvas-coloured
+background in `globals.css` to kill the flash before Cal's CSS lands.
+
+Google Forms exposes no such hook. Set the form's own background from the
+palette menu inside Google Forms; nothing on our side can reach it.
+
 ## Booking and application plumbing
 
 `ctaHref` defaults to `#book`. Set `NEXT_PUBLIC_CALENDAR_URL` only if the

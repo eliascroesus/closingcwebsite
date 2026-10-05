@@ -321,6 +321,13 @@ body {
   box-shadow: 0 0 0 1px var(--color-hairline-strong);
 }
 
+/* Cal.com paints the frame itself once its CSS lands; until then an
+   unstyled iframe is white, which flashes hard against the canvas. */
+#cal-inline-closer-setter iframe {
+  background-color: var(--color-canvas) !important;
+  color-scheme: dark;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
