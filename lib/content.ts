@@ -16,7 +16,6 @@ export const brand = {
   tagline: "Proven closers, installed into your offer.",
   email: "hello@closingcircle.com",
   calendarUrl: process.env.NEXT_PUBLIC_CALENDAR_URL || "",
-  founderImage: "", // e.g. "/founder.jpg" to show the hero inset
   // Hero VSL. Loom embed URL; NEXT_PUBLIC_VIDEO_URL overrides it if set.
   videoUrl:
     process.env.NEXT_PUBLIC_VIDEO_URL ||
@@ -57,7 +56,6 @@ export const hero = {
   ctaSub: "Commission only, or one flat access fee. Your choice.",
   videoLabel: "",
   videoTitle: "How we install a closer in 24 hours",
-  videoKicker: "300+ vetted reps. Commission only.",
 };
 
 export const tools = [

@@ -1,12 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import { brand, ctaHref, hero, stats } from "@/lib/content";
 
 const videoUrl = brand.videoUrl;
 
 export function Hero() {
-  const [playing, setPlaying] = useState(false);
   return (
     <section id="top" className="relative isolate overflow-hidden">
       {/* Layered field — see .field-* in globals.css */}
@@ -59,54 +55,18 @@ export function Hero() {
           <div aria-hidden className="bloom left-1/2 top-[54%] h-[74%] w-[82%] -translate-x-1/2 -translate-y-1/2 opacity-70" />
 
           <div className="relative aspect-video overflow-hidden rounded-2xl border border-hairline-strong bg-gradient-to-b from-[#0C2028] to-[#050C10] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.9),0_0_70px_-16px_rgba(34,211,238,0.4),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-            {playing && videoUrl ? (
-              <iframe
-                src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}autoplay=1&hideEmbedTopBar=true`}
-                title={hero.videoTitle}
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                allowFullScreen
-                className="h-full w-full"
-              />
-            ) : (
-              <button
-                type="button"
-                onClick={() => videoUrl && setPlaying(true)}
-                aria-label={videoUrl ? `Play: ${hero.videoTitle}` : hero.videoTitle}
-                className="group relative block h-full w-full text-left"
-              >
-                <span aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(34,211,238,0.2),transparent_66%)]" />
-
-                <span className="absolute left-4 top-4 hidden items-center gap-1.5 rounded-md border border-hairline bg-canvas/70 px-2 py-1 backdrop-blur-sm sm:inline-flex">
-                  <Mark className="h-3 w-3 text-accent" />
-                  <span className="text-[10px] font-medium text-ink-muted">ClosingCircle</span>
-                </span>
-
-                <span className="absolute inset-0 flex flex-col items-center justify-center px-6">
-                  <span className="block text-center text-[clamp(1.35rem,4.2vw,2.35rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-ink">
-                    install a closer
-                    <br />
-                    in 24 hours
-                  </span>
-                  <span className="mt-2.5 block text-center text-[11.5px] leading-relaxed text-ink-subtle">
-                    {hero.videoKicker}
-                  </span>
-                  <span className="mt-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-[0_10px_40px_-6px_rgba(34,211,238,0.7)] transition-transform duration-300 group-hover:scale-105">
-                    <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 text-[#04191F]" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </span>
-
-                {/* Founder inset, rounded-square as in the reference. Set
-                    brand.founderImage in lib/content.ts to switch it on. */}
-                {brand.founderImage && (
-                  <span className="absolute bottom-4 right-4 hidden h-20 w-20 overflow-hidden rounded-2xl border border-hairline-strong bg-s3 sm:block">
-                    <img src={brand.founderImage} alt="" className="h-full w-full object-cover" />
-                  </span>
-                )}
-
-              </button>
-            )}
+            {/* The player is the preview: it mounts on load rather than
+                sitting behind a poster, so the first thing in the hero is
+                the video itself. Loom's chrome is stripped so only the
+                player shows. */}
+            <iframe
+              src={`${videoUrl}${videoUrl.includes("?") ? "&" : "?"}hideEmbedTopBar=true&hide_owner=true&hide_share=true&hide_title=true&hide_reactions=true`}
+              title={hero.videoTitle}
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              allowFullScreen
+              loading="eager"
+              className="h-full w-full"
+            />
           </div>
         </div>
 
